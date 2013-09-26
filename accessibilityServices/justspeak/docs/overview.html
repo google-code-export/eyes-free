@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>JustSpeak: Controlling Android By Voice </title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="JustSpeak: Controlling Android By Voice "/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-08-06 Tue"/>
+<meta name="author" content="T.V Raman"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">JustSpeak: Controlling Android By Voice </h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 JustSpeak: Controlling  Android By Voice</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Starting  JustSpeak</a></li>
+<li><a href="#sec-1-2">1.2 Initiating Voice Commands</a></li>
+<li><a href="#sec-1-3">1.3 Global Voice  Commands</a></li>
+<li><a href="#sec-1-4">1.4 Local Voice Commands</a></li>
+<li><a href="#sec-1-5">1.5 Chaining  Commands</a></li>
+<li><a href="#sec-1-6">1.6 Alternative Means Of Triggering JustSpeak</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> JustSpeak: Controlling  Android By Voice</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+<b>JustSpeak</b>  is an Android <i>Accessibility Service</i> that enables
+voice control of your Android device. Once enabled, you can
+activate on-screen controls, launch installed applications, and
+trigger other commonly used Android actions using spoken
+commands.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Starting  JustSpeak</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Once installed, you can start <b>JustSpeak</b> under
+<i>Settings-&gt;Accessibility</i> on your Android device — you only need
+to do this once, i.e., <b>JustSpeak</b> will be automatically
+restarted when you reboot your phone.
+</p>
+<p>
+<b>JustSpeak</b> is an <i>Accessibility Service</i> i.e., once started, it
+uses Acessibility APIs on the platform to augment Android's user
+interface. <b>JustSpeak</b> augments the Android user interface with
+voice-input control; other Accessibility Services like TalkBack
+provide spoken feedback. Note that <b>JustSpeak</b> can be used either
+by itself, or in conjunction with other platform Accessibility
+Services such as TalkBack.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Initiating Voice Commands</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Once started, <b>JustSpeak</b> registers itself as an <i>Assistant</i> on
+your device; you can initiate voice commands by swiping up from
+the bottom of the screen. Note that this is the same gesture that
+activates <i>Google Now</i> on devices running the stock version of
+Android.  When using JustSpeak, you can get to Google Now by
+saying <i>Google</i>. Successful invocation of voice-control produces an
+auditory icon, indicating that your device is ready to
+listen. The auditory tone, along with an optional vibration (if
+available) you hear is your cue to start speaking; <i>JustSpeak</i>
+displays a visual overlay on the right-edge of the screen to
+indicate that it is listening. the recognized utterance is
+displayed visually, — additionally, it is spoken out if TalkBack
+is active. <b>JustSpeak</b> supports two types of voice control
+commands as described below.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Global Voice  Commands</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<p>
+<b>JustSpeak</b> supports a set of <i>global commands</i>  — these
+are <i>global</i>  in that they are available on <i>any</i> screen.  Global
+commands include:
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Command</td><td class="left">Utterance</td><td class="left">Action</td></tr>
+<tr><td class="left">Open</td><td class="left">Open &lt;Installed Application&gt;</td><td class="left">Launch Application</td></tr>
+<tr><td class="left">Recent</td><td class="left">Recent</td><td class="left">Recent Applications</td></tr>
+<tr><td class="left">Quick Settings</td><td class="left">Quick Settings</td><td class="left">Launch Quick Settings</td></tr>
+<tr><td class="left">Toggle WiFi</td><td class="left">Switch WiFi (On/Off)</td><td class="left">Toggle WiFi</td></tr>
+<tr><td class="left">Toggle Bluetooth</td><td class="left">Switch Bluetooth (On/Off)</td><td class="left">Toggle Bluetooth</td></tr>
+<tr><td class="left">Toggle Tethering</td><td class="left">Switch Tethering (On/Off)</td><td class="left">Toggle Tethering</td></tr>
+<tr><td class="left">Home</td><td class="left">Go Home</td><td class="left">Return to home screen</td></tr>
+<tr><td class="left">Back</td><td class="left">Go Back</td><td class="left">Return to previous screen</td></tr>
+<tr><td class="left">Notifications</td><td class="left">Open Notifications</td><td class="left">Pull down notifications shade</td></tr>
+</tbody>
+</table>
+
+Note that voice commands are flexible in that you can use a
+number  of synonyms for verbs such as <i>open</i> e.g., <i>launch</i>. In
+addition, voice control commands can be formulated as full
+sentences, e.g., "Please open GMail".
+
+<p>
+List Of Synonyms For <i>Open</i>:
+</p>
+<ul>
+<li>open
+</li>
+<li>go to  
+</li>
+<li>show
+</li>
+<li>display
+</li>
+</ul>
+
+
+
+<p>
+In addition, <i>JustSpeak</i> provides the following spoken aliases
+as a means of triggering commonly used applications:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Utterance</td><td class="left">Action</td></tr>
+<tr><td class="left">Browser</td><td class="left">Launch default Web browser</td></tr>
+<tr><td class="left">Web</td><td class="left">Launch default Web Browser</td></tr>
+<tr><td class="left">OK Google Now</td><td class="left">Launch Google Now</td></tr>
+<tr><td class="left">Search</td><td class="left">Launch Voice Search</td></tr>
+<tr><td class="left">Voice Search</td><td class="left">Launch Voice Search</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Local Voice Commands</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<p>
+In addition to the global voice commands that are available on
+any screen, <b>JustSpeak</b> lets you activate on-screen controls in
+a variety of ways.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Command</td><td class="left">Utterance</td><td class="left">Action</td></tr>
+<tr><td class="left">Activate</td><td class="left">Click &lt;control name&gt;</td><td class="left">Activate control by its on-screen name</td></tr>
+<tr><td class="left">Toggle</td><td class="left">Turn on/off &lt;toggle&gt;</td><td class="left">Toggle on/off switch</td></tr>
+<tr><td class="left">Scroll</td><td class="left">Scroll Up/Down</td><td class="left">Scroll  e.g., Lists.</td></tr>
+</tbody>
+</table>
+
+List Of   Synonym  For <i>Activate</i>:
+
+
+
+<ul>
+<li>touch 
+</li>
+<li>click on  
+</li>
+<li>press 
+</li>
+<li>activate 
+</li>
+<li>open 
+</li>
+<li>push 
+</li>
+<li>tap
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Chaining  Commands</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+<p>
+Note that you can  issue a sequence of commands via a single
+utterance by using simple connectives such as <i>then</i> or <i>and</i>
+when speaking; as an example, you can say:
+</p><pre class="example">
+Quick Settings then  WiFi
+</pre>
+
+<p>to open "Quick Settings" and then click 
+the "WiFi" item that appears within quick settings.
+This is an example 
+of chaining together a global command followed by a local
+command that becomes available <i>after</i> the global command has
+executed successfully.  Similarly, you can say:
+</p><pre class="example">
+Open GMail, then compose
+</pre>
+
+<p>to launch  GMail, and  immediately start composing  a new
+message.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Alternative Means Of Triggering JustSpeak</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+<p>
+We are continuing to experiment with alternative ways of
+initiating voice control. Toward this end, <b>JustSpeak</b> 
+enables you to configure   an NFC  tag that can then be tapped
+to initiate voice control; see  <i>JustSpeak-&gt;Settings</i> for
+configuring an NFC  tag.
+On Android 4.3 and above, you can also trigger <i>JustSpeak</i> by
+long-pressing both  volume buttons at the same time.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-08-06 Tue</p>
+<p class="author">Author: T.V Raman</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
