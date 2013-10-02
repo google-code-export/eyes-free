@@ -46,7 +46,10 @@ which ant > /dev/null || \
 
 ensureSvnDependency "brltty" "${brlttydir}" "${brlttysvnurl}"
 ensureSvnDependency "liblouis" "${liblouisdir}" "${liblouissvnurl}"
-ensureSvnDependency "android-midi-lib" "${midilibdir}" "${midilibsvnurl}"
+# Uncomment the below line to build the midi library from source.
+# In that case, also remove libraries/utils/libs/android_midi_lib.jar from
+# the source tree.
+#ensureSvnDependency "android-midi-lib" "${midilibdir}" "${midilibsvnurl}"
 
 for dir in libraries/compatutils libraries/utils braille/client \
     braille/service braille/brailleback; do
