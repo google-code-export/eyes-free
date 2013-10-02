@@ -72,17 +72,9 @@ Please run all commands from the root of the eyes-free source tree.
   $ svn checkout http://liblouis.googlecode.com/svn/tags/liblouis_2_5_1 \
     braille/service/jni/liblouiswrapper/liblouis
 
-* Make sure to have the android-midi-library checked out.  This can be
-  checked out from subversion as follows (run from within the eyes-free
-  directory as per above):
-  $ svn checkout -r31 \
-    http://android-midi-lib.googlecode.com/svn/trunk/src/com/leff \
-    libraries/utils/src/com/leff
-
 * Apply patches to the dependencies:
   $ (cd braille/service/jni/brlttywrapper && patch -p1 < brltty.patch)
   $ (cd braille/service/jni/liblouiswrapper && patch -p1 < liblouis.patch)
-  $ (cd libraries/utils/src/com/ && patch -p1 < android-midi-lib.patch
 
 * Update the local ant property files:
   $ android update project -p libraries/utils
