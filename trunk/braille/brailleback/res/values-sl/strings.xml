@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Iskanje v zaslonskem načinu omogoča hiter skok na elemente na zaslonu tako, da vnesete del opisnega besedila. Ko tipkate, se bo izbor premaknil na naslednji element, ki se ujema."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Za premik na naslednji rezultat uporabite <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g>, za prejšnjega pa <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g>. Pritisnite <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g>, če želite zapreti način iskanja in ohraniti izbor na rezultatu. Pritisnite <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> za premik nazaj na prejšnji izbrani element."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Tega ne prikazuj več"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Zapri"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Naprej"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Dodajanje oznake po meri"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Urejanje oznake po meri"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Odstranitev oznake po meri"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Oznake po meri niso podprte. Posodobite talkback"</string>
 </resources>

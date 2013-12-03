@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="service_description" msgid="3837907778560523486">"เมื่อเปิดใช้งาน BrailleBack อุปกรณ์ของคุณจะเชื่อมต่อกับจอภาพอักษรเบรลล์ที่ได้รับการจับคู่ผ่านบลูทูธ และแสดงเนื้อหาของหน้าจอเป็นอักษรเบรลล์ คุณสามารถใช้แป้นบนจอภาพอักษรเบรลล์ในการไปยังส่วนต่างๆ ในหน้าจอ เปิดใช้งานรายการ และป้อนข้อความได้ สำหรับข้อมูลเพิ่มเติม กด Space และจุด 1, 2 และ 3 (ตัวอักษร l ในอักษรเบรลล์) บนจอภาพเมื่อเชื่อมต่อแล้ว"</string>
+    <string name="service_description" msgid="3837907778560523486">"เมื่อเปิดใช้ BrailleBack อุปกรณ์ของคุณจะเชื่อมต่อกับจอภาพอักษรเบรลล์ที่จับคู่ผ่านบลูทูธ และแสดงเนื้อหาของหน้าจอเป็นอักษรเบรลล์ คุณสามารถใช้แป้นบนจอภาพอักษรเบรลล์ควบคุมการเดินทางไปยังส่วนต่างๆ ในหน้าจอ เปิดใช้งานรายการ และป้อนข้อความได้ สำหรับข้อมูลเพิ่มเติม กด Space และจุด 1, 2 และ 3 (ตัวอักษร l ในอักษรเบรลล์) บนจอภาพเมื่อเชื่อมต่อแล้ว"</string>
     <string name="braille_ime_name" msgid="819430885692057322">"แป้นพิมพ์อักษรเบรลล์"</string>
     <string name="ime_setup_wizard_name" msgid="3001767325395835523">"วิซาร์ดแป้นพิมพ์อักษรเบรลล์"</string>
     <string name="ime_setup_need_enable_title" msgid="4607530771880167657">"เปิดใช้งานแป้นพิมพ์อักษรเบรลล์"</string>
@@ -48,7 +48,7 @@
     <string name="key_bindings_title" msgid="7481545872884477026">"ความช่วยเหลือแป้นพิมพ์ BrailleBack"</string>
     <string name="display_connected" msgid="2008600513914815101">"brlback เปิด"</string>
     <string name="shutting_down" msgid="1303701310644298807">"brlback ปิด"</string>
-    <string name="braille_keyboard_active" msgid="7094321134174837395">"แป้นพิมพ์ BrailleBack ทำงาน"</string>
+    <string name="braille_keyboard_active" msgid="7094321134174837395">"แป้นพิมพ์ BrailleBack พร้อมใช้งาน"</string>
     <string name="tap_to_switch_ime" msgid="8521400813452643324">"แตะเพื่อสลับไปยังแป้นพิมพ์เริ่มต้น"</string>
     <string name="table_name_grade" msgid="6813487904718787264">"<xliff:g id="LOCALE_NAME">%1$s</xliff:g> - ระดับ <xliff:g id="GRADE_NUMBER">%2$d</xliff:g>"</string>
     <string name="overlay_pan_left_button" msgid="3970960598254323366">"แพนซ้าย"</string>
@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"การค้นหาบนหน้าจอช่วยให้คุณข้ามไปยังรายการบนหน้าจอได้อย่างรวดเร็วโดยการพิมพ์รายละเอียดข้อความเพียงบางส่วน ในขณะที่คุณพิมพ์ โฟกัสจะย้ายไปยังรายการที่ตรงกันถัดไป"</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"ใช้ <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> เพื่อย้ายไปยังผลลัพธ์ถัดไปและ <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> เพื่อย้ายไปยังผลลัพธ์ก่อนหน้า กด <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> เพื่อออกจากโหมดการค้นหาโดยยังโฟกัสอยู่บนผลลัพธ์ กด <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> เพื่อย้ายกลับไปยังรายการที่โฟกัสก่อนหน้า"</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"ไม่ต้องแสดงอีก"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"ปิด"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"ดำเนินการต่อ"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"เพิ่มป้ายกำกับที่กำหนดเอง"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"แก้ไขป้ายกำกับที่กำหนดเอง"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"นำป้ายกำกับที่กำหนดเองออก"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"ไม่สนับสนุนป้ายกำกับที่กำหนดเอง อัปเดต talkback"</string>
 </resources>

@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Ukusesha kuskrini kukuvumela ukuba weqele ngokushesha kuzinto ezikuskrini ngokuthayipha ingxenye yencazelo yazo yombhalo. Njengoba uthayipha, ukugxila kuzoya kwinto efanayo elandelayo."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Sebenzisa i-<xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> ukuya kumphumela olandelayo ne-<xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> ukuya kumphumela wangaphambilini. Cindezela i-<xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> ukuphuma kwimodi yokusesha futhi ugxile kumphumela. Cindezela i-<xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> ukubuyela emuva kwinto okugxilwe kuyo ngaphambilini."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Ungaphinde ubonise lokhu futhi"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Vala"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Qhubeka"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Engeza ilebula engokwezifiso"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Hlela ilebula engokwezifiso"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Susa ilebula engokwezifiso"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Amalebula angokwezifiso awasekelwa. Buyekeza i-talkback"</string>
 </resources>

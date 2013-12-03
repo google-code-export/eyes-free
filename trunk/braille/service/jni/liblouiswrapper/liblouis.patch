@@ -1,6 +1,6 @@
 diff --strip-trailing-cr -Pur a/liblouis/liblouis/compileTranslationTable.c b/liblouis/liblouis/compileTranslationTable.c
---- a/liblouis/liblouis/compileTranslationTable.c	2012-12-10 15:20:01.048020618 -0800
-+++ b/liblouis/liblouis/compileTranslationTable.c	2013-03-20 18:17:41.000000000 -0700
+--- a/liblouis/liblouis/compileTranslationTable.c	2012-12-10 15:20:01.000000000 -0800
++++ b/liblouis/liblouis/compileTranslationTable.c	2013-10-18 14:37:19.000000000 -0700
 @@ -134,6 +134,10 @@
  #endif
  /* End of MS contribution */
@@ -25,7 +25,31 @@ diff --strip-trailing-cr -Pur a/liblouis/liblouis/compileTranslationTable.c b/li
    va_end (argp);
  #endif
  }
-@@ -4676,7 +4684,7 @@
+@@ -1484,7 +1492,6 @@
+ 	{
+ 	  if (ch == '\\')
+ 	    {			/* escape sequence */
+-	      int ok = 1;
+ 	      switch (ch = token->chars[in])
+ 		{
+ 		case '\\':
+@@ -1531,7 +1538,6 @@
+ 		    not32:
+ 		      compileError (nested,
+ 				    "liblouis has not been compiled for 32-bit Unicode");
+-		      ok = 0;
+ 		      break;
+ 		    }
+ 		  if (token->length - in > 5)
+@@ -1552,7 +1558,6 @@
+ 		  break;
+ 		default:
+ 		  compileError (nested, "invalid escape sequence '\\%c'", ch);
+-		  ok = 0;
+ 		  break;
+ 		}
+ 	      in++;
+@@ -4676,7 +4681,7 @@
      return NULL;
    strcpy (newList, tableList);
    for (k = strlen (newList) - 1; k >= 0 && newList[k] != '='; k--);
@@ -34,6 +58,19 @@ diff --strip-trailing-cr -Pur a/liblouis/liblouis/compileTranslationTable.c b/li
      return newList;
    fileCount = 1;
    errorCount = 1;
+@@ -5207,9 +5212,8 @@
+ }
+ */
+ 
+-void
+-debugHook ()
++void debugHook ()
+ {
+-  char *hook = "debug hook\n";
+-  printf (hook);
++  char *hook = "debug hook";
++  printf ("%s\n", hook);
+ }
 diff --strip-trailing-cr -Pur a/liblouis/liblouis/liblouis.h b/liblouis/liblouis/liblouis.h
 --- a/liblouis/liblouis/liblouis.h	1969-12-31 16:00:00.000000000 -0800
 +++ b/liblouis/liblouis/liblouis.h	2012-11-13 09:56:13.000000000 -0800
@@ -187,8 +224,45 @@ diff --strip-trailing-cr -Pur a/liblouis/liblouis/liblouis.h b/liblouis/liblouis
 +}
 +#endif				/* __cplusplus */
 +#endif				/*LibLOUIS_H_ */
+diff --strip-trailing-cr -Pur a/liblouis/METADATA b/liblouis/METADATA
+--- a/liblouis/METADATA	1969-12-31 16:00:00.000000000 -0800
++++ b/liblouis/METADATA	2013-10-11 16:20:52.000000000 -0700
+@@ -0,0 +1,33 @@
++# This file is a text proto using the definition here:
++# https://cs.corp.google.com/#google3/devtools/metadata/presubmit.proto
++#
++# For more information, visit go/google3metadata.
++
++presubmit: {
++  check_tests: {
++    project: "brailleback"
++    project: "chromevox"
++
++    action: REVIEW
++    failure_status: WARNING
++  }
++}
++
++presubmit: {
++  check_tests: {
++    project: "brailleback"
++    project: "chromevox"
++
++    action: SUBMIT
++    failure_status: ERROR
++  }
++}
++
++# Checks for "do not submit" (all caps) in CL description and files.
++presubmit: {
++  check_do_not_submit: {
++    action: SUBMIT
++    failure_status: ERROR
++    scope: DESCRIPTION_AND_FILES
++  }
++}
 diff --strip-trailing-cr -Pur a/liblouis/tables/braille-patterns.cti b/liblouis/tables/braille-patterns.cti
---- a/liblouis/tables/braille-patterns.cti	2012-12-10 15:20:04.818070074 -0800
+--- a/liblouis/tables/braille-patterns.cti	2012-12-10 15:20:04.000000000 -0800
 +++ b/liblouis/tables/braille-patterns.cti	2012-11-27 13:40:20.000000000 -0800
 @@ -25,262 +25,262 @@
  # Unicode 2800..28FF  Braille Patterns
@@ -710,7 +784,7 @@ diff --strip-trailing-cr -Pur a/liblouis/tables/braille-patterns.cti b/liblouis/
  
  # ----------------------------------------------------------------------------------------------
 diff --strip-trailing-cr -Pur a/liblouis/tables/da.ctb b/liblouis/tables/da.ctb
---- a/liblouis/tables/da.ctb	2012-12-10 15:20:04.808069943 -0800
+--- a/liblouis/tables/da.ctb	2012-12-10 15:20:04.000000000 -0800
 +++ b/liblouis/tables/da.ctb	2013-01-09 13:58:47.000000000 -0800
 @@ -214,11 +214,11 @@
  punctuation \x00bf 348		INVERTED QUESTION MARK

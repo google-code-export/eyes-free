@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Met Zoeken op scherm kunt u snel naar items op het scherm springen door een gedeelte van de tekst te typen. Terwijl u typt, wordt de focus verplaatst naar het volgende overeenkomende item."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Gebruik <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> om naar het volgende resultaat te gaan en <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> om naar het vorige resultaat te gaan. Druk op <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> om de zoekmodus te sluiten en de focus op het resultaat te houden. Druk op <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> om terug te gaan naar het vorige geselecteerde item."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Nooit meer tonen"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Sluiten"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Doorgaan"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Aangepast label toevoegen"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Aangepast label bewerken"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Aangepast label verwijderen"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Aangepaste labels worden niet ondersteund. Werk TalkBack bij."</string>
 </resources>

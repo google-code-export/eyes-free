@@ -111,6 +111,13 @@ class DefaultNavigationMode implements NavigationMode {
                             .MOVEMENT_GRANULARITY_LINE)) {
                 return true;
             }
+
+            // Check if we need to scroll.
+            if (autoScrollItem(currentNode, 
+                    AccessibilityNodeInfo.ACTION_SCROLL_BACKWARD)) {
+                return true;
+            }
+
             firstNode = AccessibilityNodeInfoUtils.refreshNode(
                     content.getFirstNode());
             // If the content doesn't have a first node, fall back on the
@@ -148,6 +155,12 @@ class DefaultNavigationMode implements NavigationMode {
                             currentNode, DIRECTION_FORWARD,
                             AccessibilityNodeInfoCompat
                             .MOVEMENT_GRANULARITY_LINE)) {
+                return true;
+            }
+
+            // Check if we need to scroll.
+            if (autoScrollItem(currentNode, 
+                    AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)) {
                 return true;
             }
         } finally {
@@ -280,6 +293,13 @@ class DefaultNavigationMode implements NavigationMode {
                             .MOVEMENT_GRANULARITY_LINE)) {
                 return true;
             }
+
+            // Check if we need to scroll.
+            if (autoScrollItem(currentNode, 
+                    AccessibilityNodeInfo.ACTION_SCROLL_BACKWARD)) {
+                return true;
+            }
+
             AccessibilityNodeInfoRef firstNode =
                 AccessibilityNodeInfoRef.unOwned(
                         content.getFirstNode());
@@ -344,6 +364,13 @@ class DefaultNavigationMode implements NavigationMode {
                     && WebInterfaceUtils.hasWebContent(currentNode)
                     && WebInterfaceUtils.performNavigationByDOMObject(
                             currentNode, direction)) {
+                return true;
+            }
+            // Check if we need to scroll.
+            int scrollDirection = (direction == DIRECTION_FORWARD)
+                    ? AccessibilityNodeInfo.ACTION_SCROLL_FORWARD
+                    : AccessibilityNodeInfo.ACTION_SCROLL_BACKWARD;
+            if (autoScrollItem(currentNode, scrollDirection)) {
                 return true;
             }
             return moveFocus(currentNode, direction);
@@ -542,8 +569,8 @@ class DefaultNavigationMode implements NavigationMode {
         next = mFocusFinder.linear(from, searchDirection);
         try {
             if (next != null) {
-               return next.performAction(
-                       AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS);
+                return next.performAction(
+                        AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS);
             }
         } finally {
             AccessibilityNodeInfoUtils.recycleNodes(next);
@@ -852,5 +879,21 @@ class DefaultNavigationMode implements NavigationMode {
         } finally {
             AccessibilityNodeInfoUtils.recycleNodes(root, toFocus);
         }
+    }
+
+    /**
+     * Checks if the specified node is suitable for autoscrolling and will
+     * try to scroll it if it is.
+     * Note we might have an issue here when more than one node is on the line
+     * or not the whole list item is visible.
+     */
+    private boolean autoScrollItem(AccessibilityNodeInfoCompat node,
+            int scrollDirection) {
+        int edgeDirection =
+                (scrollDirection == AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)
+                    ? 1 : -1;
+        return AccessibilityNodeInfoUtils.isAutoScrollEdgeListItem(
+                        mAccessibilityService, node, edgeDirection)
+                && attemptScrollAction(scrollDirection);
     }
 }

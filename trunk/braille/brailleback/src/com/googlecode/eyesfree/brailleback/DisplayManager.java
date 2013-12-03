@@ -353,6 +353,12 @@ public class DisplayManager
      * will eventually be recycled by the display manager.
      */
     public void setContent(Content content) {
+        if (content == null) {
+            throw new NullPointerException("content can't be null");
+        }
+        if (content.mText == null) {
+            throw new NullPointerException("content text is null");
+        }
         mDisplayHandler.setContent(content);
     }
 
@@ -658,7 +664,7 @@ public class DisplayManager
 
         private void handleStop() {
             mDisplay.shutdown();
-            mHandlerThread.quitSafely();
+            mHandlerThread.quit();
         }
     }
 

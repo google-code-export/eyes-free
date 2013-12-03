@@ -1,3 +1,5 @@
+# Key bindings in this file should be synced with brl-ht-dots.kti.
+
 # Back key
 bind \{Space}+Dot1+Dot2 KEY_ESCAPE
 # Home key
@@ -24,3 +26,5 @@ bind \{Space}+DOT2+DOT4 KEY_FUNCTION+10
 bind \{Space}+\{Dot7}+DOT2+DOT4 KEY_FUNCTION+11
 # Incremental Search
 bind \{Space}+DOT3+DOT4 KEY_FUNCTION+12
+# Braille menu
+bind \{Space}+\{Dot7}+DOT1+DOT3+DOT4 KEY_FUNCTION+13

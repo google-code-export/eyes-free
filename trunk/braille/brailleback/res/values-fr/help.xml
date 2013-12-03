@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Accéder à la liste suivante dans le contenu Web"</item>
     <item msgid="561134957068368670">"Accéder à la liste précédente dans le contenu Web"</item>
     <item msgid="4431278105955644176">"Activer ou désactiver le mode de recherche sur l\'écran"</item>
-    <item msgid="2754093362613614658">"Ouvrir l\'aide du clavier BrailleBack"</item>
+    <item msgid="1541653246718288681">"Act./Désact. menu libellés"</item>
+    <item msgid="3070189781205215458">"Ouvrir aide clavier BrailleBack"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"Appuyer de manière prolongée sur <xliff:g id="KEY_LIST">%s</xliff:g>"</string>

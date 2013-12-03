@@ -1,8 +1,54 @@
 Only in a/brltty/Android/Application/res: values-de
 Only in a/brltty/Android/Application/res/xml: input_service.xml
+diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/Alva/braille.c b/brltty/Drivers/Braille/Alva/braille.c
+--- a/brltty/Drivers/Braille/Alva/braille.c	2013-04-25 14:27:31.000000000 -0700
++++ b/brltty/Drivers/Braille/Alva/braille.c	2013-10-17 08:26:29.000000000 -0700
+@@ -307,6 +307,7 @@
+ static const ModelEntry *model;		/* points to terminal model config struct */
+ 
+ #define MOD_FLAG_CONFIGURABLE 0X01
++#define MOD_FLAG_SEMI_PARTIAL_UPDATES 0X02
+ 
+ static const ModelEntry modelTable[] = {
+   { .identifier = 0X00,
+@@ -435,6 +436,8 @@
+   .identifier = 0X40,
+   .name = "BC640",
+   .columns = 40,
++  /* EasyLink 12 touch doesn't support writes that start at offsets > 0. */
++  .flags = MOD_FLAG_SEMI_PARTIAL_UPDATES,
+   .keyTableDefinition = &KEY_TABLE_DEFINITION(bc)
+ };
+ 
+@@ -1145,7 +1148,7 @@
+ static int
+ askDevice2s (unsigned char command, unsigned char *response, int size) {
+   if (tellDevice2s(command, 0X3F)) {
+-    while (io->awaitInput(200)) {
++    while (io->awaitInput(600)) {
+       int length = protocol->readPacket(response, size);
+       if (length <= 0) break;
+       if ((response[0] == ESC) && (response[1] == command)) return 1;
+@@ -1657,7 +1660,7 @@
+ 
+ static int
+ readBluetoothBytes (unsigned char *buffer, int length, int wait) {
+-  const int timeout = 100;
++  const int timeout = 200;
+   return bthReadData(bluetoothConnection, buffer, length,
+                      (wait? timeout: 0), timeout);
+ }
+@@ -1762,6 +1765,7 @@
+   }
+ 
+   if (cellsHaveChanged(previousText, brl->buffer, brl->textColumns, &from, &to, &textRewriteRequired)) {
++    if (model->flags & MOD_FLAG_SEMI_PARTIAL_UPDATES) from = 0;
+     size_t count = to - from;
+     unsigned char cells[count];
+ 
 diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/HandyTech/braille.c b/brltty/Drivers/Braille/HandyTech/braille.c
---- a/brltty/Drivers/Braille/HandyTech/braille.c	2013-04-25 14:27:32.734579167 -0700
-+++ b/brltty/Drivers/Braille/HandyTech/braille.c	2013-07-18 12:39:54.000000000 -0700
+--- a/brltty/Drivers/Braille/HandyTech/braille.c	2013-04-25 14:27:32.000000000 -0700
++++ b/brltty/Drivers/Braille/HandyTech/braille.c	2013-07-08 14:19:37.000000000 -0700
 @@ -177,6 +177,20 @@
    KEY_NAME_TABLE(easyBraille),
  END_KEY_NAME_TABLES
@@ -175,8 +221,8 @@ diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/HandyTech/braille.c b/brl
  
    if ((byte >= HT_KEY_STATUS) &&
 diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/HandyTech/brldefs-ht.h b/brltty/Drivers/Braille/HandyTech/brldefs-ht.h
---- a/brltty/Drivers/Braille/HandyTech/brldefs-ht.h	2013-04-25 14:27:32.734579167 -0700
-+++ b/brltty/Drivers/Braille/HandyTech/brldefs-ht.h	2013-07-18 12:39:54.000000000 -0700
+--- a/brltty/Drivers/Braille/HandyTech/brldefs-ht.h	2013-04-25 14:27:32.000000000 -0700
++++ b/brltty/Drivers/Braille/HandyTech/brldefs-ht.h	2013-07-08 14:19:37.000000000 -0700
 @@ -27,6 +27,14 @@
    HT_MODEL_ModularEvolution88  = 0X38,
    HT_MODEL_EasyBraille         = 0X44,
@@ -192,9 +238,151 @@ diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/HandyTech/brldefs-ht.h b/
    HT_MODEL_Braillino           = 0X72,
    HT_MODEL_BrailleStar40       = 0X74,
    HT_MODEL_BrailleStar80       = 0X78,
+diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/HIMS/braille.c b/brltty/Drivers/Braille/HIMS/braille.c
+--- a/brltty/Drivers/Braille/HIMS/braille.c	2013-04-25 14:27:30.000000000 -0700
++++ b/brltty/Drivers/Braille/HIMS/braille.c	2013-10-14 12:15:58.000000000 -0700
+@@ -146,10 +146,10 @@
+   unsigned char previousCells[MAXIMUM_CELL_COUNT];
+ };
+ 
+-static int
++static size_t
+ readPacket (BrailleDisplay *brl, InputPacket *packet) {
+-  const int length = 10;
+-  int offset = 0;
++  const size_t length = 10;
++  size_t offset = 0;
+ 
+   while (1) {
+     unsigned char byte;
+@@ -176,7 +176,7 @@
+           int checksum = -packet->data.checksum;
+ 
+           {
+-            int i;
++            size_t i;
+             for (i=0; i<offset; i+=1) checksum += packet->bytes[i];
+           }
+ 
+@@ -200,6 +200,16 @@
+   }
+ }
+ 
++static size_t
++readBytes (BrailleDisplay *brl, void *packet, size_t size) {
++  return readPacket(brl, packet);
++}
++
++static int
++writeBytes (BrailleDisplay *brl, const unsigned char *bytes, size_t count) {
++  return writeBraillePacket(brl, brl->data->gioEndpoint, bytes, count);
++}
++
+ static int
+ writePacket (
+   BrailleDisplay *brl,
+@@ -264,7 +274,7 @@
+     *checksum = sum;
+   }
+ 
+-  return writeBraillePacket(brl, brl->data->gioEndpoint, packet, byte - packet);
++  return writeBytes(brl, packet, byte - packet);
+ }
+ 
+ 
+@@ -282,24 +292,6 @@
+ 
+ static int
+ getSyncBrailleCellCount (BrailleDisplay *brl, unsigned int *count) {
+-  static const unsigned char data[] = {
+-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+-  };
+-
+-  if (writePacket(brl, 0XFB, 0X01, data, sizeof(data), NULL, 0)) {
+-    InputPacket packet;
+-
+-    while (gioAwaitInput(brl->data->gioEndpoint, 1000)) {
+-      if (readPacket(brl, &packet)) {
+-        if (packet.data.type == IPT_CELLS) {
+-          *count = packet.data.data;
+-          return 1;
+-        }
+-      }
+-    }
+-  }
+-
+   return 0;
+ }
+ 
+@@ -337,6 +329,38 @@
+ }
+ 
+ static int
++writeCellCountRequest (BrailleDisplay *brl) {
++  static const unsigned char data[] = {
++    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
++    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
++  };
++
++  return writePacket(brl, 0XFB, 0X01, data, sizeof(data), NULL, 0);
++}
++
++static BrailleResponseResult
++isCellCountResponse (BrailleDisplay *brl, const void *packet, size_t size) {
++  const InputPacket *response = packet;
++
++  return (response->data.type == IPT_CELLS)? BRL_RSP_DONE: BRL_RSP_UNEXPECTED;
++}
++
++static int
++getCellCount (BrailleDisplay *brl, unsigned int *count) {
++  InputPacket response;
++
++  if (probeBrailleDisplay(brl, 2, brl->data->gioEndpoint, 1000,
++                          writeCellCountRequest,
++                          readBytes, &response, sizeof(response.bytes),
++                          isCellCountResponse)) {
++    *count = response.data.data;
++    return 1;
++  }
++
++  return brl->data->protocol->getCellCount(brl, count);
++}
++
++static int
+ connectResource (BrailleDisplay *brl, const char *identifier) {
+   static const SerialParameters serialParameters = {
+     SERIAL_DEFAULT_PARAMETERS,
+@@ -362,6 +386,15 @@
+       .data=&brailleSenseOperations
+     },
+ 
++    { /* Braille Sense U2 (USB 2.0) */
++      .version = UsbSpecificationVersion_2_0,
++      .vendor=0X045E, .product=0X930A,
++      .configuration=1, .interface=0, .alternative=0,
++      .inputEndpoint=1, .outputEndpoint=2,
++      .disableAutosuspend=1,
++      .data=&brailleSenseOperations
++    },
++
+     { /* Sync Braille */
+       .vendor=0X0403, .product=0X6001,
+       .configuration=1, .interface=0, .alternative=0,
+@@ -408,8 +441,7 @@
+       brl->data->protocol = gioGetApplicationData(brl->data->gioEndpoint);
+       logMessage(LOG_INFO, "detected: %s", brl->data->protocol->modelName);
+ 
+-      if (brl->data->protocol->getCellCount(brl, &brl->textColumns) ||
+-          brl->data->protocol->getCellCount(brl, &brl->textColumns)) {
++      if (getCellCount(brl, &brl->textColumns)) {
+         brl->textRows = 1;
+         brl->keyBindings = brl->data->protocol->keyTableDefinition->bindings;
+         brl->keyNameTables = brl->data->protocol->keyTableDefinition->names;
 diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/Seika/braille.c b/brltty/Drivers/Braille/Seika/braille.c
---- a/brltty/Drivers/Braille/Seika/braille.c	2013-04-25 14:27:32.364574368 -0700
-+++ b/brltty/Drivers/Braille/Seika/braille.c	2013-07-18 12:39:54.000000000 -0700
+--- a/brltty/Drivers/Braille/Seika/braille.c	2013-04-25 14:27:32.000000000 -0700
++++ b/brltty/Drivers/Braille/Seika/braille.c	2013-07-18 12:32:21.000000000 -0700
 @@ -480,7 +480,7 @@
  static void
  ntvInterpretIdentity (InputPacket *packet) {
@@ -205,8 +393,8 @@ diff --strip-trailing-cr -Pur a/brltty/Drivers/Braille/Seika/braille.c b/brltty/
  }
  
 diff --strip-trailing-cr -Pur a/brltty/Programs/brl.h b/brltty/Programs/brl.h
---- a/brltty/Programs/brl.h	2013-04-25 14:27:26.434497486 -0700
-+++ b/brltty/Programs/brl.h	2013-07-18 12:39:54.000000000 -0700
+--- a/brltty/Programs/brl.h	2013-04-25 14:27:26.000000000 -0700
++++ b/brltty/Programs/brl.h	2013-07-08 14:19:37.000000000 -0700
 @@ -33,6 +33,9 @@
  typedef struct BrailleDataStruct BrailleData;
  
@@ -228,7 +416,7 @@ diff --strip-trailing-cr -Pur a/brltty/Programs/brl.h b/brltty/Programs/brl.h
  } BrailleDriver;
 diff --strip-trailing-cr -Pur a/brltty/Programs/cmds.auto.h b/brltty/Programs/cmds.auto.h
 --- a/brltty/Programs/cmds.auto.h	1969-12-31 16:00:00.000000000 -0800
-+++ b/brltty/Programs/cmds.auto.h	2013-07-18 12:39:54.000000000 -0700
++++ b/brltty/Programs/cmds.auto.h	2013-04-15 16:20:06.000000000 -0700
 @@ -0,0 +1,1011 @@
 +/*
 + * NOTE: Manually generated on Linux and added to version control to be used

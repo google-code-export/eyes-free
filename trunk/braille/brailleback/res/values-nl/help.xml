@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Naar volgende lijst navigeren in webinhoud"</item>
     <item msgid="561134957068368670">"Naar vorige lijst navigeren in webinhoud"</item>
     <item msgid="4431278105955644176">"Modus \'Zoeken op scherm\' in-/uitschakelen"</item>
-    <item msgid="2754093362613614658">"De BrailleBack-help voor het toetsenbord openen"</item>
+    <item msgid="1541653246718288681">"Labelmenu in-/uitschakelen"</item>
+    <item msgid="3070189781205215458">"De BrailleBack-help voor het toetsenbord openen"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"<xliff:g id="KEY_LIST">%s</xliff:g> ingedrukt houden"</string>

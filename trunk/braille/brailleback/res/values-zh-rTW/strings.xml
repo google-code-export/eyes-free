@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"在「搜尋畫面內容」模式中，只要輸入畫面上任一項目的部分文字說明，即可快速移至該項目。在您輸入文字時，游標會自動移至下一個相符項目。"</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"您可使用 <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> 移至下一個搜尋結果，或使用 <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> 移至上一個搜尋結果。按下 <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> 可結束搜尋模式，並將游標置於搜尋結果上方；按下 <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> 則可返回游標停留的上一個項目。"</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"不再顯示教學課程"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"關閉"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"繼續"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"新增自訂標籤"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"編輯自訂標籤"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"移除自訂標籤"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"系統不支援自訂標籤，請更新 TalkBack 功能。"</string>
 </resources>

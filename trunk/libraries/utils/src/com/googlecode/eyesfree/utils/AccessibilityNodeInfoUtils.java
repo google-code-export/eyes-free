@@ -25,10 +25,12 @@ import android.util.Log;
 
 import com.googlecode.eyesfree.compat.CompatUtils;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Provides a series of utilities for interacting with AccessibilityNodeInfo
@@ -48,6 +50,13 @@ public class AccessibilityNodeInfoUtils {
      */
     private static final Class<?> CLASS_TOUCHWIZ_TWADAPTERVIEW = CompatUtils.getClass(
             "com.sec.android.touchwiz.widget.TwAdapterView");
+
+    /**
+     * Class for Samsung's TouchWiz implementation of AbsListView. May be
+     * {@code null} on non-Samsung devices.
+     */
+    private static final Class<?> CLASS_TOUCHWIZ_TWABSLISTVIEW = CompatUtils.getClass(
+            "com.sec.android.touchwiz.widget.TwAbsListView");
 
     private AccessibilityNodeInfoUtils() {
         // This class is not instantiable.
@@ -323,6 +332,24 @@ public class AccessibilityNodeInfoUtils {
                 AccessibilityNodeInfoCompat.ACTION_PREVIOUS_HTML_ELEMENT);
     }
 
+    public static boolean isSelfOrAncestorFocused(
+            Context context, AccessibilityNodeInfoCompat node) {
+        if (node == null) {
+            return false;
+        }
+
+        if (node.isAccessibilityFocused()) {
+            return true;
+        } else {
+            return hasMatchingAncestor(context, node, new NodeFilter() {
+                @Override
+                public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
+                    return node.isAccessibilityFocused();
+                }
+            });
+        }
+    }
+
     /**
      * Returns whether a node is clickable. That is, the node supports at least one of the
      * following:
@@ -566,6 +593,26 @@ public class AccessibilityNodeInfoUtils {
     }
 
     /**
+     * Convenience method determining if the current item is at the edge of a
+     * list and suitable autoscroll. Calls {@code isEdgeListItem} with
+     * {@code FILTER_AUTO_SCROLL}.
+     *
+     * @param context The parent context.
+     * @param node The node to check.
+     * @param direction The direction in which to check, one of:
+     *            <ul>
+     *            <li>{@code -1} to check backward
+     *            <li>{@code 0} to check both backward and forward
+     *            <li>{@code 1} to check forward
+     *            </ul>
+     * @return true if the current item is at the edge of a list.
+     */
+    public static boolean isAutoScrollEdgeListItem(
+            Context context, AccessibilityNodeInfoCompat node, int direction) {
+        return isEdgeListItem(context, node, direction, FILTER_AUTO_SCROLL);
+    }
+
+    /**
      * Utility method for determining if a searching past a particular node will
      * fall off the edge of a scrollable container.
      *
@@ -786,15 +833,57 @@ public class AccessibilityNodeInfoUtils {
             for (int i = 0; i < childCount; i++) {
                 final AccessibilityNodeInfoCompat child = item.getChild(i);
 
-                if (child == null) {
-                    continue;
+                if (child != null) {
+                    queue.addLast(child);
                 }
-
-                queue.addLast(child);
             }
         }
 
         return null;
+    }
+
+    /**
+     * Returns the result of applying a filter using breadth-first traversal.
+     *
+     * @param context The parent context.
+     * @param node The root node to traverse from.
+     * @param filter The filter to satisfy.
+     * @param maxResults The number of results to stop searching after
+     * @return The first n nodes reached via BFS traversal that satisfies the
+     *         filter.
+     */
+    public static List<AccessibilityNodeInfoCompat> searchAllFromBfs(Context context,
+            AccessibilityNodeInfoCompat node, NodeFilter filter, int maxResults) {
+        if (node == null) {
+            return null;
+        }
+
+        final List<AccessibilityNodeInfoCompat> toReturn =
+                new ArrayList<AccessibilityNodeInfoCompat>();
+        final LinkedList<AccessibilityNodeInfoCompat> queue =
+                new LinkedList<AccessibilityNodeInfoCompat>();
+
+        queue.add(AccessibilityNodeInfoCompat.obtain(node));
+
+        while (!queue.isEmpty() && toReturn.size() < maxResults) {
+            final AccessibilityNodeInfoCompat item = queue.removeFirst();
+
+            if (filter.accept(context, item)) {
+                toReturn.add(AccessibilityNodeInfoCompat.obtain(item));
+            }
+
+            final int childCount = item.getChildCount();
+
+            for (int i = 0; i < childCount; i++) {
+                final AccessibilityNodeInfoCompat child = item.getChild(i);
+
+                if (child != null) {
+                    queue.addLast(child);
+                }
+            }
+        }
+
+        return toReturn;
     }
 
     /**
@@ -921,6 +1010,34 @@ public class AccessibilityNodeInfoUtils {
         @Override
         public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
             return shouldFocusNode(context, node);
+        }
+    };
+
+    /**
+     * Filter that defines which types of views should be auto-scrolled.
+     * Generally speaking, only accepts views that are capable of showing
+     * partially-visible data.
+     * <p>
+     * Accepts the following classes (and sub-classes thereof):
+     * <ul>
+     * <li>{@link android.widget.AbsListView} (and Samsung's TwAbsListView)
+     * <li>{@link android.widget.AbsSpinner}
+     * <li>{@link android.widget.ScrollView}
+     * <li>{@link android.widget.HorizontalScrollView}
+     * </ul>
+     * <p>
+     * Specifically excludes {@link android.widget.AdapterViewAnimator} and
+     * sub-classes, since they represent overlapping views. Also excludes
+     * {@link android.support.v4.view.ViewPager} since it exclusively represents
+     * off-screen views.
+     */
+    private static final NodeFilter FILTER_AUTO_SCROLL = new NodeFilter() {
+        @Override
+        public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
+            return AccessibilityNodeInfoUtils.nodeMatchesAnyClassByType(context, node,
+                    android.widget.AbsListView.class, android.widget.AbsSpinner.class,
+                    android.widget.ScrollView.class, android.widget.HorizontalScrollView.class,
+                    CLASS_TOUCHWIZ_TWABSLISTVIEW);
         }
     };
 

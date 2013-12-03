@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Zulazulela kuhlu lokulandelayo kokuqukethwe kwewebhu"</item>
     <item msgid="561134957068368670">"Zulazulela kuhlu lwangaphambilini kokuqukethwe kwewebhu"</item>
     <item msgid="4431278105955644176">"Guqula ukusesha kwimodi yeskrini"</item>
-    <item msgid="2754093362613614658">"Vula usizo lwekhibhodi ye-BrailleBack"</item>
+    <item msgid="1541653246718288681">"Guqula imenyu yokulebula"</item>
+    <item msgid="3070189781205215458">"Vula usizo lwekhibhodi ye-BrailleBack"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"Chofoza isikhathi eside u-<xliff:g id="KEY_LIST">%s</xliff:g>"</string>

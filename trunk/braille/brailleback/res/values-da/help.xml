@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Naviger til den næste liste i webindhold"</item>
     <item msgid="561134957068368670">"Naviger til den forrige liste i webindhold"</item>
     <item msgid="4431278105955644176">"Slå søgning på skærmen til"</item>
-    <item msgid="2754093362613614658">"Åbn hjælp til BrailleBack-tastaturet"</item>
+    <item msgid="1541653246718288681">"Slå menu for etiketter til"</item>
+    <item msgid="3070189781205215458">"Åbn hjælp til BrailleBack-tastaturet"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"Tryk længe på <xliff:g id="KEY_LIST">%s</xliff:g>"</string>

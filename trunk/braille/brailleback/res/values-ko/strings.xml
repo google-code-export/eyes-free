@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="service_description" msgid="3837907778560523486">"BrailleBack이 사용 중이면 기기가 페어링된 블루투스 점자 디스플레이와 연결되고 화면 콘텐츠가 점자로 표시됩니다. 점자 디스플레이의 키를 사용하여 화면을 탐색하고 항목을 활성화하며 텍스트를 입력할 수 있습니다. 자세한 내용을 보려면 기기가 연결된 후 표시되는 디스플레이에서 스페이스바+점1+점2+점3(영문점자 l 또는 한글점자 사)을 누르세요."</string>
+    <string name="service_description" msgid="3837907778560523486">"점자 지원이 사용 중이면 기기가 페어링된 블루투스 점자 디스플레이와 연결되고 화면 콘텐츠가 점자로 표시됩니다. 점자 디스플레이의 키를 사용하여 화면을 탐색하고 항목을 활성화하며 텍스트를 입력할 수 있습니다. 자세한 내용을 보려면 기기가 연결된 후 표시되는 디스플레이에서 스페이스바+점1+점2+점3(영문점자 l 또는 한글점자 사)을 누르세요."</string>
     <string name="braille_ime_name" msgid="819430885692057322">"점자 하드웨어 키보드"</string>
     <string name="ime_setup_wizard_name" msgid="3001767325395835523">"점자 하드웨어 키보드 마법사"</string>
     <string name="ime_setup_need_enable_title" msgid="4607530771880167657">"점자 하드웨어 키보드 사용"</string>
@@ -24,7 +24,7 @@
     <string name="type_button" msgid="3639574187835564558">"버튼"</string>
     <string name="type_seekbar" msgid="979094491475615458">"찾기 컨트롤"</string>
     <string name="type_quickcontact" msgid="5224329178093450337">"주소록"</string>
-    <string name="preferences_title" msgid="368535298674637475">"BrailleBack 환경설정"</string>
+    <string name="preferences_title" msgid="368535298674637475">"점자 지원 환경설정"</string>
     <string name="pref_category_device_title" msgid="8644919099122845217">"기기"</string>
     <string name="pref_connection_status_title" msgid="8350285056432214602">"상태"</string>
     <string name="pref_key_bindings_title" msgid="1228004448435300774">"키보드 도움말"</string>
@@ -45,10 +45,10 @@
     <string name="pref_braille_overlay_title" msgid="1490370457319373830">"화면에 점자 출력 표시"</string>
     <string name="pref_braille_overlay_tutorial_title" msgid="6443284526953091708">"자습서 열기"</string>
     <string name="pref_log_level_label" msgid="3161296593165404029">"로그 출력 수준"</string>
-    <string name="key_bindings_title" msgid="7481545872884477026">"BrailleBack 키보드 도움말"</string>
+    <string name="key_bindings_title" msgid="7481545872884477026">"점자 지원 키보드 도움말"</string>
     <string name="display_connected" msgid="2008600513914815101">"brlback 켜짐"</string>
     <string name="shutting_down" msgid="1303701310644298807">"brlback 꺼짐"</string>
-    <string name="braille_keyboard_active" msgid="7094321134174837395">"BrailleBack 키보드 사용 중"</string>
+    <string name="braille_keyboard_active" msgid="7094321134174837395">"점자 지원 키보드 사용 중"</string>
     <string name="tap_to_switch_ime" msgid="8521400813452643324">"탭하여 기본 키보드로 전환"</string>
     <string name="table_name_grade" msgid="6813487904718787264">"<xliff:g id="LOCALE_NAME">%1$s</xliff:g> - <xliff:g id="GRADE_NUMBER">%2$d</xliff:g>종"</string>
     <string name="overlay_pan_left_button" msgid="3970960598254323366">"좌측으로 이동"</string>
@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"화면 검색을 사용하면 텍스트 설명 중 일부분을 입력하여 화면 안에 있는 항목으로 빠르게 바로 이동할 수 있습니다. 입력과 동시에 다음 일치하는 항목으로 초점이 이동합니다."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"<xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> 키를 사용하면 다음 검색결과로, <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> 키를 사용하면 이전 검색결과로 이동합니다. <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> 키를 누르면 검색 모드를 종료하고 초점이 검색결과에 맞춰집니다. <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> 키를 누르면 이전에 초점을 맞췄던 항목으로 돌아갑니다."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"다시 표시 안함"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"닫기"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"계속"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"맞춤 라벨 추가"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"맞춤 라벨 수정"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"맞춤 라벨 삭제"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"맞춤 라벨이 지원되지 않습니다. 음성 안내 지원을 업데이트하세요."</string>
 </resources>

@@ -22,11 +22,13 @@ import com.googlecode.eyesfree.braille.display.BrailleKeyBinding;
 import com.googlecode.eyesfree.braille.display.Display;
 import com.googlecode.eyesfree.braille.display.DisplayClient;
 import com.googlecode.eyesfree.brailleback.utils.BrailleKeyBindingUtils;
+import com.googlecode.eyesfree.labeling.CustomLabelManager;
 import com.googlecode.eyesfree.utils.LogUtils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -117,6 +119,13 @@ public class KeyBindingsActivity extends Activity
         for (int i = 0; i < supportedCommands.length; ++i) {
             String name = supportedCommands[i];
             int command = BrailleInputEvent.stringToCommand(name);
+
+            // Labeling menu command not supported in all versions.
+            if (command == BrailleInputEvent.CMD_TOGGLE_BRAILLE_MENU
+                && Build.VERSION.SDK_INT < CustomLabelManager.MIN_API_LEVEL) {
+                continue;
+            }
+
             BrailleKeyBinding binding =
                     BrailleKeyBindingUtils.getBrailleKeyBindingForCommand(
                         command, sortedBindings);

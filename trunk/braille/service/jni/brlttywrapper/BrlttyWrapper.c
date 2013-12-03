@@ -551,6 +551,7 @@ initCommandTables(JNIEnv* env) {
     { "CMD_LIST_NEXT", BRL_KEY_FUNCTION + 10 },
     { "CMD_LIST_PREVIOUS", BRL_KEY_FUNCTION + 11 },
     { "CMD_TOGGLE_INCREMENTAL_SEARCH", BRL_KEY_FUNCTION + 12 },
+    { "CMD_TOGGLE_BRAILLE_MENU", BRL_KEY_FUNCTION + 13 },
   };
   brlttyKeyMap = createCommandMap(
       env, cls, namesToKeys,

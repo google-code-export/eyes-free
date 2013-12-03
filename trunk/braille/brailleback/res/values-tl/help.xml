@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Mag-navigate sa susunod na listahan sa nilalaman sa web"</item>
     <item msgid="561134957068368670">"Mag-navigate sa nakaraang listahan sa nilalaman sa web"</item>
     <item msgid="4431278105955644176">"I-toggle ang mode na paghahanap sa screen"</item>
-    <item msgid="2754093362613614658">"Buksan ang tulong sa BrailleBack keyboard"</item>
+    <item msgid="1541653246718288681">"I-toggle ang menu ng paglalagay ng label"</item>
+    <item msgid="3070189781205215458">"Buksan ang tulong sa BrailleBack keyboard"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"Pindutin nang matagal ang <xliff:g id="KEY_LIST">%s</xliff:g>"</string>

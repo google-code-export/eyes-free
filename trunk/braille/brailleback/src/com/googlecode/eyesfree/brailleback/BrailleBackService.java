@@ -20,6 +20,8 @@ import com.googlecode.eyesfree.braille.display.BrailleInputEvent;
 import com.googlecode.eyesfree.braille.display.Display;
 import com.googlecode.eyesfree.brailleback.rule.BrailleRuleRepository;
 import com.googlecode.eyesfree.brailleback.utils.PreferenceUtils;
+import com.googlecode.eyesfree.labeling.CustomLabelManager;
+import com.googlecode.eyesfree.labeling.PackageRemovalReceiver;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
 
@@ -27,6 +29,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
@@ -43,7 +46,8 @@ public class BrailleBackService
         implements Display.OnConnectionStateChangeListener,
         DisplayManager.OnMappedInputEventListener,
         DisplayManager.OnPanOverflowListener,
-        SearchNavigationMode.SearchStateListener {
+        SearchNavigationMode.SearchStateListener,
+        BrailleMenuNavigationMode.BrailleMenuListener {
 
     /** Start the service, initializing a few components. */
     private static final int WHAT_START = 2;
@@ -70,6 +74,9 @@ public class BrailleBackService
     private IMEHelper mIMEHelper;
     private ModeSwitcher mModeSwitcher;
     private SearchNavigationMode mSearchNavigationMode;
+    private BrailleMenuNavigationMode mBrailleMenuNavigationMode;
+    private CustomLabelManager mLabelManager;
+    private PackageRemovalReceiver mPackageReceiver;
 
     /** Set if the infrastructure is initialized. */
     private boolean isInfrastructureInitialized;
@@ -123,6 +130,14 @@ public class BrailleBackService
                 && event.getCommand() == BrailleInputEvent.CMD_BRAILLE_KEY
                 && event.getArgument() == SWITCH_NAVIGATION_MODE_DOTS) {
             mModeSwitcher.switchMode();
+            return;
+        }
+        if (event.getCommand() == BrailleInputEvent.CMD_TOGGLE_BRAILLE_MENU) {
+            if (mBrailleMenuNavigationMode.isActive()) {
+                mModeSwitcher.overrideMode(null);
+            } else {
+                mModeSwitcher.overrideMode(mBrailleMenuNavigationMode);
+            }
             return;
         }
         if (mModeSwitcher.onMappedInputEvent(event, content)) {
@@ -227,6 +242,9 @@ public class BrailleBackService
             mModeSwitcher.onObserveAccessibilityEvent(event);
             mModeSwitcher.onAccessibilityEvent(event);
         }
+        if (mLabelManager != null) {
+            mLabelManager.onAccessibilityEvent(event);
+        }
     }
 
     @Override
@@ -251,6 +269,11 @@ public class BrailleBackService
         mModeSwitcher.overrideMode(null);
     }
 
+    @Override
+    public void onMenuClosed() {
+        mModeSwitcher.overrideMode(null);
+    }
+
     /**
      * Starts search mode in BrailleBack. Optionally tries to start the tutorial
      * first.
@@ -270,6 +293,8 @@ public class BrailleBackService
     }
 
     private void initializeDependencies() {
+        // Must initialize label manager before navigation modes.
+        initializeLabelManager();
         mFeedbackManager = new FeedbackManager(this);
         mTranslatorManager = new TranslatorManager(this);
         mSelfBrailleManager = new SelfBrailleManager();
@@ -287,6 +312,26 @@ public class BrailleBackService
         AccessibilityServiceInfo info = getServiceInfo();
         info.feedbackType |= AccessibilityServiceInfo.FEEDBACK_BRAILLE;
         setServiceInfo(info);
+    }
+
+    private void initializeLabelManager() {
+        if (Build.VERSION.SDK_INT >= CustomLabelManager.MIN_API_LEVEL) {
+            try {
+                mLabelManager = new CustomLabelManager(this);
+            } catch (SecurityException e) {
+                // Don't use labeling features if there's a permission denial
+                // due to a key mismatch
+                LogUtils.log(this, Log.ERROR,
+                        "Not using labeling due to permission denial.");
+            }
+
+            if (mLabelManager != null) {
+                mPackageReceiver = new PackageRemovalReceiver();
+                registerReceiver(
+                        mPackageReceiver, mPackageReceiver.getFilter());
+                mLabelManager.ensureDataConsistency();
+            }
+        }
     }
 
     private void initializeDisplayManager() {
@@ -328,7 +373,16 @@ public class BrailleBackService
             mTranslatorManager,
             mSelfBrailleManager,
             mNodeBrailler,
-            this /*searchStateListener*/);
+            this /*searchStateListener*/,
+            mLabelManager);
+
+        // Create separate BrailleMenuNavigationMode.
+        mBrailleMenuNavigationMode = new BrailleMenuNavigationMode(
+            mDisplayManager,
+            this /*accessibilityService*/,
+            mFeedbackManager,
+            mLabelManager,
+            this /*brailleMenuListener*/);
     }
 
     private void shutdownDependencies() {
@@ -350,6 +404,15 @@ public class BrailleBackService
             mFocusTracker.unregister();
             mFocusTracker = null;
         }
+        if (mLabelManager != null) {
+            mLabelManager.shutdown();
+            mLabelManager = null;
+        }
+        if (mPackageReceiver != null) {
+            unregisterReceiver(mPackageReceiver);
+            mPackageReceiver = null;
+        }
+
         BrailleIME.setSingletonHost(null);
     }
 
@@ -364,6 +427,10 @@ public class BrailleBackService
 
     public static BrailleBackService getActiveInstance() {
         return sInstance;
+    }
+
+    public CustomLabelManager getLabelManager() {
+        return mLabelManager;
     }
 
     /**

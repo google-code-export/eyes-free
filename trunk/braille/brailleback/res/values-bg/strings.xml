@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Търсенето на екрана ви дава възможност бързо да преминавате към елементи на екрана, като въвеждате част от текстовото им описание. Докато пишете, фокусът ще се премества към следващия съответстващ елемент."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Ползвайте <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> за преминаване към следващия резултат и <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> за преминаване към предишния. Натиснете <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g>, за да излезете от режима на търсене и да оставите фокуса върху резултата. Натиснете <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g>, за да се върнете към елемента, върху който е бил фокусът преди това."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Никога да не се показва отново"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Затваряне"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Напред"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Добавяне на персонализиран етикет"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Редактиране на персонализиран етикет"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Премахване на персонализиран етикет"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Персонализираните етикети не се поддържат. Актуализирайте TalkBack"</string>
 </resources>

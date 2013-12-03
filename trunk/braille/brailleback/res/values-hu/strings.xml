@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"A képernyőn történő keresés segítségével gyorsan az egyes elemekhez léphet, úgy, hogy elkezdi beírni szöveges leírásukat. Gépelés közben a fókusz mindig a következő egyező elemre kerül."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"A(z) <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> használatával a következő találatra, míg a(z) <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> segítségével az előző találatra léphet. A(z) <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> lenyomásával kiléphet a keresőmódból, és a találatra fókuszálhat. Egy korábban fókuszált elemre lépéshez nyomja le a(z) <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> lehetőséget."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Ne jelenjen meg többé"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Bezárás"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Folytatás"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Egyéni címke hozzáadása"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Egyéni címke szerkesztése"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Egyéni címke eltávolítása"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Az egyéni címkék nem támogatottak. Frissítse a TalkBacket"</string>
 </resources>

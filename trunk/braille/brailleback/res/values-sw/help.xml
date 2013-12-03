@@ -8,8 +8,8 @@
     <item msgid="4868322620432152139">"Rambaza hadi kwenye kipengee cha awali"</item>
     <item msgid="713256521059720189">"Rambaza hadi kwenye mstari unaofuata"</item>
     <item msgid="7111316948614107646">"Rambaza hadi kwenye mstari wa awali"</item>
-    <item msgid="1092717670413169154">"Tembeza mbele"</item>
-    <item msgid="2672802569950877806">"Tembeza nyuma"</item>
+    <item msgid="1092717670413169154">"Sogeza mbele"</item>
+    <item msgid="2672802569950877806">"Sogeza nyuma"</item>
     <item msgid="6858389246595464611">"Nenda hadi juu ya ukurasa"</item>
     <item msgid="6077703163925348890">"Nenda hadi chini ya ukurasa"</item>
     <item msgid="880847480793051862">"Washa kipengee kilicho chini ya kidole"</item>
@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Nenda kwenye orodha inayofuata katika maudhui ya tovuti"</item>
     <item msgid="561134957068368670">"Nenda kwenye orodha iliyotangulia katika maudhui ya tovuti"</item>
     <item msgid="4431278105955644176">"Geuza utafutaji kwenye hali ya skrini"</item>
-    <item msgid="2754093362613614658">"Fungua usaidizi wa kibodi ya BrailleBack"</item>
+    <item msgid="1541653246718288681">"Geuza menyu ya lebo"</item>
+    <item msgid="3070189781205215458">"Fungua usaidizi wa kibodi ya BrailleBack"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"Bonyeza <xliff:g id="KEY_LIST">%s</xliff:g> kwa muda mrefu"</string>
