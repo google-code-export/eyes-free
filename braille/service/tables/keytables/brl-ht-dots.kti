@@ -50,3 +50,5 @@ bind \{Space}+B3+B5 KEY_FUNCTION+10
 bind \{Space}+B1+B3+B5 KEY_FUNCTION+11
 # Incremental Search
 bind \{Space}+B2+B5 KEY_FUNCTION+12
+# Braille menu
+bind \{Space}+B1+B2+B4+B5 KEY_FUNCTION+13

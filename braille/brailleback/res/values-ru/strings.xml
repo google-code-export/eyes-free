@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Поиск по экрану позволяет быстро перейти к объектам, указывая часть их текстового описания. По мере ввода система будет предлагать подходящие объекты."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Используйте \"<xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g>\", чтобы перейти к следующему результату, или \"<xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g>\", чтобы вернуться к предыдущему. Нажмите \"<xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g>\", чтобы выйти из режима поиска и выбрать найденный объект, или \"<xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g>\", чтобы вернуться к предыдущему."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Больше не показывать"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Закрыть"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Продолжить"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Добавить пользовательский ярлык"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Изменить пользовательский ярлык"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Удалить пользовательский ярлык"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Пользовательские ярлыки не поддерживаются. Обновите TalkBack."</string>
 </resources>

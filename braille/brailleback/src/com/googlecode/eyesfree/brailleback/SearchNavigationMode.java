@@ -20,6 +20,8 @@ import com.googlecode.eyesfree.braille.display.BrailleInputEvent;
 import com.googlecode.eyesfree.braille.translate.BrailleTranslator;
 import com.googlecode.eyesfree.brailleback.rule.BrailleRuleRepository;
 import com.googlecode.eyesfree.brailleback.utils.AccessibilityEventUtils;
+import com.googlecode.eyesfree.brailleback.utils.LabelingUtils;
+import com.googlecode.eyesfree.labeling.CustomLabelManager;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoRef;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
@@ -60,6 +62,7 @@ class SearchNavigationMode implements NavigationMode {
     private final SearchStateListener mSearchStateListener;
     private final StringBuilder mQueryText = new StringBuilder();
     private final SearchOverlay mSearchOverlay;
+    private final CustomLabelManager mLabelManager;
     private boolean mActive = false;
 
     private final AccessibilityNodeInfoRef mInitialNode =
@@ -77,7 +80,8 @@ class SearchNavigationMode implements NavigationMode {
             TranslatorManager translatorManager,
             SelfBrailleManager selfBrailleManager,
             NodeBrailler nodeBrailler,
-            SearchStateListener searchStateListener) {
+            SearchStateListener searchStateListener,
+            CustomLabelManager labelManager) {
         mDisplayManager = displayManager;
         mAccessibilityService = accessibilityService;
         mFeedbackManager = feedbackManager;
@@ -85,6 +89,7 @@ class SearchNavigationMode implements NavigationMode {
         mSelfBrailleManager = selfBrailleManager;
         mNodeBrailler = nodeBrailler;
         mSearchStateListener = searchStateListener;
+        mLabelManager = labelManager;
         mSearchOverlay = new SearchOverlay(mAccessibilityService, mQueryText);
     }
 
@@ -381,17 +386,18 @@ class SearchNavigationMode implements NavigationMode {
         }
 
         if (node == null ||
-            AccessibilityNodeInfoUtils.getNodeText(node) == null ||
             mSelfBrailleManager.hasContentForNode(node)) {
             return false;
         }
 
-        String nodeText =
-                AccessibilityNodeInfoUtils.getNodeText(node)
-                    .toString().toLowerCase();
+        CharSequence nodeText =
+                LabelingUtils.getNodeText(node, mLabelManager);
+        if (nodeText == null) {
+            return false;
+        }
         String queryText = mQueryText.toString().toLowerCase();
 
-        return nodeText.contains(queryText);
+        return nodeText.toString().toLowerCase().contains(queryText);
     }
 
     /**
@@ -530,6 +536,7 @@ class SearchNavigationMode implements NavigationMode {
         mNodeBrailler = nodeBrailler;
         mSearchStateListener = searchStateListener;
         mSearchOverlay = searchOverlay;
+        mLabelManager = null;
     }
 
     /*package*/ void setQueryTextForTest(String text) {

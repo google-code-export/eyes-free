@@ -138,6 +138,9 @@ public class BrailleInputEvent implements Parcelable {
     /** Keyboard command: Invoke keyboard help. */
     public static final int CMD_HELP = 100;
 
+    /** Keyboard command: Toggle the Braille menu. */
+    public static final int CMD_TOGGLE_BRAILLE_MENU = 117;
+
     // Web content commands.
 
     /** Keyboard command: Next section in page. */
@@ -213,6 +216,7 @@ public class BrailleInputEvent implements Parcelable {
         CMD_NAMES.append(CMD_LIST_PREVIOUS, "CMD_LIST_PREVIOUS");
         CMD_NAMES.append(CMD_TOGGLE_INCREMENTAL_SEARCH,
             "CMD_TOGGLE_INCREMENTAL_SEARCH");
+        CMD_NAMES.append(CMD_TOGGLE_BRAILLE_MENU, "CMD_TOGGLE_BRAILLE_MENU");
         for (int i = 0; i < CMD_NAMES.size(); ++i) {
             NAMES_TO_CMDS.put(CMD_NAMES.valueAt(i),
                     CMD_NAMES.keyAt(i));

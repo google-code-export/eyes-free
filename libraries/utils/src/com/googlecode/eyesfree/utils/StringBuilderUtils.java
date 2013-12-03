@@ -36,6 +36,11 @@ public class StringBuilderUtils {
     public static final String DEFAULT_SEPARATOR = " ";
 
     /**
+     * The hex alphabet.
+     */
+    private static final char[] HEX_ALPHABET = "0123456789abcdef".toCharArray();
+
+    /**
      * Generates the aggregate text from a list of {@link CharSequence}s,
      * separating as necessary.
      *
@@ -110,5 +115,29 @@ public class StringBuilderUtils {
         }
 
         return Character.isLetterOrDigit(text.charAt(text.length() - 1));
+    }
+
+    /**
+     * Convert a byte array to a hex-encoded string.
+     *
+     * @param bytes The byte array of data to convert
+     * @return The hex encoding of {@code bytes}, or null if {@code bytes} was
+     *         null
+     */
+    public static String bytesToHexString(byte[] bytes) {
+        if (bytes == null) {
+            return null;
+        }
+
+        final StringBuilder hex = new StringBuilder(bytes.length * 2);
+        int nibble1, nibble2;
+        for (byte b : bytes) {
+            nibble1 = (b >>> 4) & 0xf;
+            nibble2 = b & 0xf;
+            hex.append(HEX_ALPHABET[nibble1]);
+            hex.append(HEX_ALPHABET[nibble2]);
+        }
+
+        return hex.toString();
     }
 }

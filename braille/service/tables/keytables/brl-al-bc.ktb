@@ -114,7 +114,8 @@ bind SmartpadUp KEY_CURSOR_UP
 bind SmartpadDown KEY_CURSOR_DOWN
 # Activate currently focused item.
 bind SmartpadEnter ROUTE+127
-# Long press currently focused item
+# Long press currently focused item. This display handles auto-repeat on its
+# own so we can't use long press of SmartpadEnter for this command.
 bind ThumbHome+SmartpadEnter ROUTE+255
 
 bind SmartpadF1+SmartpadLeft SWITCHVT_PREV
@@ -157,7 +158,9 @@ map Control CONTROL
 map Alt META
 bind Enter KEY_ENTER
 
-assign chord Space+
+assign Space Space
+assign Dot7 DOT7
+assign Dot8 DOT8
 include brl-android-chords.kti
 
 

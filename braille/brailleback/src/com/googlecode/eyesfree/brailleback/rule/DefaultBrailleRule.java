@@ -16,12 +16,16 @@
 
 package com.googlecode.eyesfree.brailleback.rule;
 
+import com.googlecode.eyesfree.brailleback.BrailleBackService;
 import com.googlecode.eyesfree.brailleback.FocusFinder;
 import com.googlecode.eyesfree.brailleback.R;
+import com.googlecode.eyesfree.brailleback.utils.LabelingUtils;
 import com.googlecode.eyesfree.brailleback.utils.StringUtils;
+import com.googlecode.eyesfree.labeling.CustomLabelManager;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -37,6 +41,8 @@ import android.widget.QuickContactBadge;
  * the node is checkable.
  */
 class DefaultBrailleRule implements BrailleRule {
+    private CustomLabelManager mLabelManager = null;
+
     @Override
     public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
         return true;
@@ -47,7 +53,8 @@ class DefaultBrailleRule implements BrailleRule {
             Context context,
             AccessibilityNodeInfoCompat node) {
         int oldLength = result.length();
-        CharSequence text = AccessibilityNodeInfoUtils.getNodeText(node);
+        CharSequence text =
+                LabelingUtils.getNodeText(node, getLabelManager());
         if (text == null) {
             text = "";
         }
@@ -120,5 +127,19 @@ class DefaultBrailleRule implements BrailleRule {
             }
         }
         return false;
+    }
+
+    /**
+     * Retrieves a handle to the correct {@link CustomLabelManager}.
+     */
+    private CustomLabelManager getLabelManager() {
+        if (Build.VERSION.SDK_INT >= CustomLabelManager.MIN_API_LEVEL) {
+            final BrailleBackService service =
+                    BrailleBackService.getActiveInstance();
+            if (service != null) {
+                return service.getLabelManager();
+            }
+        }
+        return null;
     }
 }

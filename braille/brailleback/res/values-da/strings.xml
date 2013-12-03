@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Søgning på skærmen gør det muligt at flytte hurtigt til elementer på skærmen ved at skrive en del af deres tekstbeskrivelse. Mens du skriver, skifter fokus til det næste matchende emne."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Brug <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> til at gå til det næste resultat, og <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> til at gå til det forrige resultat. Tryk på <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> for at afslutte søgefunktion og beholde fokus på resultatet. Tryk på <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> for at gå tilbage til det element, der var fokuseret på tidligere."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Vis ikke dette igen"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Luk"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Fortsæt"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Tilføj tilpasset etiket"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Rediger tilpasset etiket"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Fjern tilpasset etiket"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Tilpassede etiketter understøttes ikke. Opdater TalkBack"</string>
 </resources>

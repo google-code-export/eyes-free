@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"الانتقال إلى القائمة التالية في محتوى الويب"</item>
     <item msgid="561134957068368670">"الانتقال إلى القائمة السابقة في محتوى الويب"</item>
     <item msgid="4431278105955644176">"تشغيل البحث في وضع الشاشة"</item>
-    <item msgid="2754093362613614658">"فتح مساعدة لوحة مفاتيح BrailleBack"</item>
+    <item msgid="1541653246718288681">"تبديل قائمة التصنيف"</item>
+    <item msgid="3070189781205215458">"فتح مساعدة لوحة مفاتيح BrailleBack"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"اضغط ضغطة طويلة على <xliff:g id="KEY_LIST">%s</xliff:g>"</string>

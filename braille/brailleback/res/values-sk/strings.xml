@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"Vyhľadávanie na obrazovke vám umožňuje rýchlo prechádzať medzi položkami na obrazovke tak, že napíšte časť ich textového popisu. Počas písania sa mení zameranie vyhľadávania na ďalšie položky, ktoré sa zhodujú s hľadaným výrazom."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Ak chcete prejsť na ďalší výsledok, použite kláves <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g>. Ak chcete prejsť na predchádzajúci výsledok, použite kláves <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g>. Stlačením klávesa <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> ukončíte režim vyhľadávania a ponecháte zameranie na výsledku. Stlačením klávesa <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> sa vrátite na predchádzajúcu zameranú položku."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Túto správu už nezobrazovať"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Zavrieť"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Pokračovať"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Pridať vlastnú menovku"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Upraviť vlastnú menovku"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Odstrániť vlastnú menovku"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Vlastné menovky nie sú podporované. Aktualizujte funkciu TalkBack"</string>
 </resources>

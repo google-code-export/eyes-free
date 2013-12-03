@@ -31,7 +31,8 @@
     <item msgid="8658175115960567526">"Navigate to next list in web content"</item>
     <item msgid="561134957068368670">"Navigate to previous list in web content"</item>
     <item msgid="4431278105955644176">"Toggle search on screen mode"</item>
-    <item msgid="2754093362613614658">"Open the BrailleBack keyboard help"</item>
+    <item msgid="1541653246718288681">"Toggle labelling menu"</item>
+    <item msgid="3070189781205215458">"Open the BrailleBack keyboard help"</item>
   </string-array>
     <string name="help_keyBindingDelimiter" msgid="1140579260785499060">" + "</string>
     <string name="help_longPressTemplate" msgid="5028857601567358274">"Long press <xliff:g id="KEY_LIST">%s</xliff:g>"</string>

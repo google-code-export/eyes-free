@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"A pesquisa na tela permite o acesso rápido a itens na tela digitando parte do texto de descrição. Enquanto você digita, o foco se ajusta para o próximo item correspondente."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"Use <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> para ir para o próximo resultado e <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> para ir para o resultado anterior. Pressione <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> para sair do modo de pesquisa e focar no resultado. Pressione <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> para retornar para o item focado anteriormente."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"Nunca mostrar novamente"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"Fechar"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"Continuar"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"Adicionar marcador personalizado"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"Editar marcador personalizado"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"Remover marcador personalizado"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"Não há suporte para marcadores personalizados. Atualize o TalkBack"</string>
 </resources>

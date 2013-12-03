@@ -68,5 +68,9 @@
     <string name="search_tutorial_instructions_general" msgid="6818519646574055310">"جستجو در صفحه به شما امکان می‌دهد با تایپ کردن بخشی از نوشتار توضیح موارد روی صفحه به سرعت به آنها بروید. همان‌طور که تایپ می‌کنید، فوکوس به مورد منطبق بعدی منتقل خواهد شد."</string>
     <string name="search_tutorial_instructions_specific" msgid="6238171239009571192">"از <xliff:g id="NEXT_KEY_COMMAND">%1$s</xliff:g> برای حرکت به نتیجه بعدی و از <xliff:g id="PREVIOUS_KEY_COMMAND">%2$s</xliff:g> برای حرکت به نتیجه قبلی استفاده کنید. برای خارج شدن از حالت جستجو و نگه داشتن فوکوس بر نتیجه، <xliff:g id="ENTER_KEY_COMMAND">%3$s</xliff:g> را فشار دهید. برای بازگشت به مورد فوکوس شده قبلی <xliff:g id="TOGGLE_SEARCH_KEY_COMMAND">%4$s</xliff:g> را فشار دهید."</string>
     <string name="search_tutorial_checkbox" msgid="3804049570909695877">"هرگز دوباره نشان داده نشود"</string>
-    <string name="search_tutorial_close_button" msgid="8087574965051267276">"بستن"</string>
+    <string name="search_tutorial_close_button" msgid="6374344909522290237">"ادامه"</string>
+    <string name="menu_item_label_add" msgid="7171209255969707579">"افزودن برچسب سفارشی"</string>
+    <string name="menu_item_label_edit" msgid="3009644363444552176">"ویرایش برچسب سفارشی"</string>
+    <string name="menu_item_label_remove" msgid="6836749636921226607">"حذف برچسب سفارشی"</string>
+    <string name="menu_item_update_talkback" msgid="5549071241261625208">"برچسب‌های سفارشی پشتیبانی نمی‌شوند. talkback به‌روزرسانی شود"</string>
 </resources>

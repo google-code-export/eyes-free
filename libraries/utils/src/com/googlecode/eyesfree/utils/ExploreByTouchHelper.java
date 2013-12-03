@@ -543,12 +543,12 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
      * <ul>
      * <li>event text, see {@link AccessibilityEvent#getText()} or
      * {@link AccessibilityEvent#setContentDescription(CharSequence)}
-     * <li>item class name, see
-     * {@link AccessibilityEvent#setClassName(CharSequence)}
      * </ul>
      * <p>
      * The helper class automatically populates some required fields:
      * <ul>
+     * <li>item class name, see
+     * {@link AccessibilityEvent#setClassName(CharSequence)}
      * <li>package name, see
      * {@link AccessibilityEvent#setPackageName(CharSequence)}
      * <li>event source, see
@@ -572,11 +572,11 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
      * {@link AccessibilityNodeInfoCompat#setContentDescription(CharSequence)}
      * <li>parent-relative bounds, see
      * {@link AccessibilityNodeInfoCompat#setBoundsInParent(Rect)}
-     * <li>item class name, see {@link AccessibilityNodeInfoCompat#setClassName}
      * </ul>
      * <p>
      * The helper class automatically populates some required fields:
      * <ul>
+     * <li>item class name, see {@link AccessibilityNodeInfoCompat#setClassName}
      * <li>package name, see {@link AccessibilityNodeInfoCompat#setPackageName}
      * <li>parent view, see {@link AccessibilityNodeInfoCompat#setParent(View)}
      * <li>node source, see

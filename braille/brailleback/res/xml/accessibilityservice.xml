@@ -3,7 +3,7 @@
   android:accessibilityEventTypes="typeAllMask"
   android:accessibilityFeedbackType="feedbackGeneric"
   android:notificationTimeout="0"
-  android:accessibilityFlags="flagDefault|flagRequestEnhancedWebAccessibility"
+  android:accessibilityFlags="flagDefault|flagRequestEnhancedWebAccessibility|flagReportViewIds"
   android:canRetrieveWindowContent="true"
   android:canRequestEnhancedWebAccessibility="true"
   android:description="@string/service_description"
