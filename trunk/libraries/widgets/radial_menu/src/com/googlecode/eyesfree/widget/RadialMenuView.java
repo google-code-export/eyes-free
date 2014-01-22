@@ -51,7 +51,6 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.googlecode.eyesfree.utils.ExploreByTouchObjectHelper;
 import com.googlecode.eyesfree.utils.LogUtils;
-import com.googlecode.eyesfree.utils.MathUtils;
 import com.googlecode.eyesfree.widget.LongPressHandler.LongPressListener;
 import com.googlecode.eyesfree.widget.RadialMenu.MenuLayoutListener;
 
@@ -327,7 +326,7 @@ public class RadialMenuView extends SurfaceView {
         mCachedOuterPath.arcTo(mCachedOuterBound, right, (center - right));
         mCachedOuterPath.close();
 
-        mCachedOuterPathWidth = MathUtils.arcLength((left - right), mExtremeRadius);
+        mCachedOuterPathWidth = arcLength((left - right), mExtremeRadius);
 
         // Outer wedge in reverse, for rendering text.
         mCachedOuterPathReverse.rewind();
@@ -364,7 +363,7 @@ public class RadialMenuView extends SurfaceView {
         mCachedCornerPath.arcTo(mCachedCornerBound, cornerRight, (cornerCenter - cornerRight));
         mCachedCornerPath.close();
 
-        mCachedCornerPathWidth = MathUtils.arcLength((cornerLeft - cornerRight), mExtremeRadius);
+        mCachedCornerPathWidth = arcLength((cornerLeft - cornerRight), mExtremeRadius);
 
         // Corner wedge in reverse, for rendering text.
         mCachedCornerPathReverse.rewind();
@@ -758,7 +757,7 @@ public class RadialMenuView extends SurfaceView {
      * @param y The touch Y coordinate.
      */
     private void onMove(float x, float y) {
-        if (mMaybeSingleTap && (MathUtils.distSq(mEntryPoint, x, y) >= mSingleTapRadiusSq)) {
+        if (mMaybeSingleTap && (distSq(mEntryPoint, x, y) >= mSingleTapRadiusSq)) {
             mMaybeSingleTap = false;
         }
 
@@ -934,6 +933,31 @@ public class RadialMenuView extends SurfaceView {
         rect.top += amount;
         rect.right -= amount;
         rect.bottom -= amount;
+    }
+
+    /**
+     * Computes the squared distance between a point and an (x,y) coordinate.
+     *
+     * @param p The point.
+     * @param x The x-coordinate.
+     * @param y The y-coordinate.
+     * @return The squared distance between the point and (x,y) coordinate.
+     */
+    private static float distSq(PointF p, float x, float y) {
+        final float dX = (x - p.x);
+        final float dY = (y - p.y);
+        return ((dX * dX) + (dY * dY));
+    }
+
+    /**
+     * Computes the length of an arc defined by an angle and radius.
+     *
+     * @param angle The angle of the arc, in degrees.
+     * @param radius The radius of the arc.
+     * @return The length of the arc.
+     */
+    private static float arcLength(float angle, float radius) {
+        return ((2.0f * (float) Math.PI * radius) * (angle / 360.0f));
     }
 
     private final SurfaceHolder.Callback mSurfaceCallback = new SurfaceHolder.Callback() {

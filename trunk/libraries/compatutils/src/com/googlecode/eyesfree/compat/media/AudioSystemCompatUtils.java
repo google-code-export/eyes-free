@@ -29,6 +29,8 @@ public class AudioSystemCompatUtils {
             CLASS_AudioSystem, "isStreamActive", int.class, int.class);
     private static final Method METHOD_LEGACY_isStreamActive = CompatUtils.getMethod(
             CLASS_AudioSystem, "isStreamActive", int.class);
+    private static final Method METHOD_isSourceActive = CompatUtils.getMethod(
+            CLASS_AudioSystem, "isSourceActive", int.class);
 
     /**
      * Calls into AudioSystem to check the current status of audio streams.
@@ -47,5 +49,20 @@ public class AudioSystemCompatUtils {
         } else {
             return (Boolean) CompatUtils.invoke(null, false, METHOD_LEGACY_isStreamActive, stream);
         }
+    }
+
+    /**
+     * Calls into AudioSystem to check the current status of an input source.
+     * <p>
+     * This is only available on API 17+ and will always return false if invoked
+     * on earlier platforms.
+     *
+     * @param source The source ID to query. Expects constants from
+     *            {@code MediaRecorder.AudioSource}
+     * @return {@code true} if the input source is active, {@code false}
+     *         otherwise.
+     */
+    public static boolean isSourceActive(int source) {
+        return (Boolean) CompatUtils.invoke(null, false, METHOD_isSourceActive, source);
     }
 }

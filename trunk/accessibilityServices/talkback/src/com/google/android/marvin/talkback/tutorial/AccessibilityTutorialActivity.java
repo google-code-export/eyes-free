@@ -19,7 +19,6 @@ package com.google.android.marvin.talkback.tutorial;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
@@ -38,6 +37,7 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ViewAnimator;
 
+import com.google.android.marvin.talkback.FullScreenReadController;
 import com.google.android.marvin.talkback.R;
 import com.google.android.marvin.talkback.SpeechController;
 import com.google.android.marvin.talkback.SpeechController.UtteranceCompleteRunnable;
@@ -52,12 +52,10 @@ import com.googlecode.eyesfree.utils.WeakReferenceHandler;
  * This class provides a short tutorial that introduces the user to the features
  * available in Touch Exploration.
  */
-@TargetApi(16)
+@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 public class AccessibilityTutorialActivity extends Activity {
     /** This processor requires JellyBean (API 16). */
-    public static final int MIN_API_LEVEL = 16;
-
-    private static final int DIALOG_EXPLORE_BY_TOUCH = 1;
+    public static final int MIN_API_LEVEL = Build.VERSION_CODES.JELLY_BEAN;
 
     /** Instance state saving constant for the active module. */
     private static final String KEY_ACTIVE_MODULE = "active_module";
@@ -67,6 +65,9 @@ public class AccessibilityTutorialActivity extends Activity {
 
     /** Whether or not the tutorial is active. */
     private static boolean sTutorialIsActive = false;
+
+    /** Whether or not to allow the service to show context menus. */
+    private static boolean sAllowContextMenus = true;
 
     private static final int REPEAT_DELAY = 15000;
     private static final int RESUME_REPEAT_DELAY = 1500;
@@ -85,14 +86,34 @@ public class AccessibilityTutorialActivity extends Activity {
     private RepeatHandler mRepeatHandler;
     private FeedbackController mFeedbackController;
 
+    private Bundle mSavedInstanceState;
     private int mResourceIdToRepeat = 0;
     private Object[] mRepeatedFormatArgs;
     private boolean mOrientationLocked = false;
+
+    /** Flag set by onCreate to identify the following call to onResume. */
+    private boolean mFirstTimeResume = false;
+
+    private final OnCancelListener mFinishActivityOnCancelListener = new OnCancelListener() {
+        @Override
+        public void onCancel(DialogInterface dialog) {
+            finish();
+        }
+    };
+
+    private final OnClickListener mFinishActivityOnClickListener = new OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            finish();
+        }
+    };
 
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mSavedInstanceState = savedInstanceState;
 
         final Animation inAnimation = AnimationUtils.loadAnimation(this,
                 android.R.anim.slide_in_left);
@@ -110,6 +131,13 @@ public class AccessibilityTutorialActivity extends Activity {
         mViewAnimator.setOutAnimation(outAnimation);
         mViewAnimator.addView(new TouchTutorialModule1(this));
         mViewAnimator.addView(new TouchTutorialModule2(this));
+        mViewAnimator.addView(new TouchTutorialModule3(this));
+        mViewAnimator.addView(new TouchTutorialModule4(this));
+
+        // Module 5 (text editing) requires JellyBean MR2 (API 18) features.
+        if (Build.VERSION.SDK_INT >= TouchTutorialModule5.MIN_API_LEVEL) {
+            mViewAnimator.addView(new TouchTutorialModule5(this));
+        }
 
         // Ensure the screen stays on and doesn't change orientation.
         final Window window = getWindow();
@@ -122,38 +150,10 @@ public class AccessibilityTutorialActivity extends Activity {
 
         mAccessibilityManager = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
 
-        if (!mAccessibilityManager.isTouchExplorationEnabled()) {
-            showDialog(DIALOG_EXPLORE_BY_TOUCH);
-            return;
-        }
-
         // Lock the screen orientation until the first instruction is read.
         lockOrientation();
 
-        if (savedInstanceState != null) {
-            show(savedInstanceState.getInt(KEY_ACTIVE_MODULE, DEFAULT_MODULE));
-        } else {
-            show(DEFAULT_MODULE);
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        sTutorialIsActive = true;
-
-        final TalkBackService service = TalkBackService.getInstance();
-        if (service == null) {
-            // If EBT is enabled by another service, but TalkBack isn't running, exit.
-            finish();
-            return;
-        } else {
-            service.addServiceStateListener(mServiceStateListener);
-        }
-
-        if (mResourceIdToRepeat > 0) {
-            mRepeatHandler.sendEmptyMessageDelayed(RepeatHandler.MSG_REPEAT, RESUME_REPEAT_DELAY);
-        }
+        mFirstTimeResume = true;
     }
 
     @Override
@@ -166,9 +166,61 @@ public class AccessibilityTutorialActivity extends Activity {
             service.removeServiceStateListener(mServiceStateListener);
         }
 
+        getCurrentModule().onPause();
+
         interrupt();
+
+        // This is different than stopRepeating because we want the current
+        // instruction text to continue repeating if the activity resumes.
         mRepeatHandler.removeMessages(RepeatHandler.MSG_REPEAT);
+
         unlockOrientation();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sTutorialIsActive = true;
+
+        /*
+         * Handle the cases where the tutorial was started with TalkBack in an
+         * invalid state (inactive, suspended, or without Explore by Touch
+         * enabled).
+         */
+        final ServiceState serviceState = TalkBackService.getServiceState();
+        /*
+         * Check for suspended state first because touch exploration reports it
+         * is disabled when TalkBack is suspended.
+         */
+        if (serviceState == ServiceState.SUSPENDED) {
+            showAlertDialogAndFinish(R.string.accessibility_tutorial_service_suspended_title,
+                    R.string.accessibility_tutorial_service_suspended_message);
+            return;
+        } else if ((serviceState == ServiceState.INACTIVE)
+                || !mAccessibilityManager.isTouchExplorationEnabled()) {
+            showAlertDialogAndFinish(R.string.accessibility_tutorial_service_inactive_title,
+                    R.string.accessibility_tutorial_service_inactive_message);
+            return;
+        }
+
+        final TalkBackService service = TalkBackService.getInstance();
+        service.addServiceStateListener(mServiceStateListener);
+
+        if (mFirstTimeResume) {
+            mFirstTimeResume = false;
+
+            if (mSavedInstanceState != null) {
+                show(mSavedInstanceState.getInt(KEY_ACTIVE_MODULE, DEFAULT_MODULE));
+            } else {
+                show(DEFAULT_MODULE);
+            }
+        }
+
+        getCurrentModule().onResume();
+
+        if (mResourceIdToRepeat > 0) {
+            mRepeatHandler.sendEmptyMessageDelayed(RepeatHandler.MSG_REPEAT, RESUME_REPEAT_DELAY);
+        }
     }
 
     @Override
@@ -178,77 +230,56 @@ public class AccessibilityTutorialActivity extends Activity {
         outState.putInt(KEY_ACTIVE_MODULE, mViewAnimator.getDisplayedChild());
     }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch (id) {
-            case DIALOG_EXPLORE_BY_TOUCH: {
-                final OnClickListener onClickListener = new OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                };
-
-                final OnCancelListener onCancelListener = new OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        finish();
-                    }
-                };
-
-                return new AlertDialog.Builder(this).setTitle(R.string.attention)
-                        .setMessage(R.string.requires_talkback).setCancelable(true)
-                        .setPositiveButton(android.R.string.ok, onClickListener)
-                        .setOnCancelListener(onCancelListener).create();
-            }
-        }
-
-        return super.onCreateDialog(id);
-    }
-
     public static boolean isTutorialActive() {
         return sTutorialIsActive;
     }
 
-    private void activateModule(TutorialModule module) {
-        module.activate();
+    public static boolean shouldAllowContextMenus() {
+        return sAllowContextMenus;
     }
 
-    private void deactivateModule(TutorialModule module) {
-        mAccessibilityManager.interrupt();
-        interrupt();
-        mRepeatHandler.removeMessages(RepeatHandler.MSG_REPEAT);
-        mViewAnimator.setOnKeyListener(null);
-        module.deactivate();
+    protected static void setAllowContextMenus(boolean allowed) {
+        sAllowContextMenus = allowed;
     }
 
-    void next() {
+    public TutorialModule getCurrentModule() {
+        final View currentView = mViewAnimator.getCurrentView();
+        if (currentView == null || !(currentView instanceof TutorialModule)) {
+            throw new IllegalStateException("Current view is not a valid TutorialModule.");
+        }
+
+        return (TutorialModule) currentView;
+    }
+
+    protected void next() {
         show(mViewAnimator.getDisplayedChild() + 1);
     }
 
-    void previous() {
+    protected void previous() {
         show(mViewAnimator.getDisplayedChild() - 1);
     }
 
     private void show(int which) {
         if ((which < 0) || (which >= mViewAnimator.getChildCount())) {
+            LogUtils.log(this, Log.WARN, "Tried to show a module with an index out of bounds.");
             return;
         }
 
-        mAccessibilityManager.interrupt();
-        interrupt();
-
-        final int displayedIndex = mViewAnimator.getDisplayedChild();
-        final TutorialModule displayedView = (TutorialModule) mViewAnimator.getChildAt(
-                displayedIndex);
-        deactivateModule(displayedView);
+        if (which != mViewAnimator.getDisplayedChild()) {
+            // Interrupt speech and stop the previous module.
+            mAccessibilityManager.interrupt();
+            interrupt();
+            stopRepeating();
+            mViewAnimator.setOnKeyListener(null);
+            getCurrentModule().onPause();
+            getCurrentModule().onStop();
+        }
 
         mViewAnimator.setDisplayedChild(which);
     }
 
     public void setTouchGuardActive(boolean active) {
-        final View touchGuard = mViewAnimator.getCurrentView().findViewById(R.id.touch_guard);
+        final View touchGuard = getCurrentModule().findViewById(R.id.touch_guard);
 
         if (active) {
             touchGuard.setVisibility(View.VISIBLE);
@@ -311,6 +342,26 @@ public class AccessibilityTutorialActivity extends Activity {
             return isReversed ? ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT
                     : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
         }
+    }
+
+    protected SpeechController getSpeechController() {
+        final TalkBackService service = TalkBackService.getInstance();
+        if (service == null) {
+            LogUtils.log(Log.ERROR, "Failed to get TalkBackService instance.");
+            return null;
+        }
+
+        return service.getSpeechController();
+    }
+
+    protected FullScreenReadController getFullScreenReadController() {
+        final TalkBackService service = TalkBackService.getInstance();
+        if (service == null) {
+            LogUtils.log(Log.ERROR, "Failed to get TalkBackService instance.");
+            return null;
+        }
+
+        return service.getFullScreenReadController();
     }
 
     /**
@@ -410,6 +461,25 @@ public class AccessibilityTutorialActivity extends Activity {
         }
     }
 
+    protected void showAlertDialogAndFinish(int titleId, int messageId) {
+        showAlertDialogAndFinish(getString(titleId), getString(messageId));
+    }
+
+    protected void showAlertDialogAndFinish(String title, String message) {
+        interrupt();
+        stopRepeating();
+
+        new AlertDialog.Builder(AccessibilityTutorialActivity.this)
+            .setTitle(title)
+            .setMessage(message)
+            .setCancelable(true)
+            .setOnCancelListener(mFinishActivityOnCancelListener)
+            .setPositiveButton(R.string.accessibility_tutorial_alert_dialog_exit,
+                    mFinishActivityOnClickListener)
+            .create()
+            .show();
+    }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -418,10 +488,8 @@ public class AccessibilityTutorialActivity extends Activity {
     private final AnimationListener mInAnimationListener = new AnimationListener() {
         @Override
         public void onAnimationEnd(Animation animation) {
-            final int index = mViewAnimator.getDisplayedChild();
-            final TutorialModule module = (TutorialModule) mViewAnimator.getChildAt(index);
-
-            activateModule(module);
+            getCurrentModule().onStart();
+            getCurrentModule().onResume();
         }
 
         @Override
@@ -450,6 +518,12 @@ public class AccessibilityTutorialActivity extends Activity {
             if (newState == ServiceState.INACTIVE) {
                 // If the service dies while the tutorial is active, exit.
                 finish();
+            } else if (newState == ServiceState.SUSPENDED) {
+                stopRepeating();
+
+                // If the service is suspended, show an alert and exit.
+                showAlertDialogAndFinish(R.string.accessibility_tutorial_service_suspended_title,
+                        R.string.accessibility_tutorial_service_suspended_message);
             }
         }
     };

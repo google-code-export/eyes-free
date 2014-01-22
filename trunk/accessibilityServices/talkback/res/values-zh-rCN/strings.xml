@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"话语提示设置"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"启用“话语提示”后，您的设备可为盲人和有视力障碍的用户提供语音反馈。例如，设备会说出您所触摸、选择和激活的具体内容。"</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"话语提示设置"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"管理自定义标签"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"管理 <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g> 的标签"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"目前没有任何自定义标签。要创建自定义标签，请导航至未创建标签的图片，然后从本地上下文菜单中添加标签。"</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"上次修改时间为<xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"短信"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"短信发送失败"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"未接来电"</string>
@@ -79,7 +83,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"没有任何内容。"</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"语音"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"语音音量"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"屏幕关闭时用语音读出通知"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"屏幕关闭时播放语音"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"屏幕关闭时读出通知"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"屏幕关闭时不播放语音"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"读出来电显示号码"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"使用近程传感器"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"近程传感器会导致语音静音"</string>
@@ -91,6 +97,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"（实验性功能）点按焦点所在的项，即可将其选中"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"摇动手机即可开始持续阅读"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"管理手势"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"管理自定义标签"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"快捷手势"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"内置手势"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"使用音调变化"</string>
@@ -107,6 +114,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"开发者设置"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"日志输出级别"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"显示语音输出"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"增强网页辅助功能"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"为网络内容下载辅助功能脚本"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"从暂停状态恢复启用"</string>
     <string name="axis_character" msgid="5059604520074645703">"按字符导航。"</string>
     <string name="axis_word" msgid="7745798763195184060">"按字词导航。"</string>
@@ -163,6 +172,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"页面控制"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"下一页"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"上一页"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"标签控件"</string>
     <string name="title_summary" msgid="1892383897326964505">"快速导航"</string>
     <string name="title_granularity" msgid="8810561997342447201">"更改浏览单位"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"先向下再向左"</string>
@@ -202,23 +212,33 @@
     <string name="message_talkback_settings_available" msgid="8705763859411459771">"点按即可下载“辅助功能设置”应用。"</string>
     <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"话语提示手势已更改"</string>
     <string name="notification_message_talkback_gestures_changed" msgid="5639775622146513884">"点按可查看辅助功能手势的更改"</string>
-    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack 已暂停"</string>
+    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"话语提示已暂停"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"点按即可继续。"</string>
-    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"暂停 TalkBack 吗？"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"确定要暂停话语提示吗？"\n\n"暂停该功能之后，设备将不再提供语言反馈。"</string>
+    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"要暂停话语提示吗？"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"确定要暂停话语提示吗？\n\n暂停该功能之后，设备将不再提供语言反馈。"</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"您可以通过通知栏恢复启用话语提示。"</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"您可以通过通知栏或打开屏幕来恢复启用话语提示。"</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"您可以通过通知栏或返回锁定屏幕来恢复启用话语提示。"</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"一律显示此警告"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"此版本的“话语提示”对默认的辅助功能手势进行了一些更改。您可在话语提示设置中自定义与这些手势关联的操作。启用“触摸浏览”后，您可以使用以下手势执行特定的操作。"\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"此版本的话语提示对默认的辅助功能手势进行了一些更改。"\n\n"先上划后下划的手势现在可让您直接跳到屏幕上显示的第一项，而先下划后上划的手势则可让您跳到屏幕上显示的最后一项。"\n\n"现在，如果您要更改朗读单位，可以先聚焦于某项内容，然后从本地上下文菜单中选择单位。"\n\n"您可以在话语提示设置中更改这些手势对应的操作。"</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"添加标签"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"修改标签"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"删除标签"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"请在下方的字段中输入要为此图片使用的文字。"</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"确定要删除“<xliff:g id="LABEL">%1$s</xliff:g>”标签吗？"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"确定要删除 <xliff:g id="APP_NAME">%2$s</xliff:g> 中的“<xliff:g id="LABEL">%1$s</xliff:g>”标签吗？"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"标签文字"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"此版本的“话语提示”对默认的辅助功能手势进行了一些更改。您可在话语提示设置中自定义与这些手势关联的操作。启用“触摸浏览”后，您可以使用以下手势执行特定的操作。\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"此版本的话语提示对默认的辅助功能手势进行了一些更改。\n\n先上划后下划的手势现在可让您直接跳到屏幕上显示的第一项，而先下划后上划的手势则可让您跳到屏幕上显示的最后一项。\n\n现在，如果您要更改朗读单位，可以先聚焦于某项内容，然后从本地上下文菜单中选择单位。\n\n您可以在话语提示设置中更改这些手势对应的操作。"</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"接受手势"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"自定义手势"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"停用触摸浏览功能吗？"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"您确定要停用触摸浏览功能吗？"\n\n"当您触摸屏幕时，设备将不再对快捷手势或语音命令做出响应。"</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"您确定要停用触摸浏览功能吗？\n\n当您触摸屏幕时，设备将不再对快捷手势或语音命令做出响应。"</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"触摸浏览功能不可用于网络内容。要浏览网络内容，请打开辅助功能设置中的“<xliff:g id="PREFERENCE_NAME">%1$s</xliff:g>”。"</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"话语提示全局上下文菜单"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"控制话语提示"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"允许向话语提示发送手势并重新启动语音反馈。"</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"管理话语提示自定义标签"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"允许查看、修改和删除由话语提示读出的自定义标签。"</string>
     <string name="links" msgid="5674175288909957654">"链接"</string>
     <string name="end_of_text" msgid="4039485166364049724">"末尾"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g>个<xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

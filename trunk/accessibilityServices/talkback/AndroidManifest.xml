@@ -4,8 +4,8 @@
     package="com.google.android.marvin.talkback"
     android:installLocation="internalOnly"
     android:sharedUserId="com.google.android.marvin.feedback"
-    android:versionCode="99"
-    android:versionName="3.4.0" >
+    android:versionCode="107"
+    android:versionName="3.5.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -14,7 +14,17 @@
     <!-- Permission used to restrict sending gestures and resuming feedback. -->
     <permission
         android:name="com.google.android.marvin.feedback.permission.TALKBACK"
+        android:description="@string/permission_talkback_desc"
+        android:icon="@drawable/icon"
         android:label="@string/permission_talkback_label"
+        android:protectionLevel="signature" />
+
+    <!-- Permission used to restrict storing and retrieving custom view labels. -->
+    <permission
+        android:name="com.google.android.marvin.talkback.permission.LABELING"
+        android:description="@string/permission_labeling_desc"
+        android:icon="@drawable/icon"
+        android:label="@string/permission_labeling_label"
         android:protectionLevel="signature" />
 
     <!-- Required to monitor phone busy state. -->
@@ -35,11 +45,14 @@
     <!-- Required for shortcuts and widgets. -->
     <uses-permission android:name="com.google.android.marvin.feedback.permission.TALKBACK" />
 
-    <!-- Required for managing audio levels on GB. -->
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <!-- Required for labeling. -->
+    <uses-permission android:name="com.google.android.marvin.talkback.permission.LABELING" />
 
-    <!-- Required for an upcoming feature. -->
-    <uses-permission android:name="android.permission.READ_FRAME_BUFFER" />
+    <!-- Required for managing audio levels on GB. -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- Required for removing custom labels on package removal. -->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED" />
 
     <!-- Hardware compatibility. -->
     <uses-feature
@@ -98,13 +111,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Status provider is required for compatibility with pre-ICS (API 14) apps -->
-        <provider
-            android:name=".StatusProvider"
-            android:authorities="com.google.android.marvin.talkback.providers.StatusProvider"
-            android:exported="true"
-            tools:ignore="ExportedContentProvider" />
-
         <!-- Accessibility tutorial -->
         <activity
             android:name=".tutorial.AccessibilityTutorialActivity"
@@ -114,6 +120,38 @@
             android:label="@string/accessibility_tutorial_title"
             android:launchMode="singleInstance"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <!-- Notification Activity used to obtain label text from the user -->
+        <activity
+            android:name=".labeling.LabelDialogActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:launchMode="singleInstance"
+            android:permission="com.google.android.marvin.talkback.permission.LABELING"
+            tools:ignore="ExportedActivity" >
+            <intent-filter>
+                <action android:name="com.google.android.marvin.talkback.labeling.ADD_LABEL" />
+                <action android:name="com.google.android.marvin.talkback.labeling.EDIT_LABEL" />
+                <action android:name="com.google.android.marvin.talkback.labeling.REMOVE_LABEL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Custom Label Manager - Summary Activity -->
+        <activity
+            android:name=".labeling.LabelManagerSummaryActivity"
+            android:label="@string/label_manager_summary_title"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.google.android.marvin.talkback.SettingsAffinity" />
+
+        <!-- Custom Label Manager - Package Activity -->
+        <activity
+            android:name=".labeling.LabelManagerPackageActivity"
+            android:label="@string/label_manager_package_title"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.google.android.marvin.talkback.SettingsAffinity" />
 
         <!-- Gesture Change Notification Activity -->
         <activity
@@ -159,6 +197,22 @@
             android:taskAffinity="com.google.android.marvin.talkback.TtsDiscoveryAffinity"
             android:theme="@android:style/Theme.NoDisplay"
             android:exported="false" />
+
+
+        <!-- Status provider is required for compatibility with pre-ICS (API 14) apps -->
+        <provider
+            android:name=".StatusProvider"
+            android:authorities="com.google.android.marvin.talkback.providers.StatusProvider"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+        <!-- Content provider for custom label data -->
+        <provider
+            android:name=".labeling.LabelProvider"
+            android:authorities="com.google.android.marvin.talkback.providers.LabelProvider"
+            android:exported="true"
+            android:readPermission="com.google.android.marvin.talkback.permission.LABELING"
+            android:writePermission="com.google.android.marvin.talkback.permission.LABELING" />
 
         <meta-data
             android:name="com.google.android.backup.api_key"

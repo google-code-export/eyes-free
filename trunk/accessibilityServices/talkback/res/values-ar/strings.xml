@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"إعدادات TalkBack"</string>
-    <string name="talkback_service_description" msgid="983212841294665356">"عندما يتم تشغيل Talkback، يوفر الجهاز تعليقات ناطقة لمساعدة المستخدمين المكفوفين وضعاف البصر. على سبيل المثال، فإنها تصف ما تلمسه وتحدده وتنشطه."</string>
+    <string name="talkback_service_description" msgid="983212841294665356">"‏عندما يتم تشغيل Talkback، يوفر الجهاز تعليقات ناطقة لمساعدة المستخدمين المكفوفين وضعاف البصر. على سبيل المثال، فإنها تصف ما تلمسه وتحدده وتنشطه."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"‏إعدادات TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"إدارة التصنيفات المخصصة"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"إدارة تصنيفات تطبيق <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"ليست هناك حاليًا أي تصنيفات مخصصة. ويمكنك إنشاء تصنيف من خلال الانتقال إلى صورة بدون تصنيف ثم إضافة تصنيف من قائمة السياق المحلي."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"آخر تعديل في <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"رسالة نصية"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"لم يتم إرسال الرسالة النصية"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"مكالمة فائتة"</string>
-    <string name="notification_type_usb_connected" msgid="6285639671469979341">"USB متصل"</string>
+    <string name="notification_type_usb_connected" msgid="6285639671469979341">"‏USB متصل"</string>
     <string name="notification_type_status_mute" msgid="575502984311443548">"كتم الصوت"</string>
     <string name="notification_type_status_chat" msgid="6270641711377218448">"دردشة"</string>
     <string name="notification_type_status_error" msgid="9106600515811868558">"خطأ"</string>
     <string name="notification_type_status_more" msgid="3191659976249507098">"المزيد"</string>
-    <string name="notification_type_status_sdcard" msgid="2268627072134312579">"بطاقة SD"</string>
-    <string name="notification_type_status_sdcard_usb" msgid="410122674028987252">"USB لبطاقة SD"</string>
+    <string name="notification_type_status_sdcard" msgid="2268627072134312579">"‏بطاقة SD"</string>
+    <string name="notification_type_status_sdcard_usb" msgid="410122674028987252">"‏USB لبطاقة SD"</string>
     <string name="notification_status_sync" msgid="4919271166470257796">"مزامنة"</string>
     <string name="notification_type_new_email" msgid="207543580986817175">"بريد إلكتروني جديد"</string>
     <string name="notification_type_status_sync_noanim" msgid="7207653060078653323">"مزامنة"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"لا توجد عناصر."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"الكلام"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"مستوى صوت التحدث"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"نطق الإشعارات عند إيقاف تشغيل الشاشة"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"الكلام عند توقف الشاشة"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"يتم نطق الإشعارات عندما تكون الشاشة مغلقة"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"لا يتم نطق أي كلام عندما تكون الشاشة مغلقة"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"نطق معرف المتصل"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"استخدام استشعار التقارب"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"تؤدي أداة استشعار التقارب إلى كتم صوت الكلام"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(تجريبي) انقر على العنصر المركّز عليه حاليًا لتحديده"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"إحداث اهتزاز لبدء القراءة المستمرة"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"إدارة الإيماءات"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"إدارة التصنيفات المخصصة"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"إيماءات الاختصارات"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"الإيماءات المدمجة"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"استخدام تغييرات درجة الصوت"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"إعدادات مطوّر البرامج"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"مستوى مخرجات التسجيل"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"عرض إخراج الكلام"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"تحسين إمكانية الدخول إلى الويب"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"تنزيل النصوص البرمجية لإمكانية الدخول لمحتوى الويب"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"استئناف من التعليق"</string>
     <string name="axis_character" msgid="5059604520074645703">"التنقل حرف بحرف."</string>
     <string name="axis_word" msgid="7745798763195184060">"التنقل كلمة بكلمة."</string>
@@ -125,7 +134,7 @@
     <string name="granularity_web_list" msgid="2865126503773287493">"التنقل عبر القوائم"</string>
     <string name="granularity_web_control" msgid="8614337019107379031">"التنقل عبر عناصر التحكم"</string>
     <string name="granularity_pseudo_web_special_content" msgid="8235312346324504685">"التنقل عبر محتوى خاص"</string>
-    <string name="orientation_portrait" msgid="5280362272647722922">"رأسي"</string>
+    <string name="orientation_portrait" msgid="5280362272647722922">"عمودي"</string>
     <string name="orientation_landscape" msgid="129313890178554132">"أفقي"</string>
     <string name="shortcut_unassigned" msgid="8631675444401168361">"غير محدّد"</string>
     <string name="shortcut_back" msgid="8404153155835310379">"زر الرجوع"</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"عناصر التحكم في الصفحة"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"الصفحة التالية"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"الصفحة السابقة"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"عناصر التحكم في التصنيفات"</string>
     <string name="title_summary" msgid="1892383897326964505">"التنقل السريع"</string>
     <string name="title_granularity" msgid="8810561997342447201">"تغيير الدقة"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"إلى أسفل، ثم إلى اليسار"</string>
@@ -198,25 +208,35 @@
     <string name="value_keyboard_echo_never" msgid="7272733066649438914">"عدم نطق المفاتيح التي يُضغط عليها مطلقًا"</string>
     <string name="title_talkback_settings_available" msgid="6764624676369520992">"يتوفر تطبيق تفضيلات إمكانية وصول ذوي الاحتياجات الخاصة"</string>
     <string name="message_talkback_settings_available" msgid="8705763859411459771">"انقر لتنزيل تطبيق تفضيلات إمكانية وصول ذوي الاحتياجات الخاصة"</string>
-    <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"تم تغيير إيماءات TalkBack"</string>
+    <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"‏تم تغيير إيماءات TalkBack"</string>
     <string name="notification_message_talkback_gestures_changed" msgid="5639775622146513884">"انقر لمراجعة التغييرات التي تم إدخالها على إيماءات السماح بالوصول"</string>
-    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"تم تعليق TalkBack"</string>
+    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"‏تم تعليق TalkBack"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"انقر للاستئناف."</string>
-    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"هل تريد تعليق TalkBack؟"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"هل تريد بالتأكيد تعليق TalkBack؟"\n\n"أثناء تعليق TalkBack، لن يقدم جهازك تعليقات."</string>
-    <string name="message_resume_manual" msgid="4491108398618252430">"يمكنك استئناف عمل TalkBack من مركز الإشعارات."</string>
-    <string name="message_resume_screen_on" msgid="2080032080971819102">"يمكنك استئناف عمل TalkBack من مركز الإشعارات أو عبر تشغيل الشاشة."</string>
-    <string name="message_resume_keyguard" msgid="8347218053451487513">"يمكنك استئناف عمل TalkBack من مركز الإشعارات أو عبر العودة إلى شاشة التأمين."</string>
+    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"‏هل تريد تعليق TalkBack؟"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"‏هل تريد بالتأكيد تعليق TalkBack؟\n\nأثناء تعليق TalkBack، لن يقدم جهازك تعليقات."</string>
+    <string name="message_resume_manual" msgid="4491108398618252430">"‏يمكنك استئناف عمل TalkBack من مركز الإشعارات."</string>
+    <string name="message_resume_screen_on" msgid="2080032080971819102">"‏يمكنك استئناف عمل TalkBack من مركز الإشعارات أو عبر تشغيل الشاشة."</string>
+    <string name="message_resume_keyguard" msgid="8347218053451487513">"‏يمكنك استئناف عمل TalkBack من مركز الإشعارات أو عبر العودة إلى شاشة التأمين."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"عرض هذا التحذير دومًا"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"يتضمن هذا الإصدار من TalkBack تغييرات على إيماءات السماح بالوصول الافتراضية. يمكن تخصيص الإجراءات المقترنة بهذه الإيماءات ضمن إعدادات TalkBack. عندما يتم تمكين \"الاستكشاف باللمس\"، يمكنك استخدام الإيماءات التالية لتنفيذ إجراءات معينة."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"هذا الإصدار من TalkBack يتضمن تغييرات في الإيماءات الافتراضية لإمكانية الوصول."\n\n"الإيماءة إلى أعلى ثم إلى أسفل تتيح لك الانتقال إلى العنصر الأول على الشاشة، أما الإيماءة إلى أسفل ثم إلى أعلى فتتيح الانتقال إلى العنصر الأخير."\n\n"يمكن الآن تغيير دقة القراءة عبر التركيز على العنصر، ثم تحديد الدقة من قائمة السياقات المحلية."\n\n"يمكنك تغيير الإجراءات التي يتم تنفيذها من خلال هذه الإيماءات في إعدادات TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"إضافة تصنيف"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"تعديل التصنيف"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"إزالة التصنيف"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"أدخل النص الذي سيتم استخدامه لهذه الصورة في الحقل أدناه."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"هل تريد بالتأكيد إزالة التصنيف \"<xliff:g id="LABEL">%1$s</xliff:g>\"؟"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"هل تريد بالتأكيد إزالة التصنيف \"<xliff:g id="LABEL">%1$s</xliff:g>\" ضمن <xliff:g id="APP_NAME">%2$s</xliff:g>؟"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"نص التصنيف"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"‏يتضمن هذا الإصدار من TalkBack تغييرات على إيماءات السماح بالوصول الافتراضية. يمكن تخصيص الإجراءات المقترنة بهذه الإيماءات ضمن إعدادات TalkBack. عندما يتم تمكين \"الاستكشاف باللمس\"، يمكنك استخدام الإيماءات التالية لتنفيذ إجراءات معينة.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"‏هذا الإصدار من TalkBack يتضمن تغييرات في الإيماءات الافتراضية لإمكانية الوصول.\n\nالإيماءة إلى أعلى ثم إلى أسفل تتيح لك الانتقال إلى العنصر الأول على الشاشة، أما الإيماءة إلى أسفل ثم إلى أعلى فتتيح الانتقال إلى العنصر الأخير.\n\nيمكن الآن تغيير دقة القراءة عبر التركيز على العنصر، ثم تحديد الدقة من قائمة السياقات المحلية.\n\nيمكنك تغيير الإجراءات التي يتم تنفيذها من خلال هذه الإيماءات في إعدادات TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"قبول الإيماءات"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"تخصيص الإيماءات"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"هل تريد تعطيل ميزة الاستكشاف باللمس؟"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"هل تريد بالتأكيد إيقاف ميزة الاستكشاف باللمس؟"\n\n"لن يستجيب الجهاز مرة أخرى لإيماءات الاختصارات أو لعناصر التحدث عند لمس الشاشة."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"هل تريد بالتأكيد إيقاف ميزة الاستكشاف باللمس؟\n\nلن يستجيب الجهاز مرة أخرى لإيماءات الاختصارات أو لعناصر التحدث عند لمس الشاشة."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"الاستكشاف بواسطة اللمس ليس متوفرًا في محتوى الويب. شغّل <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> في إعدادات \"إمكانية الدخول\" لاستكشاف محتوى الويب."</string>
-    <string name="label_talkback_context_menu" msgid="102441078934343795">"قائمة سياقات TalkBack العامة"</string>
-    <string name="permission_talkback_label" msgid="7399199628843033396">"التحكم في TalkBack"</string>
+    <string name="label_talkback_context_menu" msgid="102441078934343795">"‏قائمة سياقات TalkBack العامة"</string>
+    <string name="permission_talkback_label" msgid="7399199628843033396">"‏التحكم في TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"‏إذن لإرسال إيماءات إلى TalkBack وتلقي تعليقات منطوقة."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"‏إدارة التصنيفات المخصصة في TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"‏إذن للدخول إلى التصنيفات المخصصة المنطوقة في TalkBack وتعديلها وحذفها."</string>
     <string name="links" msgid="5674175288909957654">"الروابط"</string>
     <string name="end_of_text" msgid="4039485166364049724">"النهاية"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Mipangilio ya TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Wakati TalkBack imewashwa, kifaa chako hutoa maoni ya kunenwa ili kuwasaidia vipofu na watumiaji wasioweza kuona vizuri. Kwa mfano, inaelezea nini unagusa, kuchagua na kuamilisha."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Mipangilio ya TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Simamia Lebo Maalum"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Simamia Lebo za <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Kwa sasa hakuna lebo maalum. Unaweza kuunda kwa kuenda kwenye picha isiyokuwa na lebo na kuongeza lebo kutoka kwenye Menyu ya Karibu."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Mara ya mwisho ilirekebishwa <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Ujumbe wa maandishi"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Usitume ujumbe wa maandishi"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Simu isiyojibiwa"</string>
@@ -77,19 +81,22 @@
     <string name="value_no_items" msgid="3587303601074849845">"Hakuna vipengee."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Usemi"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Sauti ya usemi"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Tamka arifa wakati skrini imezimwa"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Zungumza wakati skrini imezimwa"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Arifa huzungumzwa wakati skrini imezimwa"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Hakuna usemi utakaofanyika wakati skrini imezimwa"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Sema Kitambulisho cha mpigaji"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Tumia sensa ya ukaribu"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Kihisio mbadala kinanyamazisha usemi"</string>
     <string name="summaryOff_pref_proximity" msgid="3024213283254452034">"Kihisio mbadala hakidhibiti usemi"</string>
     <string name="title_pref_explore_by_touch" msgid="4051040843081874790">"Chunguza kwa kugusa"</string>
-    <string name="title_pref_auto_scroll" msgid="5676036153048224469">"Orodha za kutembeza kiotomatiki"</string>
+    <string name="title_pref_auto_scroll" msgid="5676036153048224469">"Orodha za kusogeza kiotomatiki"</string>
     <string name="title_pref_category_touch_exploration" msgid="4152747299134842442">"Uchunguzi kwa kugusa"</string>
     <string name="title_pref_single_tap" msgid="3053869870881145209">"Uteuzi wa kugonga mara moja"</string>
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Jaribio) Gonga kwenye kipengee kilicholengwa sasa ili kuchagua"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Tikisa ili uanze kusoma bila kikomo"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Dhibiti ishara"</string>
-    <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Ishara za njia mkato"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Dhibiti lebo maalum"</string>
+    <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Ishara za njia za mkato"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Ishara iliyoundiwa ndani"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Tumia mabadiliko ya sauti"</string>
     <string name="title_pref_keyboard_echo" msgid="860353418869467119">"Mwangwi wa kibodi"</string>
@@ -163,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Vidhibiti kurasa"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Ukurasa Unaofuata"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Ukurasa uliotangulia"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Udhibiti wa lebo"</string>
     <string name="title_summary" msgid="1892383897326964505">"Ufikiaji wa haraka"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Badilisha chaguo"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"chini kisha kushoto"</string>
@@ -205,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack imesimamishwa"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Gonga ili kuendelea."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Simamisha TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Je, una uhakika unataka kusimamisha TalkBack?"\n\n"TalkBack ikiwa imesimamishwa, kifaa chako hakitatoa majibu."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Je, una uhakika unataka kusimamisha TalkBack?\n\nTalkBack ikiwa imesimamishwa, kifaa chako hakitatoa majibu."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Unaweza kuendelea kutumia TalkBack kutoka sehemu ya arifa."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Unaweza kuendelea kutumia TalkBack kutoka sehemu ya arifa au kwa kuwasha skrini."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Unaweza kuendelea kutumia TalkBack kutoka sehemu ya arifa au urudi kwenye skrini iliyofungwa."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Onyesha onyo hili kila wakati"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Toleo hili la TalkBack linajumuisha mabadiliko katika ishara chaguo-msingi za ufikivu. Vitendo vinavyohusiana na ishara hizi vinaweza kugeuzwa kukufaa katika mipangilio ya TalkBack. Wakati Kuchunguza kwa mguso kumewezeshwa, unaweza kutumia ishara zifuatazo kufanya vitendo vingine."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Toleo hili la TalkBack linajumuisha mabadiliko kwa ishara chaguo-msingi ya ufikiaji."\n\n"Ishara ya juu kisha chini itakuruhusu kusogeza kipengee cha kwanza kwenye skrini, na ishara ya chini kisha juu itasogeza hadi kwenye kipengee cha mwisho."\n\n"Kijichembe cha kusoma sasa kinaweza kubadilishwa kwa kulenga kipengee, kisha kuchagua kijichembe kutoka kwenye menyu ya muktadha wa karibu."\n\n"Unaweza kubadilisha hatua zilizotekelezwa kwa ishara hizi katika Mipangilio ya TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Ongeza lebo"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Badilisha lebo"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Ondoa lebo"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Ingiza maandishi yatakayotumika kwa picha hii katika sehemu iliyo hapo chini."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Je, una uhakika unataka kuondoa lebo ya \"<xliff:g id="LABEL">%1$s</xliff:g>\"?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Je, una uhakika unataka kuondoa lebo ya \"<xliff:g id="LABEL">%1$s</xliff:g>\" iliyo ndani ya <xliff:g id="APP_NAME">%2$s</xliff:g> ?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Weka lebo ya maandishi"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Toleo hili la TalkBack linajumuisha mabadiliko katika ishara chaguo-msingi za ufikivu. Vitendo vinavyohusiana na ishara hizi vinaweza kugeuzwa kukufaa katika mipangilio ya TalkBack. Wakati Kuchunguza kwa mguso kumewezeshwa, unaweza kutumia ishara zifuatazo kufanya vitendo vingine.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Toleo hili la TalkBack linajumuisha mabadiliko kwa ishara chaguo-msingi ya ufikiaji.\n\nIshara ya juu kisha chini itakuruhusu kusogeza kipengee cha kwanza kwenye skrini, na ishara ya chini kisha juu itasogeza hadi kwenye kipengee cha mwisho.\n\nKijichembe cha kusoma sasa kinaweza kubadilishwa kwa kulenga kipengee, kisha kuchagua kijichembe kutoka kwenye menyu ya muktadha wa karibu.\n\nUnaweza kubadilisha hatua zilizotekelezwa kwa ishara hizi katika Mipangilio ya TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Kubali ishara"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Geuza ishara kukufaa"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Lemaza Kuchunguza kwa mguso?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Je, una uhakika unataka kuzima Kuchunguza kwa mguso?"\n\n"Kifaa chako hakitaitikia tena ishara za njia mkato au vipengee vya kuzungumza unapogusa skrini."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Je, una uhakika unataka kuzima Kuchunguza kwa mguso?\n\nKifaa chako hakitaitikia tena ishara za njia mkato au vipengee vya kuzungumza unapogusa skrini."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Kuchunguza kwa mguso hakupatikani katika maudhui ya wavuti. Washa <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> kwenye mipangilio ya Ufikikaji ili kuchunguza maudhui ya wavuti."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Menyu ya maudhui yote ya TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Dhibiti TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Ruhusa ya kutuma ishara kwa TalkBack na kuendelea maoni yanayotamkwa."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Dhibiti lebo maalum za TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Ruhusa ya kufikia, kurekebisha, na kufuta lebo maalum zinazotamkwa na TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"Viungo"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Mwisho"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

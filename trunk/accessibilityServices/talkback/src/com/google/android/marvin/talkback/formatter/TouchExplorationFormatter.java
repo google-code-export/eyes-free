@@ -32,6 +32,7 @@ import com.google.android.marvin.talkback.Utterance;
 import com.google.android.marvin.talkback.formatter.EventSpeechRule.AccessibilityEventFormatter;
 import com.google.android.marvin.talkback.formatter.EventSpeechRule.ContextBasedRule;
 import com.google.android.marvin.talkback.speechrules.NodeSpeechRuleProcessor;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityEventUtils;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
@@ -41,7 +42,7 @@ import com.googlecode.eyesfree.utils.LogUtils;
  * implementation is simple and handles only hover enter events.
  */
 public final class TouchExplorationFormatter
-        implements AccessibilityEventFormatter, ContextBasedRule, TalkBackService.AccessibilityEventListener {
+        implements AccessibilityEventFormatter, ContextBasedRule, AccessibilityEventListener {
 
     /** Whether this build supports accessibility focus. */
     private static final boolean SUPPORTS_A11Y_FOCUS =

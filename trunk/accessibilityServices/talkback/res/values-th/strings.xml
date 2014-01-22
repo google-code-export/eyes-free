@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"การตั้งค่า TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"เมื่อเปิดใช้งาน Talkback อุปกรณ์ของคุณจะให้การตอบสนองด้วยเสียงพูดเพื่อช่วยเหลือผู้ใช้ที่พิการทางสายตาและผู้ที่มีปัญหาทางสายตา ตัวอย่างเช่น อุปกรณ์จะอธิบายว่าคุณแตะ เลือก และเปิดใช้งานสิ่งใด"</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"การตั้งค่า TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"จัดการป้ายกำกับที่กำหนดเอง"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"จัดการป้ายกำกับสำหรับ <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"ไม่มีป้ายกำกับที่กำหนดเองในขณะนี้ คุณสามารถสร้างโดยนำทางไปยังรูปภาพที่ไม่มีป้ายกำกับแล้วเพิ่มป้ายกำกับจากเมนูตามบริบทในเครื่อง"</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"แก้ไขครั้งล่าสุดเมื่อ <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"ข้อความตัวอักษร"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"ไม่ได้ส่งข้อความตัวอักษร"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"สายที่ไม่ได้รับ"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"ไม่มีรายการ"</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"คำพูด"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"ระดับเสียงพูด"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"พูดการแจ้งเตือนเมื่อมีการปิดหน้าจอ"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"พูดเมื่อหน้าจอปิด"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"มีการพูดแจ้งเตือนเมื่อหน้าจอดับ"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"ไม่มีเสียงพูดขึ้นเมื่อหน้าจอดับ"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"บอกหมายเลขผู้โทร"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"ใช้พร็อกซิมิตีเซ็นเซอร์"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"พร็อกซิมิตีเซ็นเซอร์ปิดเสียงพูด"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(ทดลอง) แตะที่รายการที่โฟกัสอยู่ในขณะนี้เพื่อเลือก"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"เขย่าเพื่อเริ่มต้นการอ่านอย่างต่อเนื่อง"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"จัดการท่าทางสัมผัส"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"จัดการป้ายกำกับที่กำหนดเอง"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"ท่าทางสัมผัสของทางลัด"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"ท่าทางสัมผัสในตัว"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"ใช้การเปลี่ยนแปลงระดับเสียงสูงต่ำ"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"การตั้งค่าสำหรับนักพัฒนาซอฟต์แวร์"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"ระดับของการบันทึกเอาต์พุต"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"แสดงเอาต์พุตของการพูด"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"การปรับปรุงการเข้าถึงเว็บให้ดีขึ้น"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"ดาวน์โหลดสคริปต์การเข้าถึงเนื้อหาเว็บ"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"กลับมาทำงานอีกครั้งจากการระงับ"</string>
     <string name="axis_character" msgid="5059604520074645703">"นำทางตามอักขระ"</string>
     <string name="axis_word" msgid="7745798763195184060">"นำทางตามคำ"</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"การควบคุมหน้า"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"หน้าถัดไป"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"หน้าที่แล้ว"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"การควบคุมป้ายกำกับ"</string>
     <string name="title_summary" msgid="1892383897326964505">"การนำทางด่วน"</string>
     <string name="title_granularity" msgid="8810561997342447201">"เปลี่ยนรายละเอียด"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"ลงแล้วไปทางซ้าย"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack ถูกระงับ"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"แตะเพื่อดำเนินการต่อ"</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"ระงับ TalkBack หรือไม่"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"คุณแน่ใจหรือว่าต้องการระงับ TalkBack"\n\n"ขณะที่ TalkBack ถูกระงับ อุปกรณ์ของคุณจะไม่มีการมอบข้อเสนอแนะ"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"คุณแน่ใจหรือว่าต้องการระงับ TalkBack\n\nขณะที่ TalkBack ถูกระงับ อุปกรณ์ของคุณจะไม่มีการมอบข้อเสนอแนะ"</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"คุณสามารถกลับไปใช้งาน TalkBack จากเฉดการแจ้งเตือน"</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"คุณสามารถกลับไปใช้งาน TalkBack จากเฉดการแจ้งเตือน หรือโดยการเปิดหน้าจอ"</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"คุณสามารถกลับไปใช้งาน TalkBack จากเฉดการแจ้งเตือน หรือโดยการกลับไปที่หน้อจอล็อก"</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"แสดงคำเตือนนี้ทุกครั้ง"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"TalkBack รุ่นนี้มีการเปลี่ยนแปลงของท่าทางสัมผัสในการเข้าถึงเริ่มต้น โดยสามารถกำหนดค่าการทำงานต่างๆ ที่เชื่อมโยงกับท่าทางสัมผัสเหล่านี้ได้จากภายในการตั้งค่า TalkBack เมื่อมีการเปิดใช้งาน \"สำรวจโดยการสัมผัส\" คุณสามารถใช้ท่าทางสัมผัสต่อไปนี้เพื่อทำงานบางอย่าง"\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"TalkBack เวอร์ชันนี้มีการเปลี่ยนแปลงค่าเริ่มต้นของท่าทางสัมผัสเพื่อการเข้าถึง "\n\n"ท่าทางสัมผัสแบบขึ้นแล้วลงจะช่วยให้คุณย้ายไปยังรายการแรกบนหน้าจอ และท่าทางสัมผัสแบบลงแล้วขึ้นจะย้ายคุณไปยังรายการสุดท้าย"\n\n"รายละเอียดการอ่านในตอนนี้สามารถเปลี่ยนแปลงได้โดยการโฟกัสไปที่รายการ แล้วเลือกรายละเอียดจากเมนูตามบริบทเฉพาะพื้นที่"\n\n"คุณสามารถเปลี่ยนการทำงานที่เกิดจากท่าทางสัมผัสเหล่านี้ได้ในการตั้งค่า TalkBack"</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"เพิ่มป้ายกำกับ"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"แก้ไขป้ายกำกับ"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"ลบป้ายกำกับ"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"ป้อนข้อความที่จะใช้สำหรับรูปภาพนี้ลงในช่องด้านล่าง"</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"คุณแน่ใจหรือว่าต้องการลบป้ายกำกับ \"<xliff:g id="LABEL">%1$s</xliff:g>\""</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"คุณแน่ใจหรือว่าต้องการลบป้ายกำกับ \"<xliff:g id="LABEL">%1$s</xliff:g>\" ภายในแอป <xliff:g id="APP_NAME">%2$s</xliff:g>"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"ข้อความป้ายกำกับ"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"TalkBack รุ่นนี้มีการเปลี่ยนแปลงของท่าทางสัมผัสในการเข้าถึงเริ่มต้น โดยสามารถกำหนดค่าการทำงานต่างๆ ที่เชื่อมโยงกับท่าทางสัมผัสเหล่านี้ได้จากภายในการตั้งค่า TalkBack เมื่อมีการเปิดใช้งาน \"สำรวจโดยการสัมผัส\" คุณสามารถใช้ท่าทางสัมผัสต่อไปนี้เพื่อทำงานบางอย่าง\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"TalkBack เวอร์ชันนี้มีการเปลี่ยนแปลงค่าเริ่มต้นของท่าทางสัมผัสเพื่อการเข้าถึง \n\nท่าทางสัมผัสแบบขึ้นแล้วลงจะช่วยให้คุณย้ายไปยังรายการแรกบนหน้าจอ และท่าทางสัมผัสแบบลงแล้วขึ้นจะย้ายคุณไปยังรายการสุดท้าย\n\nรายละเอียดการอ่านในตอนนี้สามารถเปลี่ยนแปลงได้โดยการโฟกัสไปที่รายการ แล้วเลือกรายละเอียดจากเมนูตามบริบทเฉพาะพื้นที่\n\nคุณสามารถเปลี่ยนการทำงานที่เกิดจากท่าทางสัมผัสเหล่านี้ได้ในการตั้งค่า TalkBack"</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"ยอมรับท่าทางสัมผัส"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"กำหนดค่าท่าทางสัมผัส"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"ปิดใช้งานการสำรวจด้วยการแตะหรือไม่"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"คุณแน่ใจหรือไม่ว่าต้องการปิดการสำรวจด้วยการแตะ"\n\n"อุปกรณ์ของคุณจะไม่ตอบสนองทางลัดท่าทางสัมผัสหรือรายการการพูดอีกต่อไปเมื่อคุณแตะหน้าจอ"</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"คุณแน่ใจหรือไม่ว่าต้องการปิดการสำรวจด้วยการแตะ\n\nอุปกรณ์ของคุณจะไม่ตอบสนองทางลัดท่าทางสัมผัสหรือรายการการพูดอีกต่อไปเมื่อคุณแตะหน้าจอ"</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"ไม่สามารถใช้การสำรวจด้วยการแตะในเนื้อหาเว็บ เปิด <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> ในการตั้งค่าการเข้าถึงเพื่อสำรวจเนื้อหาเว็บ"</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"เมนูตามบริบททั่วโลกของ TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"ควบคุม TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"สิทธิ์ในการส่งท่าทางสัมผัสไปยัง TalkBack และกลับไปใช้งานเสียงพูดตอบรับ"</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"จัดการป้ายกำกับที่กำหนดเองของ TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"สิทธิ์ในการเข้าถึง แก้ไข และลบป้ายกำกับที่กำหนดเองที่พูดโดย TalkBack"</string>
     <string name="links" msgid="5674175288909957654">"ลิงก์"</string>
     <string name="end_of_text" msgid="4039485166364049724">"สิ้นสุด"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

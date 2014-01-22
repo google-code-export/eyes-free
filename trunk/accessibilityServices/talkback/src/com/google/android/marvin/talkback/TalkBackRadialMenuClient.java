@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ import android.view.MenuItem;
 import com.google.android.marvin.talkback.BreakoutMenuUtils.JogDial;
 import com.google.android.marvin.talkback.RadialMenuManager.RadialMenuClient;
 import com.google.android.marvin.talkback.menurules.NodeMenuRuleProcessor;
+import com.google.android.marvin.talkback.tutorial.ContextMenuMonitor;
 import com.googlecode.eyesfree.widget.RadialMenu;
 import com.googlecode.eyesfree.widget.RadialMenu.OnMenuVisibilityChangedListener;
 import com.googlecode.eyesfree.widget.RadialMenuItem;
@@ -108,6 +110,11 @@ public class TalkBackRadialMenuClient implements RadialMenuClient {
             // The menu item was not recognized.
             return false;
         }
+
+        // Broadcast a notification that a menu item was clicked.
+        Intent intent = new Intent(ContextMenuMonitor.ACTION_CONTEXT_MENU_ITEM_CLICKED);
+        intent.putExtra(ContextMenuMonitor.EXTRA_ITEM_ID, itemId);
+        LocalBroadcastManager.getInstance(mService).sendBroadcast(intent);
 
         return true;
     }

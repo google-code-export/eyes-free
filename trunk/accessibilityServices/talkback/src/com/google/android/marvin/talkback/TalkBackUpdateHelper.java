@@ -22,7 +22,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
-import com.google.android.marvin.utils.AutomationUtils;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
+import com.googlecode.eyesfree.utils.AutomationUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
 import com.googlecode.eyesfree.utils.PackageManagerUtils;
 import com.googlecode.eyesfree.utils.SharedPreferencesUtils;
@@ -390,8 +391,7 @@ class TalkBackUpdateHelper {
      * Jelly Bean factory ROM version (68) on device running the Jelly Bean
      * factory ROM version of Android.
      */
-    private static class ExploreByTouchUpdateHelper
-            implements TalkBackService.AccessibilityEventListener {
+    private static class ExploreByTouchUpdateHelper implements AccessibilityEventListener {
         private final TalkBackService mService;
 
         public ExploreByTouchUpdateHelper(TalkBackService service) {

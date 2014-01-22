@@ -26,8 +26,8 @@ import android.support.v4.view.accessibility.AccessibilityRecordCompat;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
 import com.googlecode.eyesfree.compat.view.accessibility.AccessibilityEventCompatUtils;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityEventUtils;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.WeakReferenceHandler;

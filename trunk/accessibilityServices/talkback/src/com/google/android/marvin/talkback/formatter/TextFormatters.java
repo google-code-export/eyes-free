@@ -119,8 +119,10 @@ public final class TextFormatters {
                         !TextUtils.equals(event.getPackageName(), sChangedPackage);
 
                 // If the state is still consistent, update the count and drop
-                // the event.
-                if (!hasDelayElapsed && !hasPackageChanged) {
+                // the event except when running on locales that don't support
+                // text replacement due to character combination complexity.
+                if (!hasDelayElapsed && !hasPackageChanged
+                        && context.getResources().getBoolean(R.bool.supports_text_replacement)) {
                     sAwaitingSelectionCount++;
                     sChangedTimestamp = timestamp;
                     return false;
@@ -252,6 +254,12 @@ public final class TextFormatters {
                     // Do nothing.
                 } else if (TextUtils.isEmpty(cleanRemovedText)
                         || TextUtils.equals(cleanAddedText, cleanRemovedText)) {
+                    utterance.addSpoken(cleanAddedText);
+                } else if (!(context.getResources().getBoolean(R.bool.supports_text_replacement))) {
+                    // The method of character substitution in some languages is
+                    // identical to text replacement events. As such, we only
+                    // speak the added text if the device locale matches one of
+                    // these languages.
                     utterance.addSpoken(cleanAddedText);
                 } else {
                     final String replacedText = context.getString(

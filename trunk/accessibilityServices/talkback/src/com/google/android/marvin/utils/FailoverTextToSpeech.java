@@ -499,6 +499,10 @@ public class FailoverTextToSpeech {
     private static final boolean USE_GOOGLE_TTS_WORKAROUNDS =
             (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1);
 
+    /** Whether we need to always force locale changes through TTS. */
+    private static final boolean FORCE_TTS_LOCALE_CHANGES =
+            (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2);
+
     /**
      * Preferred locale for fallback language.
      * <p>
@@ -551,7 +555,7 @@ public class FailoverTextToSpeech {
     private void ensureSupportedLocale() {
         if (needsFallbackLocale()) {
             attemptSetFallbackLanguage();
-        } else if (mUsingFallbackLocale || mHasSetLocale) {
+        } else if (mUsingFallbackLocale || mHasSetLocale || FORCE_TTS_LOCALE_CHANGES) {
             // We might need to restore the system locale. Or, if we've ever
             // explicitly set the locale, we'll need to work around a bug where
             // there's no way to tell the TTS engine to use whatever it thinks
@@ -655,6 +659,10 @@ public class FailoverTextToSpeech {
      */
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     private void attemptRestorePreferredLocale() {
+        if (mTts == null) {
+            return;
+        }
+
         final Locale preferredLocale = (mDefaultLocale != null ? mDefaultLocale : mSystemLocale);
         final int status = mTts.setLanguage(preferredLocale);
         if (!isAvailableStatus(status)) {
@@ -677,7 +685,7 @@ public class FailoverTextToSpeech {
     private void updateDefaultLocale() {
         final String defaultLocale = TextToSpeechUtils.getDefaultLocaleForEngine(
                 mResolver, mTtsEngine);
-        mDefaultLocale = ((defaultLocale != null) ? new Locale(defaultLocale) : null);
+        mDefaultLocale = (!TextUtils.isEmpty(defaultLocale)) ? new Locale(defaultLocale) : null;
 
         // The default locale changed, which may mean we can restore the user's
         // preferred locale.

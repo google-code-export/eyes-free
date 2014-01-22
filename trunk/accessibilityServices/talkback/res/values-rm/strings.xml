@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- no translation found for talkback_service_description (983212841294665356) -->
+    <skip />
     <!-- no translation found for talkback_preferences_title (615685549632541311) -->
     <skip />
-    <!-- no translation found for talkback_service_description (983212841294665356) -->
+    <!-- no translation found for label_manager_summary_title (6129629673621990309) -->
+    <skip />
+    <!-- no translation found for label_manager_package_title (5518823554025145373) -->
+    <skip />
+    <!-- no translation found for label_manager_no_packages_message (2531887372542054600) -->
+    <skip />
+    <!-- no translation found for label_manager_timestamp_text (5161359164826380670) -->
     <skip />
     <string name="notification_type_text_message" msgid="2840489326612585077">"Messadi SMS"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"SMS betg tramess"</string>
@@ -128,7 +136,11 @@
     <skip />
     <!-- no translation found for title_pref_speech_volume (4013853601342391397) -->
     <skip />
-    <!-- no translation found for title_pref_speak_screenoff (423335664627577373) -->
+    <!-- no translation found for title_pref_speak_screenoff (1278357255432372076) -->
+    <skip />
+    <!-- no translation found for summaryOn_pref_speak_screenoff (8939554146179627909) -->
+    <skip />
+    <!-- no translation found for summaryOff_pref_speak_screenoff (6148656407539902635) -->
     <skip />
     <!-- no translation found for title_pref_caller_id (1414845059814636961) -->
     <skip />
@@ -149,6 +161,8 @@
     <!-- no translation found for title_pref_shake_to_read_threshold (544749941147543935) -->
     <skip />
     <!-- no translation found for title_pref_category_manage_gestures (5457025819029526883) -->
+    <skip />
+    <!-- no translation found for title_pref_manage_labels (593992209353672625) -->
     <skip />
     <!-- no translation found for title_pref_category_touch_shortcuts (4220670726993962812) -->
     <skip />
@@ -181,6 +195,10 @@
     <!-- no translation found for title_pref_log_level (1608733715034404715) -->
     <skip />
     <!-- no translation found for title_pref_tts_overlay (7821227047722471620) -->
+    <skip />
+    <!-- no translation found for title_pref_web_scripts (4384237853588668209) -->
+    <skip />
+    <!-- no translation found for summary_pref_web_scripts (5271359440699022407) -->
     <skip />
     <!-- no translation found for title_pref_resume_talkback (7672596366500481032) -->
     <skip />
@@ -294,6 +312,8 @@
     <skip />
     <!-- no translation found for title_viewpager_breakout_prev_page (628828561164930528) -->
     <skip />
+    <!-- no translation found for title_labeling_controls (5329026809097946643) -->
+    <skip />
     <!-- no translation found for title_summary (1892383897326964505) -->
     <skip />
     <!-- no translation found for title_granularity (8810561997342447201) -->
@@ -388,6 +408,20 @@
     <skip />
     <!-- no translation found for show_suspend_warning_label (2767993698595859057) -->
     <skip />
+    <!-- no translation found for label_dialog_title_add (5382481431231127704) -->
+    <skip />
+    <!-- no translation found for label_dialog_title_edit (4092558174381892707) -->
+    <skip />
+    <!-- no translation found for label_dialog_title_remove (3378715305025501902) -->
+    <skip />
+    <!-- no translation found for label_dialog_text (1215316331086955256) -->
+    <skip />
+    <!-- no translation found for label_remove_dialog_text (3934146603628571606) -->
+    <skip />
+    <!-- no translation found for label_remove_dialog_text_app_name (2384427835919655322) -->
+    <skip />
+    <!-- no translation found for label_dialog_edit_hint (1909934608642527277) -->
+    <skip />
     <!-- no translation found for talkback_gesture_change_details (2919155220372343154) -->
     <skip />
     <!-- no translation found for talkback_built_in_gesture_change_details (1504489384911892122) -->
@@ -405,6 +439,12 @@
     <!-- no translation found for label_talkback_context_menu (102441078934343795) -->
     <skip />
     <!-- no translation found for permission_talkback_label (7399199628843033396) -->
+    <skip />
+    <!-- no translation found for permission_talkback_desc (7998251777426211557) -->
+    <skip />
+    <!-- no translation found for permission_labeling_label (1480122506788515888) -->
+    <skip />
+    <!-- no translation found for permission_labeling_desc (2506887117365155231) -->
     <skip />
     <!-- no translation found for links (5674175288909957654) -->
     <skip />

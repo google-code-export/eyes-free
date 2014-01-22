@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack 設定"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"開啟 TalkBack 功能，裝置即可語音回應，協助視障或視力不佳的使用者。舉例來說，TalkBack 會說出您輕觸、選取或啟用的任何項目。"</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack 設定"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"管理自訂標籤"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"管理 <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g> 的標籤"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"目前沒有任何自訂標籤。如要建立自訂標籤，請找出未建立標籤的圖片，然後從區域內容選單中新增標籤。"</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"上次修改時間：<xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"簡訊"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"未傳送簡訊"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"未接來電"</string>
@@ -79,7 +83,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"沒有任何項目。"</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"語音"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"語音音量"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"螢幕關閉時仍播放語音通知"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"螢幕關閉時仍播放語音回應"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"螢幕關閉時讀出通知內容"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"螢幕關閉時不提供語音回應"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"說出來電顯示內容"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"使用鄰近感應器"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"鄰近感應器會關閉語音服務"</string>
@@ -91,6 +97,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(實驗性) 輕按目前聚焦的項目即可選取"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"搖動裝置即可開始繼續閱讀"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"管理手勢"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"管理自訂標籤"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"捷徑手勢"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"內建手勢"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"使用音調變化"</string>
@@ -107,6 +114,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"開發人員設定"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"記錄輸出等級"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"顯示語音輸出"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"增強網頁協助工具"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"下載網頁內容的協助工具指令碼"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"從停用狀態恢復使用"</string>
     <string name="axis_character" msgid="5059604520074645703">"依字元進行導覽。"</string>
     <string name="axis_word" msgid="7745798763195184060">"依單詞進行導覽。"</string>
@@ -163,6 +172,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"頁面控制項"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"下一頁"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"上一頁"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"標籤控制項"</string>
     <string name="title_summary" msgid="1892383897326964505">"快速導覽"</string>
     <string name="title_granularity" msgid="8810561997342447201">"變更瀏覽詳細度"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"先往下再往左"</string>
@@ -205,20 +215,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack 已停用"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"輕按即可繼續。"</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"停用 TalkBack？"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"您確定要停用 TalkBack 嗎？"\n\n"如果停用 TalkBack，裝置將不會提供回應。"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"您確定要停用 TalkBack 嗎？\n\n如果停用 TalkBack，裝置將不會提供回應。"</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"您可以透過通知欄恢復使用 TalkBack。"</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"您可以透過通知欄或開啟螢幕恢復使用 TalkBack。"</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"您可以透過通知欄或返回鎖定畫面恢復使用 TalkBack。"</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"一律顯示這項警告"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"這個 TalkBack 版本變更了部分預設協助工具手勢。您可以在 TalkBack 設定中自訂與這些手勢相關聯的動作。啟用「輕觸探索」時，您可以使用下列手勢執行特定動作。"\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"這個 TalkBack 版本包含更新的預設協助工具操作手勢。"\n\n"「先往上再往下」手勢可移至畫面上顯示的第一個項目，「先往下再往上」則可移至最後一個項目。"\n\n"現在如要變更讀取切分設定，可先將焦點移至特定項目，然後再從區域內容選單中選取切分設定。"\n\n"您可在 [TalkBack 設定] 中變更這些手勢所執行的動作。"</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"新增標籤"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"編輯標籤"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"移除標籤"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"在下方的欄位中輸入要用於這張圖片的文字。"</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"您確定要移除 [<xliff:g id="LABEL">%1$s</xliff:g>] 標籤嗎？"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"您確定要移除 <xliff:g id="APP_NAME">%2$s</xliff:g> 中的 [<xliff:g id="LABEL">%1$s</xliff:g>] 標籤嗎？"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"標籤文字"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"這個 TalkBack 版本變更了部分預設協助工具手勢。您可以在 TalkBack 設定中自訂與這些手勢相關聯的動作。啟用「輕觸探索」時，您可以使用下列手勢執行特定動作。\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"這個 TalkBack 版本包含更新的預設協助工具操作手勢。\n\n「先往上再往下」手勢可移至畫面上顯示的第一個項目，「先往下再往上」則可移至最後一個項目。\n\n現在如要變更讀取切分設定，可先將焦點移至特定項目，然後再從區域內容選單中選取切分設定。\n\n您可在 [TalkBack 設定] 中變更這些手勢所執行的動作。"</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"接受手勢"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"自訂手勢"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"停用輕觸探索？"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"您確定要停用「輕觸探索」功能嗎？"\n\n"當您輕觸螢幕時，裝置將不會再回應捷徑手勢或說出項目。"</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"您確定要停用「輕觸探索」功能嗎？\n\n當您輕觸螢幕時，裝置將不會再回應捷徑手勢或說出項目。"</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"「輕觸探索」目前未支援網頁內容。如要瀏覽網頁內容，請在協助工具設定中開啟 <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g>。"</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"TalkBack 全域內容選單"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"控制 TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"允許對 TalkBack 發送手勢並重新啟動語音回饋。"</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"管理 TalkBack 自訂標籤"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"允許存取、修改及刪除 TalkBack 語音說出的自訂標籤。"</string>
     <string name="links" msgid="5674175288909957654">"連結"</string>
     <string name="end_of_text" msgid="4039485166364049724">"結尾"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> 個<xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

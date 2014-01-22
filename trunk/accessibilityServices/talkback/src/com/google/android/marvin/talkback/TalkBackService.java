@@ -47,6 +47,7 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityManagerCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
@@ -69,9 +70,14 @@ import com.google.android.marvin.talkback.speechrules.NodeHintRule;
 import com.google.android.marvin.talkback.speechrules.NodeSpeechRuleProcessor;
 import com.google.android.marvin.talkback.test.TalkBackListener;
 import com.google.android.marvin.talkback.tutorial.AccessibilityTutorialActivity;
+import com.google.android.marvin.talkback.tutorial.GestureActionMonitor;
+import com.google.android.marvin.talkback.tutorial.GranularityMonitor;
 import com.googlecode.eyesfree.compat.accessibilityservice.AccessibilityServiceCompatUtils;
 import com.googlecode.eyesfree.compat.view.accessibility.AccessibilityEventCompatUtils;
 import com.googlecode.eyesfree.compat.view.accessibility.AccessibilityServiceInfoCompatUtils;
+import com.googlecode.eyesfree.labeling.CustomLabelManager;
+import com.googlecode.eyesfree.labeling.PackageRemovalReceiver;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityEventUtils;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.ClassLoadingManager;
@@ -111,14 +117,17 @@ public class TalkBackService extends AccessibilityService
             | AccessibilityEvent.TYPE_VIEW_SELECTED
             | AccessibilityEventCompat.TYPE_VIEW_SCROLLED;
 
-    /** The intent action used to perform a custom gesture. */
-    /* package */ static final String ACTION_PERFORM_GESTURE = "performCustomGesture";
+    /** The intent action used to perform a custom gesture action. */
+    /* package */ static final String ACTION_PERFORM_GESTURE_ACTION = "performCustomGestureAction";
 
     /**
-     * The gesture name to pass with {@link #ACTION_PERFORM_GESTURE} as a string
-     * extra. Must match the name of a {@link ShortcutGesture}.
+     * The gesture action to pass with {@link #ACTION_PERFORM_GESTURE_ACTION} as
+     * a string extra. Must match the name of a {@link ShortcutGestureAction}.
      */
-    /* package */ static final String EXTRA_GESTURE_NAME = "gestureName";
+    /* package */ static final String EXTRA_GESTURE_ACTION = "gestureAction";
+
+    /** Whether the current SDK supports service-managed web scripts. */
+    private static final boolean SUPPORTS_WEB_SCRIPT_TOGGLE = (Build.VERSION.SDK_INT >= 18);
 
     /** Whether to force debugging mode on. Turn off when releasing. */
     private static final boolean DEBUG = false;
@@ -211,6 +220,9 @@ public class TalkBackService extends AccessibilityService
     /** Manager for showing radial menus. */
     private RadialMenuManager mRadialMenuManager;
 
+    /** Manager for handling custom labels. */
+    private CustomLabelManager mLabelManager;
+
     /** Processor for moving access focus. Used in Jelly Bean and above. */
     private ProcessorFocusAndSingleTap mProcessorFollowFocus;
 
@@ -228,6 +240,12 @@ public class TalkBackService extends AccessibilityService
 
     /** {@link BroadcastReceiver} for tracking volume changes. */
     private VolumeMonitor mVolumeMonitor;
+
+    /**
+     * {@link BroadcastReceiver} for tracking package removals for custom label
+     * data consistency.
+     */
+    private PackageRemovalReceiver mPackageReceiver;
 
     /** Power manager, used for checking screen state. */
     private PowerManager mPowerManager;
@@ -640,6 +658,14 @@ public class TalkBackService extends AccessibilityService
         return mSpeechController;
     }
 
+    public MappedFeedbackController getFeedbackController() {
+        if (mFeedbackController == null) {
+            throw new RuntimeException("mFeedbackController has not been initialized");
+        }
+
+        return mFeedbackController;
+    }
+
     public CursorController getCursorController() {
         if (mCursorController == null) {
             throw new RuntimeException("mCursorController has not been initialized");
@@ -654,6 +680,14 @@ public class TalkBackService extends AccessibilityService
         }
 
         return mFullScreenReadController;
+    }
+
+    public CustomLabelManager getLabelManager() {
+        if (mLabelManager == null && Build.VERSION.SDK_INT >= CustomLabelManager.MIN_API_LEVEL) {
+            throw new RuntimeException("mLabelManager has not been initialized");
+        }
+
+        return mLabelManager;
     }
 
     /**
@@ -676,17 +710,22 @@ public class TalkBackService extends AccessibilityService
         final String key = getString(keyResId);
         final String defaultValue = getString(defaultResId);
         final String value = mPrefs.getString(key, defaultValue);
-        final ShortcutGesture gesture = ShortcutGesture.safeValueOf(value);
+        final ShortcutGestureAction gestureAction = ShortcutGestureAction.safeValueOf(value);
 
-        return performGesture(gesture);
+        return performGestureAction(gestureAction);
     }
 
     /**
-     * Performs the action associated with a {@link ShortcutGesture}.
+     * Performs a {@link ShortcutGestureAction} as a result of a gesture.
      *
-     * @param value The gesture to perform.
+     * @param value The gesture action to perform.
      */
-    private boolean performGesture(ShortcutGesture value) {
+    private boolean performGestureAction(ShortcutGestureAction value) {
+        // Broadcast a notification that a gesture action was performed.
+        Intent intent = new Intent(GestureActionMonitor.ACTION_GESTURE_ACTION_PERFORMED);
+        intent.putExtra(GestureActionMonitor.EXTRA_SHORTCUT_GESTURE_ACTION, value.toString());
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+
         switch (value) {
             case BACK:
                 return AccessibilityServiceCompatUtils.performGlobalAction(
@@ -770,16 +809,24 @@ public class TalkBackService extends AccessibilityService
     }
 
     /**
+     * @return The current state of the TalkBack service, or
+     *         {@code ServiceState.INACTIVE} if the service is not initialized.
+     */
+    public static ServiceState getServiceState() {
+        final TalkBackService service = getInstance();
+        if (service == null) {
+            return ServiceState.INACTIVE;
+        }
+
+        return service.mServiceState;
+    }
+
+    /**
      * @return {@code true} if TalkBack is running and initialized,
      *         {@code false} otherwise.
      */
     public static boolean isServiceActive() {
-        final TalkBackService service = getInstance();
-        if (service == null) {
-            return false;
-        }
-
-        return (service.mServiceState == ServiceState.ACTIVE);
+        return (getServiceState() == ServiceState.ACTIVE);
     }
 
     /**
@@ -850,6 +897,10 @@ public class TalkBackService extends AccessibilityService
             mVolumeMonitor = new VolumeMonitor(this);
         }
 
+        if (Build.VERSION.SDK_INT >= PackageRemovalReceiver.MIN_API_LEVEL) {
+            mPackageReceiver = new PackageRemovalReceiver();
+        }
+
         if (Build.VERSION.SDK_INT >= ProcessorGestureVibrator.MIN_API_LEVEL) {
             mAccessibilityEventListeners.add(new ProcessorGestureVibrator());
         }
@@ -901,6 +952,11 @@ public class TalkBackService extends AccessibilityService
         final TalkBackRadialMenuClient radialMenuClient = new TalkBackRadialMenuClient(this);
         mRadialMenuManager = new RadialMenuManager(this);
         mRadialMenuManager.setClient(radialMenuClient);
+
+        if (Build.VERSION.SDK_INT >= CustomLabelManager.MIN_API_LEVEL) {
+            mLabelManager = new CustomLabelManager(this);
+            mAccessibilityEventListeners.add(mLabelManager);
+        }
     }
 
     /**
@@ -930,8 +986,8 @@ public class TalkBackService extends AccessibilityService
 
         // Ensure the initial touch exploration request mode is correct.
         if (SUPPORTS_TOUCH_PREF && SharedPreferencesUtils.getBooleanPref(
-                    mPrefs, getResources(), R.string.pref_explore_by_touch_key,
-                    R.bool.pref_explore_by_touch_default)) {
+                mPrefs, getResources(), R.string.pref_explore_by_touch_key,
+                R.bool.pref_explore_by_touch_default)) {
             info.flags |= AccessibilityServiceInfoCompatUtils.FLAG_REQUEST_TOUCH_EXPLORATION_MODE;
         }
 
@@ -957,11 +1013,18 @@ public class TalkBackService extends AccessibilityService
             registerReceiver(mVolumeMonitor, mVolumeMonitor.getFilter());
         }
 
+        if (mPackageReceiver != null) {
+            registerReceiver(mPackageReceiver, mPackageReceiver.getFilter());
+            if (mLabelManager != null) {
+                mLabelManager.ensureDataConsistency();
+            }
+        }
+
         mPrefs.registerOnSharedPreferenceChangeListener(mSharedPreferenceChangeListener);
 
         // Add the broadcast listener for gestures.
         final IntentFilter filter = new IntentFilter();
-        filter.addAction(ACTION_PERFORM_GESTURE);
+        filter.addAction(ACTION_PERFORM_GESTURE_ACTION);
         registerReceiver(mActiveReceiver, filter, PERMISSION_TALKBACK, null);
 
         // Enable the proxy activity for long-press search.
@@ -1011,6 +1074,10 @@ public class TalkBackService extends AccessibilityService
             mVolumeMonitor.releaseControl();
         }
 
+        if (mPackageReceiver != null) {
+            unregisterReceiver(mPackageReceiver);
+        }
+
         if (mShakeDetector != null) {
             mShakeDetector.setEnabled(false);
         }
@@ -1049,6 +1116,10 @@ public class TalkBackService extends AccessibilityService
 
         if (mTextToSpeechManager != null) {
             mTextToSpeechManager.shutdown();
+        }
+
+        if (mLabelManager != null) {
+            mLabelManager.shutdown();
         }
 
         ClassLoadingManager.getInstance().shutdown();
@@ -1261,7 +1332,7 @@ public class TalkBackService extends AccessibilityService
         mSpeechController.setSilenceOnProximity(silenceOnProximity);
 
         final int logLevel = (DEBUG ? Log.VERBOSE : SharedPreferencesUtils.getIntFromStringPref(
-                mPrefs, res, R.string.pref_log_level_key, R.string.pref_log_level_default));
+                        mPrefs, res, R.string.pref_log_level_key, R.string.pref_log_level_default));
         LogUtils.setLogLevel(logLevel);
 
         if (mProcessorFollowFocus != null) {
@@ -1294,6 +1365,12 @@ public class TalkBackService extends AccessibilityService
                     R.string.pref_two_part_vertical_gestures_default);
             mVerticalGestureCycleGranularity = verticalGesturesPref.equals(
                     getString(R.string.value_two_part_vertical_gestures_cycle));
+        }
+
+        if (SUPPORTS_WEB_SCRIPT_TOGGLE) {
+            final boolean requestWebScripts = SharedPreferencesUtils.getBooleanPref(mPrefs, res,
+                    R.string.pref_web_scripts_key, R.bool.pref_web_scripts_default);
+            requestWebScripts(requestWebScripts);
         }
     }
 
@@ -1352,6 +1429,39 @@ public class TalkBackService extends AccessibilityService
     }
 
     /**
+     * Attempts to change the state of web script injection.
+     * <p>
+     * Should only be called if {@link #SUPPORTS_WEB_SCRIPT_TOGGLE} is true.
+     *
+     * @param requestedState {@code true} to request script injection,
+     *            {@code false} otherwise.
+     */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+    private void requestWebScripts(boolean requestedState) {
+        final AccessibilityServiceInfo info = getServiceInfo();
+        if (info == null) {
+            LogUtils.log(this, Log.ERROR,
+                    "Failed to change web script injection request state, service info was null");
+            return;
+        }
+
+        final boolean currentState = (
+                (info.flags & AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY)
+                != 0);
+        if (currentState == requestedState) {
+            return;
+        }
+
+        if (requestedState) {
+            info.flags |= AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY;
+        } else {
+            info.flags &= ~AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY;
+        }
+
+        setServiceInfo(info);
+    }
+
+    /**
      * Handler used for receiving URI change updates.
      */
     private final Handler mHandler = new Handler();
@@ -1371,6 +1481,11 @@ public class TalkBackService extends AccessibilityService
 
                 mSpeechController.speak(name, SpeechController.QUEUE_MODE_INTERRUPT, 0, null);
             }
+
+            // Broadcast a notification that the granularity was changed.
+            final Intent intent = new Intent(GranularityMonitor.ACTION_GRANULARITY_CHANGED);
+            intent.putExtra(GranularityMonitor.EXTRA_GRANULARITY_KEY, granularity.keyId);
+            LocalBroadcastManager.getInstance(TalkBackService.getInstance()).sendBroadcast(intent);
         }
 
         @Override
@@ -1440,10 +1555,11 @@ public class TalkBackService extends AccessibilityService
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
 
-            if (ACTION_PERFORM_GESTURE.equals(action)) {
-                final String gestureName = intent.getStringExtra(EXTRA_GESTURE_NAME);
-                final ShortcutGesture gesture = ShortcutGesture.safeValueOf(gestureName);
-                performGesture(gesture);
+            if (ACTION_PERFORM_GESTURE_ACTION.equals(action)) {
+                final String gestureActionString = intent.getStringExtra(EXTRA_GESTURE_ACTION);
+                final ShortcutGestureAction gestureAction =
+                        ShortcutGestureAction.safeValueOf(gestureActionString);
+                performGestureAction(gestureAction);
             }
         }
     };
@@ -1522,13 +1638,6 @@ public class TalkBackService extends AccessibilityService
      */
     public interface ServiceStateListener {
         public void onServiceStateChanged(ServiceState newState);
-    }
-
-    /**
-     * Interface for passive event processors.
-     */
-    public interface AccessibilityEventListener {
-        public void onAccessibilityEvent(AccessibilityEvent event);
     }
 
     /**

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Nastavitve funkcije TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Ko je TalkBack vklopljen, da naprava glasovne povratne informacije, ki so v pomoč slepim in slabovidnim uporabnikom. Opiše na primer, česa se dotikate, kaj izbirate in aktivirate."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Nastavitve funkcije TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Upravljanje oznak po meri"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Upravljanje oznak za <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Trenutno ni oznak po meri. Ustvarite jo lahko tako, da se pomaknete na sliko brez oznake in dodate oznako iz lokalnega kontekstnega menija."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Zadnja sprememba: <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Besedilno sporočilo"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Besedilno sporočilo ni poslano"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Neodgovorjeni klic"</string>
@@ -79,7 +83,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Prazno."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Govor"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Glasnost govora"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Izgovori obvestila, ko je zaslon izkl."</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Govori, ko je zaslon izklopljen"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Ko je zaslon izklopljen, se obvestila izgovarjajo"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Brez govora, ko je zaslon izklopljen"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Izgovori ID klicatelja"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Uporabi tipalo bližine"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Senzor bližine utiša govor"</string>
@@ -91,6 +97,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Poskusno) Izbira trenutno označenega elementa z dotikom"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Stresite za začetek neprekinjenega branja"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Upravljanje potez"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Upravljanje oznak po meri"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Poteze za bližnjice"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Vgrajene poteze"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Uporabi spremembe višine glasu"</string>
@@ -107,6 +114,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Nastavitve za razvijalce"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Raven beleženja"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Prikaz govornih sporočil"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Izboljšanje dostopnosti spleta za ljudi s posebnimi potrebami"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Prenos skriptov za spletno vsebino za ljudi s posebnimi potrebami"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Vnovično omogočanje"</string>
     <string name="axis_character" msgid="5059604520074645703">"Pomikanje glede na znak."</string>
     <string name="axis_word" msgid="7745798763195184060">"Pomikanje glede na besede."</string>
@@ -163,6 +172,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Kontrolniki strani"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Naslednja stran"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Prejšnja stran"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Kontrolniki oznak"</string>
     <string name="title_summary" msgid="1892383897326964505">"Hitro krmarjenje"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Spremeni razdrobljenost"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"navzdol in nato levo"</string>
@@ -205,20 +215,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"Funkcija TalkBack je onemogočena"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Dotaknite se za nadaljevanje."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Ali želite onemogočiti funkcijo TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Ali ste prepričani, da želite onemogočiti funkcijo TalkBack?"\n\n"Če onemogočite to funkcijo, naprava ne bo več dajala povratnih informacij."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Ali ste prepričani, da želite onemogočiti funkcijo TalkBack?\n\nČe onemogočite to funkcijo, naprava ne bo več dajala povratnih informacij."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"TalkBack lahko znova omogočite na zaslonu z obvestili."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"TalkBack lahko znova omogočite na zaslonu z obvestili ali tako, da vklopite zaslon."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"TalkBack lahko znova omogočite na zaslonu z obvestili ali na zaklenjenem zaslonu."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Vedno pokaži to opozorilo"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Ta različica funkcije TalkBack vključuje spremembe privzetih potez za ljudi s posebnimi potrebami. Dejanja, povezana s temi potezami, je mogoče prilagoditi v nastavitvah funkcije TalkBack. Ko je omogočeno raziskovanje z dotikom, lahko te poteze uporabite za izvajanje nekaterih dejanj."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Ta različica aplikacije TalkBack vsebuje spremembe privzetih potez za funkcije za ljudi s posebnimi potrebami."\n\n"S potezo »navzgor in nato navzdol« se boste pomaknili na prvi element na zaslonu, s potezo »navzdol in nato navzgor« pa na zadnjega."\n\n"Bralno razdrobljenost lahko zdaj spremenite tako, da najprej izberete element in nato tudi razdrobljenost v lokalnem kontekstnem meniju."\n\n"Dejanja, ki jih naredite s temi potezami, lahko spremenite v nastavitvah za TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Dodajanje oznake"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Urejanje oznake"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Odstranjevanje oznake"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"V spodnje polje vnesite ime za to sliko."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Ali ste prepričani, da želite odstraniti oznako »<xliff:g id="LABEL">%1$s</xliff:g>«?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Ali ste prepričani, da želite odstraniti oznako »<xliff:g id="LABEL">%1$s</xliff:g>« v aplikaciji <xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Besedilo oznake"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Ta različica funkcije TalkBack vključuje spremembe privzetih potez za ljudi s posebnimi potrebami. Dejanja, povezana s temi potezami, je mogoče prilagoditi v nastavitvah funkcije TalkBack. Ko je omogočeno raziskovanje z dotikom, lahko te poteze uporabite za izvajanje nekaterih dejanj.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Ta različica aplikacije TalkBack vsebuje spremembe privzetih potez za funkcije za ljudi s posebnimi potrebami.\n\nS potezo »navzgor in nato navzdol« se boste pomaknili na prvi element na zaslonu, s potezo »navzdol in nato navzgor« pa na zadnjega.\n\nBralno razdrobljenost lahko zdaj spremenite tako, da najprej izberete element in nato tudi razdrobljenost v lokalnem kontekstnem meniju.\n\nDejanja, ki jih naredite s temi potezami, lahko spremenite v nastavitvah za TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Sprejem potez"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Prilagajanje potez"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Ali želite onemogočiti funkcijo raziskovanja z dotikom?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Ali ste prepričani, da želite izklopiti funkcijo raziskovanja z dotikom?"\n\n"Naprava se ne bo več odzivala na poteze za bližnjice ali izgovarjala, ko se boste dotaknili zaslona."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Ali ste prepričani, da želite izklopiti funkcijo raziskovanja z dotikom?\n\nNaprava se ne bo več odzivala na poteze za bližnjice ali izgovarjala, ko se boste dotaknili zaslona."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Funkcija raziskovanja z dotikom ni na voljo v spletni vsebini. Če želite raziskovati spletno vsebino, v nastavitvah storitev za ljudi s posebnimi potrebami vklopite <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g>."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Globalni priročni meni TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Nadziraj TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Dovoljenje za pošiljanje potez v TalkBack in nadaljevanje izgovarjanja povratnih informacij."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Upravljanje oznak po meri funkcije TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Dovoljenje za dostop do oznak po meri, ki jih izgovarja TalkBack, ter za njihovo spreminjanje in brisanje."</string>
     <string name="links" msgid="5674175288909957654">"Povezave"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Konec"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

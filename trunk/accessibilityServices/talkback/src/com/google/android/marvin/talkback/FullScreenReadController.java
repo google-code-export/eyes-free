@@ -27,8 +27,8 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
 import com.google.android.marvin.talkback.SpeechController.UtteranceCompleteRunnable;
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
 import com.googlecode.eyesfree.compat.accessibilityservice.AccessibilityServiceCompatUtils;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityEventUtils;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.LogUtils;

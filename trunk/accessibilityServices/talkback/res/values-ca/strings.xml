@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Configuració de TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Quan TalkBack està activat, el teu dispositiu proporciona comentaris en veu alta per a usuaris amb discapacitat visual. Per exemple, descriu tot el que selecciones i actives."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Configuració de TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Gestiona les etiquetes personalitzades"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Gestiona les etiquetes de <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Actualment no hi ha etiquetes personalitzades. Pots crear-ne una si navegues fins a una imatge sense etiquetar i, a continuació, hi afegeixes una etiqueta des del menú contextual local."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Última modificació: <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Missatge de text"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Missatge de text no enviat"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Trucada perduda"</string>
@@ -77,18 +81,21 @@
     <string name="value_no_items" msgid="3587303601074849845">"No hi ha elements."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Veu"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Volum de la veu"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Dir notificacions amb pantalla apagada"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Parla amb pantalla apagada"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Les notificacions de veu estan activades quan la pantalla està apagada."</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"No hi ha veu quan la pantalla està apagada."</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Digues nom de l\'emissor"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Sensor de proximitat"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"El sensor de proximitat silencia la veu"</string>
     <string name="summaryOff_pref_proximity" msgid="3024213283254452034">"El sensor de proximitat no controla la veu"</string>
     <string name="title_pref_explore_by_touch" msgid="4051040843081874790">"Exploració tàctil"</string>
-    <string name="title_pref_auto_scroll" msgid="5676036153048224469">"Desplaça\'t automàtic. per les llistes"</string>
+    <string name="title_pref_auto_scroll" msgid="5676036153048224469">"Desplaça\'t automàticam. per les llistes"</string>
     <string name="title_pref_category_touch_exploration" msgid="4152747299134842442">"Exploració tàctil"</string>
     <string name="title_pref_single_tap" msgid="3053869870881145209">"Selecció d\'un sol toc"</string>
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Experimental) Fes un toc en l\'element ressaltat actualment per seleccionar-lo"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Sacseja per iniciar la lectura contínua"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Gestiona els gestos"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Gestiona les etiquetes personalitzades"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Gestos de les dreceres"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Gestos incorporats"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Utilitza els canvis de to"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Configuració del desenvolupador"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Nivell de registre de sortida"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Mostra la sortida de veu"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Millora de l\'accessibilitat web"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Baixa scripts d\'accessibilitat per al contingut web"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Reprèn de la suspensió"</string>
     <string name="axis_character" msgid="5059604520074645703">"Navega per caràcter."</string>
     <string name="axis_word" msgid="7745798763195184060">"Navega per paraula."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Controls de la pàgina"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Pàgina següent"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Pàgina anterior"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Controls d\'etiqueta"</string>
     <string name="title_summary" msgid="1892383897326964505">"Navegació ràpida"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Canvia la granularitat"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"avall i a l\'esquerra"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack està suspès"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Toca per reprendre-ho."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Vols suspendre TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Estàs segur que vols suspendre TalkBack?"\n\n"Mentre estigui suspès, el teu dispositiu no proporcionarà comentaris."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Estàs segur que vols suspendre TalkBack?\n\nMentre estigui suspès, el teu dispositiu no proporcionarà comentaris."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Pots reprendre TalkBack des de l\'àrea de notificacions."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Pots reprendre TalkBack des de l\'àrea de notificacions o activant la pantalla."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Pots reprendre TalkBack des de l\'àrea de notificacions o tornant a la pantalla de bloqueig."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Mostra sempre aquest advertiment"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Aquesta versió de TalkBack inclou canvis als gestos d\'accessibilitat predeterminats. Les accions associades amb aquests gestos es poden personalitzar dins de la configuració de TalkBack. Si l\'Exploració tàctil està activada, podràs utilitzar els gestos següents per dur a terme determinades accions."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Aquesta versió de TalkBack inclou canvis als gestos d\'accessibilitat predeterminats."\n\n"El gest amunt i avall et permetrà moure\'t al primer element de la pantalla, i el gest avall i amunt et desplaçarà al darrer element."\n\n"Ara pots canviar la granularitat de lectura si et centres en un element i després selecciones una granularitat al menú contextual local."\n\n"Pots canviar les accions que duen a terme aquests gestos a la configuració de TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Afegeix una etiqueta"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Edita l\'etiqueta"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Suprimeix l\'etiqueta"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Introdueix el text que vulguis utilitzar per a aquesta imatge al camp que hi ha a continuació."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Estàs segur que vols suprimir l\'etiqueta \"<xliff:g id="LABEL">%1$s</xliff:g>\"?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Estàs segur que vols suprimir l\'etiqueta \"<xliff:g id="LABEL">%1$s</xliff:g>\" de <xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Text de l\'etiqueta"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Aquesta versió de TalkBack inclou canvis als gestos d\'accessibilitat predeterminats. Les accions associades amb aquests gestos es poden personalitzar dins de la configuració de TalkBack. Si l\'Exploració tàctil està activada, podràs utilitzar els gestos següents per dur a terme determinades accions.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Aquesta versió de TalkBack inclou canvis als gestos d\'accessibilitat predeterminats.\n\nEl gest amunt i avall et permetrà moure\'t al primer element de la pantalla, i el gest avall i amunt et desplaçarà al darrer element.\n\nAra pots canviar la granularitat de lectura si et centres en un element i després selecciones una granularitat al menú contextual local.\n\nPots canviar les accions que duen a terme aquests gestos a la configuració de TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Accepta els gestos"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Personalitza els gestos"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Vols desactivar l\'exploració tàctil?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Estàs segur que vols desactivar l\'exploració tàctil?"\n\n"El dispositiu deixarà de respondre a les dreceres gestuals o per veu quan toquis la pantalla."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Estàs segur que vols desactivar l\'exploració tàctil?\n\nEl dispositiu deixarà de respondre a les dreceres gestuals o per veu quan toquis la pantalla."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"L\'exploració tàctil no està disponible per al contingut web. Activa <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> a la configuració d\'accessibilitat per explorar el contingut web."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Menú contextual global de TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Controla TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Permís per enviar gestos a TalkBack i per reprendre els comentaris en veu alta."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Gestiona les etiquetes personalitzades de TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Permís per modificar, per suprimir les etiquetes personalitzades que TalkBack diu en veu alta i per accedir-hi."</string>
     <string name="links" msgid="5674175288909957654">"Enllaços"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Fi"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

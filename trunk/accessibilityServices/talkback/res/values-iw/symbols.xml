@@ -24,7 +24,7 @@
     <string name="symbol_en_dash" msgid="234490117412068534">"מקף בינוני"</string>
     <string name="symbol_euro" msgid="8754914286710071533">"יורו"</string>
     <string name="symbol_exclamation_mark" msgid="1423755347958355783">"סימן קריאה"</string>
-    <string name="symbol_grave_accent" msgid="6594493842492693387">"סימון הטעמה מסוג Grave"</string>
+    <string name="symbol_grave_accent" msgid="6594493842492693387">"‏סימון הטעמה מסוג Grave"</string>
     <string name="symbol_hyphen_minus" msgid="1649545825116000516">"מקף"</string>
     <string name="symbol_low_double_quote" msgid="1677227578460338049">"מירכאות כפולות תחתונות"</string>
     <string name="symbol_multiplication" msgid="596972035072689274">"סימן כפל"</string>

@@ -21,8 +21,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 /**
- * Activity for broadcasting {@link TalkBackService#ACTION_PERFORM_GESTURE} to
- * open the TalkBack breakout menu from a search button long-press.
+ * Activity for broadcasting
+ * {@link TalkBackService#ACTION_PERFORM_GESTURE_ACTION} to open the TalkBack
+ * Global Context Menu from a search button long-press.
  */
 public class ShortcutProxyActivity extends Activity {
     @Override
@@ -31,9 +32,9 @@ public class ShortcutProxyActivity extends Activity {
 
         final Intent intent = new Intent();
         intent.setPackage(getPackageName());
-        intent.setAction(TalkBackService.ACTION_PERFORM_GESTURE);
-        intent.putExtra(
-                TalkBackService.EXTRA_GESTURE_NAME, ShortcutGesture.TALKBACK_BREAKOUT.name());
+        intent.setAction(TalkBackService.ACTION_PERFORM_GESTURE_ACTION);
+        intent.putExtra(TalkBackService.EXTRA_GESTURE_ACTION,
+                ShortcutGestureAction.TALKBACK_BREAKOUT.name());
 
         sendBroadcast(intent, TalkBackService.PERMISSION_TALKBACK);
         finish();

@@ -32,8 +32,6 @@ public class AudioManagerCompatUtils {
             AudioManager.class, "abandonAudioFocus", CLASS_OnAudioFocusChangeListener);
     private static final Method METHOD_forceVolumeControlStream = CompatUtils.getMethod(
             AudioManager.class, "forceVolumeControlStream", int.class);
-    private static final Method METHOD_isSpeechRecognitionActive = CompatUtils.getMethod(
-            AudioManager.class, "isSpeechRecognitionActive");
 
     /** The audio stream for DTMF Tones */
     public static final int STREAM_DTMF = 8;
@@ -171,19 +169,5 @@ public class AudioManagerCompatUtils {
     public static int abandonAudioFocus(AudioManager receiver, Object l) {
         return (Integer) CompatUtils.invoke(receiver, AUDIOFOCUS_REQUEST_FAILED,
                 METHOD_abandonAudioFocus, l);
-    }
-
-    /**
-     * Checks whether speech recognition is active.
-     * <p>
-     * <b>Note:</b> Only supported on API 17+. Always returns {@code false} on
-     * unsupported platforms.
-     *
-     * @return {@code true} if a recording with source
-     *         {@link android.media.MediaRecorder.AudioSource#VOICE_RECOGNITION}
-     *         is underway.
-     */
-    public static boolean isSpeechRecognitionActive(AudioManager receiver) {
-        return (Boolean) CompatUtils.invoke(receiver, false, METHOD_isSpeechRecognitionActive);
     }
 }

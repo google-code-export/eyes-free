@@ -27,6 +27,9 @@ import android.text.style.URLSpan;
 
 import com.google.android.marvin.talkback.SpeechController.SpeechParam;
 
+import java.text.BreakIterator;
+import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -52,6 +55,12 @@ public class FeedbackProcessingUtils {
 
     /** The pitch scale factor value to use when announcing italic text. */
     private static final float PITCH_CHANGE_ITALIC = 1.1f;
+
+    /**
+     * Feature flag used to control whether or not we split TTS invocations at
+     * sentence boundaries. Disabled pending testing with third party engines
+     */
+    private static final boolean FEATURE_FLAG_SPLIT_ON_SENTENCES = false;
 
     /**
      * Produces a populated {@link FeedbackItem} based on rules defined within
@@ -81,8 +90,12 @@ public class FeedbackProcessingUtils {
 
         // Process the FeedbackItem
         addFormattingCharacteristics(feedbackItem);
-        splitLongText(feedbackItem);
         cleanupItemText(context, feedbackItem);
+        if (FEATURE_FLAG_SPLIT_ON_SENTENCES) {
+            splitOnSentences(feedbackItem);
+        }
+
+        splitLongText(feedbackItem);
 
         return feedbackItem;
     }
@@ -180,6 +193,41 @@ public class FeedbackProcessingUtils {
                 }
             }
         }
+    }
+
+    private static void splitOnSentences(FeedbackItem item) {
+        final BreakIterator boundary = BreakIterator.getSentenceInstance(Locale.getDefault());
+        final LinkedList<FeedbackFragment> replacementFragments =
+                new LinkedList<FeedbackFragment>();
+        for (FeedbackFragment originalFragment : item.getFragments()) {
+            final CharSequence sourceText = originalFragment.getText();
+            if (TextUtils.isEmpty(sourceText)) {
+                // Retain the original fragment for earcons/haptics.
+                replacementFragments.add(originalFragment);
+                continue;
+            }
+
+            boundary.setText(sourceText.toString());
+            int start = boundary.first();
+            int fragmentSplits = 0;
+            for (int end = boundary.next(); end != BreakIterator.DONE; start = end,
+                    end = boundary.next()) {
+                final CharSequence textSection = TextUtils.substring(sourceText, start, end);
+                final FeedbackFragment additionalFragment = new FeedbackFragment(
+                        textSection, originalFragment.getSpeechParams());
+                if (fragmentSplits == 0) {
+                    // Ensure earcons and other metadata is copied into the
+                    // original replacement fragment.
+                    copyFragmentMetadata(originalFragment, additionalFragment);
+                }
+
+                replacementFragments.add(additionalFragment);
+                fragmentSplits++;
+            }
+        }
+
+        item.clearFragments();
+        item.addAllFragments(replacementFragments);
     }
 
     private static void cleanupItemText(Context context, FeedbackItem item) {

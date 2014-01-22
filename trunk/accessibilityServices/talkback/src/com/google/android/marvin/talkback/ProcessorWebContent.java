@@ -24,8 +24,8 @@ import android.support.v4.view.accessibility.AccessibilityRecordCompat;
 import android.view.accessibility.AccessibilityEvent;
 
 import com.google.android.marvin.talkback.FullScreenReadController.AutomaticReadingState;
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
-import com.google.android.marvin.utils.AutomationUtils;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
+import com.googlecode.eyesfree.utils.AutomationUtils;
 import com.googlecode.eyesfree.utils.AccessibilityEventUtils;
 import com.googlecode.eyesfree.utils.WebInterfaceUtils;
 
