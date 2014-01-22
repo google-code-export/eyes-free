@@ -44,6 +44,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.accessibility.AccessibilityManager;
 
+import com.google.android.marvin.talkback.labeling.LabelManagerSummaryActivity;
 import com.google.android.marvin.talkback.tutorial.AccessibilityTutorialActivity;
 import com.googlecode.eyesfree.compat.os.VibratorCompatUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
@@ -57,6 +58,9 @@ import com.googlecode.eyesfree.utils.SharedPreferencesUtils;
  */
 @SuppressWarnings("deprecation")
 public class TalkBackPreferencesActivity extends PreferenceActivity {
+    /** Feature flag for showing the option to toggle web script injection. */
+    private static final boolean FEATURE_FLAG_TOGGLE_WEB_SCRIPTS = false;
+
     /** Preferences managed by this activity. */
     private SharedPreferences mPrefs;
 
@@ -75,8 +79,10 @@ public class TalkBackPreferencesActivity extends PreferenceActivity {
         fixListSummaries(getPreferenceScreen());
 
         assignTutorialIntent();
+        assignLabelManagerIntent();
 
         checkTouchExplorationSupport();
+        checkWebScriptsSupport();
         checkTelephonySupport();
         checkVibrationSupport();
         checkProximitySupport();
@@ -131,6 +137,30 @@ public class TalkBackPreferencesActivity extends PreferenceActivity {
         tutorialIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         tutorialIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         prefTutorial.setIntent(tutorialIntent);
+    }
+
+    /**
+     * Assigns the appropriate intent to the label manager preference.
+     */
+    private void assignLabelManagerIntent() {
+        final PreferenceGroup category =
+                (PreferenceGroup) findPreferenceByResId(
+                        R.string.pref_category_touch_exploration_key);
+        final Preference prefManageLabels = findPreferenceByResId(R.string.pref_manage_labels_key);
+
+        if ((category == null) || (prefManageLabels == null)) {
+            return;
+        }
+
+        if (Build.VERSION.SDK_INT < LabelManagerSummaryActivity.MIN_API_LEVEL) {
+            category.removePreference(prefManageLabels);
+            return;
+        }
+
+        final Intent labelManagerIntent = new Intent(this, LabelManagerSummaryActivity.class);
+        labelManagerIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        labelManagerIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        prefManageLabels.setIntent(labelManagerIntent);
     }
 
     /**
@@ -273,6 +303,24 @@ public class TalkBackPreferencesActivity extends PreferenceActivity {
                         ((ListPreference) preference).getValue());
 
                 preference.setOnPreferenceChangeListener(mPreferenceChangeListener);
+            }
+        }
+    }
+
+    /**
+     * Ensure that web script injection settings do not appear on devices before
+     * user-customization of web-scripts were available in the framework.
+     */
+    private void checkWebScriptsSupport() {
+        if ((!FEATURE_FLAG_TOGGLE_WEB_SCRIPTS)
+                || (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2)) {
+            // TalkBack can control web script injection on API 18+ only.
+            final PreferenceGroup category = (PreferenceGroup) findPreferenceByResId(
+                    R.string.pref_category_developer_key);
+            final Preference prefWebScripts = findPreferenceByResId(R.string.pref_web_scripts_key);
+
+            if (prefWebScripts != null) {
+                category.removePreference(prefWebScripts);
             }
         }
     }

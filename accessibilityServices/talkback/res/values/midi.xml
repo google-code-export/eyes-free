@@ -18,6 +18,13 @@
         <item>30</item>
     </integer-array>
 
+    <integer-array name="midi_view_entered">
+        <item>115</item>
+        <item>60</item>
+        <item>127</item>
+        <item>20</item>
+    </integer-array>
+
     <integer-array name="midi_scroll_tone">
         <item>13</item>
         <item>60</item>

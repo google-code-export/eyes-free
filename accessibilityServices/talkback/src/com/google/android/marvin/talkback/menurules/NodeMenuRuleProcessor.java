@@ -20,8 +20,11 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 
+import com.google.android.marvin.talkback.FeedbackItem;
 import com.google.android.marvin.talkback.R;
+import com.google.android.marvin.talkback.SpeechController;
 import com.google.android.marvin.talkback.TalkBackService;
+import com.googlecode.eyesfree.labeling.CustomLabelManager;
 import com.googlecode.eyesfree.widget.RadialMenu;
 import com.googlecode.eyesfree.widget.RadialMenuItem;
 import com.googlecode.eyesfree.widget.RadialSubMenu;
@@ -47,12 +50,18 @@ public class NodeMenuRuleProcessor {
         mRules.add(new RuleEditText());
         mRules.add(new RuleViewPager());
         mRules.add(new RuleGranularity());
+
+        if (Build.VERSION.SDK_INT >= CustomLabelManager.MIN_API_LEVEL) {
+            mRules.add(new RuleUnlabeledImage());
+        }
     }
 
     private final TalkBackService mService;
+    private final SpeechController mSpeechController;
 
     public NodeMenuRuleProcessor(TalkBackService service) {
         mService = service;
+        mSpeechController = service.getSpeechController();
     }
 
     /**
@@ -101,7 +110,9 @@ public class NodeMenuRuleProcessor {
         }
 
         if (menu.size() == 0) {
-            menu.add(mService.getString(R.string.title_local_breakout_no_items));
+            mSpeechController.speak(mService.getString(R.string.title_local_breakout_no_items),
+                    SpeechController.QUEUE_MODE_FLUSH_ALL, FeedbackItem.FLAG_NO_HISTORY, null);
+            return false;
         }
 
         return true;

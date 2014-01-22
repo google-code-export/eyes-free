@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Налады функцыі TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Калі ўключана функцыя Talkback, прылада забяспечвае зваротную сувязь гаворкай, каб дапамагчы сляпым карыстальнікам і карыстальнікам з дрэнным зрокам. Напрыклад, яна апісвае, да чаго вы дакранаецеся, што выбіраеце і актывуе."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Налады функцыі TalkBack"</string>
+    <!-- no translation found for label_manager_summary_title (6129629673621990309) -->
+    <skip />
+    <!-- no translation found for label_manager_package_title (5518823554025145373) -->
+    <skip />
+    <!-- no translation found for label_manager_no_packages_message (2531887372542054600) -->
+    <skip />
+    <!-- no translation found for label_manager_timestamp_text (5161359164826380670) -->
+    <skip />
     <string name="notification_type_text_message" msgid="2840489326612585077">"Тэкставае паведамленне"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Неадпраўленае тэкставае паведамленне"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Прапушчаны выклік"</string>
@@ -77,7 +85,11 @@
     <string name="value_no_items" msgid="3587303601074849845">"Няма элементаў."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Гаворка"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Гук гаворкі"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Прагаворваць апавяшчэнні, калі экран выключаны"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Гаварыць, калі экран выключаны"</string>
+    <!-- no translation found for summaryOn_pref_speak_screenoff (8939554146179627909) -->
+    <skip />
+    <!-- no translation found for summaryOff_pref_speak_screenoff (6148656407539902635) -->
+    <skip />
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Прамаўляць ідэнт. карыст."</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Выкарыстанне бескантактавага датчыка"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Датчык набліжэння адключае прамаўленне"</string>
@@ -89,6 +101,8 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Эксперыментальная функцыя) Націсніце на пункт у фокусе, каб выбраць"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Страсянiце, каб пачаць бесперапыннае чытанне"</string>
     <!-- no translation found for title_pref_category_manage_gestures (5457025819029526883) -->
+    <skip />
+    <!-- no translation found for title_pref_manage_labels (593992209353672625) -->
     <skip />
     <!-- no translation found for title_pref_category_touch_shortcuts (4220670726993962812) -->
     <skip />
@@ -108,6 +122,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Налады распрацоўшчыка"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Запiс узроўню выхаду"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Паказаць выхад гаворкi"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Павышэнне даступнасці вэб-сайтаў"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Спампаваць скрыпты для даступнасці вэб-кантэнту"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Працягнуць з рэжыму чакання"</string>
     <string name="axis_character" msgid="5059604520074645703">"Перайсці да сімвала."</string>
     <string name="axis_word" msgid="7745798763195184060">"Перайсці да слова."</string>
@@ -166,6 +182,8 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Старонка кiравання"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Уперад"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Назад"</string>
+    <!-- no translation found for title_labeling_controls (5329026809097946643) -->
+    <skip />
     <string name="title_summary" msgid="1892383897326964505">"Хуткая навігацыя"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Змянiць дэталізацыю"</string>
     <!-- no translation found for value_direction_down_and_left (1136254602001079211) -->
@@ -217,21 +235,41 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"Функцыя TalkBack прыпыненая"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Націсніце, каб працягнуць."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Прыпыніць функцыю TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Вы ўпэўненыя, што жадаеце прыпыніць TalkBack?"\n\n"Калі TalkBack прыпыненая, прылада не будзе забяспечваць зваротную сувязь."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Вы ўпэўненыя, што жадаеце прыпыніць TalkBack?\n\nКалі TalkBack прыпыненая, прылада не будзе забяспечваць зваротную сувязь."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Можна аднавіць TalkBack з вобразу апавяшчэнняў."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Можна аднавіць TalkBack з вобразу апавяшчэнняў або ўключыўшы экран."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Можна аднавіць TalkBack з вобразу апавяшчэння або вярнуўшыся на экран блакіроўкі."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Заўсёды паказваць гэтае папярэджанне"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Гэта версiя TalkBack уключае ў сябе змены ў першасных жэстах даступнасцi. Дзеяннi, звязаныя з гэтымi жэстамi, можна персаналiзаваць у наладах. Калi ўключана функцыя \"Вывучэнне дакрананнем\", вы можаце выкарыстоўваць наступныя жэсты, каб выканаць пэўныя дзеяннi."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <!-- no translation found for label_dialog_title_add (5382481431231127704) -->
+    <skip />
+    <!-- no translation found for label_dialog_title_edit (4092558174381892707) -->
+    <skip />
+    <!-- no translation found for label_dialog_title_remove (3378715305025501902) -->
+    <skip />
+    <!-- no translation found for label_dialog_text (1215316331086955256) -->
+    <skip />
+    <!-- no translation found for label_remove_dialog_text (3934146603628571606) -->
+    <skip />
+    <!-- no translation found for label_remove_dialog_text_app_name (2384427835919655322) -->
+    <skip />
+    <!-- no translation found for label_dialog_edit_hint (1909934608642527277) -->
+    <skip />
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Гэта версiя TalkBack уключае ў сябе змены ў першасных жэстах даступнасцi. Дзеяннi, звязаныя з гэтымi жэстамi, можна персаналiзаваць у наладах. Калi ўключана функцыя \"Вывучэнне дакрананнем\", вы можаце выкарыстоўваць наступныя жэсты, каб выканаць пэўныя дзеяннi.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
     <!-- no translation found for talkback_built_in_gesture_change_details (1504489384911892122) -->
     <skip />
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Прыняць жэсты"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Персаналiзацыя жэстаў"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Адключыць функцыю Сэнсарнага прагляду?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Вы ўпэўненыя, што жадаеце адключыць функцыю Сэнсарнага прагляду?"\n\n"Ваша прылада больш не будзе рэагаваць на жэсты або кантэкстныя элементы пры дакрананні да экрана."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Вы ўпэўненыя, што жадаеце адключыць функцыю Сэнсарнага прагляду?\n\nВаша прылада больш не будзе рэагаваць на жэсты або кантэкстныя элементы пры дакрананні да экрана."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Функцыя даведвання з дапамогай дотыка не працуе з вэб-катэнтам. Уключыце <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> у наладах доступу, каб убачыць вэб-кантэнт."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Глабальнае кантэкстнае меню TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Кiраванне TalkBack"</string>
+    <!-- no translation found for permission_talkback_desc (7998251777426211557) -->
+    <skip />
+    <!-- no translation found for permission_labeling_label (1480122506788515888) -->
+    <skip />
+    <!-- no translation found for permission_labeling_desc (2506887117365155231) -->
+    <skip />
     <string name="links" msgid="5674175288909957654">"Спасылкі"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Завяршыць"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

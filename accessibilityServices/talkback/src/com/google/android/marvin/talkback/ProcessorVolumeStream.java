@@ -29,8 +29,8 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityEvent;
 
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
 import com.google.android.marvin.talkback.TalkBackService.KeyEventListener;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.WeakReferenceHandler;
 
@@ -42,15 +42,19 @@ public class ProcessorVolumeStream implements AccessibilityEventListener, KeyEve
     /** Minimum API version required for this class to function. */
     public static final int MIN_API_LEVEL = Build.VERSION_CODES.JELLY_BEAN_MR2;
 
-    /** Default flags for volume adjustment. */
-    private static final int DEFAULT_FLAGS = (AudioManager.FLAG_SHOW_UI | AudioManager.FLAG_VIBRATE
-            | AudioManager.FLAG_PLAY_SOUND);
+    /** Default flags for volume adjustment while touching the screen. */
+    private static final int DEFAULT_FLAGS_TOUCHING_SCREEN = (AudioManager.FLAG_SHOW_UI
+            | AudioManager.FLAG_VIBRATE);
+
+    /** Default flags for volume adjustment while not touching the screen. */
+    private static final int DEFAULT_FLAGS_NOT_TOUCHING_SCREEN = (AudioManager.FLAG_SHOW_UI
+            | AudioManager.FLAG_VIBRATE | AudioManager.FLAG_PLAY_SOUND);
 
     /** Stream to control when the user is touching the screen. */
     private static final int STREAM_TOUCHING_SCREEN = SpeechController.DEFAULT_STREAM;
 
     /** Stream to control when the user is not touching the screen. */
-    private static final int STREAM_DEFAULT = AudioManager.STREAM_RING;
+    private static final int STREAM_DEFAULT = AudioManager.USE_DEFAULT_STREAM_TYPE;
 
     /** Tag used for identification of the wake lock held by this class */
     private static final String WL_TAG = ProcessorVolumeStream.class.getSimpleName();
@@ -70,6 +74,12 @@ public class ProcessorVolumeStream implements AccessibilityEventListener, KeyEve
      */
     private final CursorController mCursorController;
 
+    /**
+     * Feedback controller for providing feedback on boundaries during volume
+     * key navigation.
+     */
+    private final MappedFeedbackController mFeedbackController;
+
     /** Handler used for processing long-press key events */
     private final LongPressHandler mLongPressHandler;
 
@@ -84,6 +94,7 @@ public class ProcessorVolumeStream implements AccessibilityEventListener, KeyEve
         mContext = service;
         mAudioManager = (AudioManager) service.getSystemService(Context.AUDIO_SERVICE);
         mCursorController = service.getCursorController();
+        mFeedbackController = service.getFeedbackController();
         mLongPressHandler = new LongPressHandler(this);
 
         final PowerManager pm = (PowerManager) service.getSystemService(Context.POWER_SERVICE);
@@ -196,13 +207,20 @@ public class ProcessorVolumeStream implements AccessibilityEventListener, KeyEve
                 mCursorController.setGranularity(CursorGranularity.CHARACTER, false /* fromUser */);
             }
 
+            boolean result = false;
             if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-                return mCursorController.next(false /* shouldWrap */, false /* shouldScroll */);
+                result = mCursorController.next(false /* shouldWrap */, false /* shouldScroll */);
             } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-                return mCursorController.previous(false /* shouldWarp */, false /* shouldScroll */);
+                result = mCursorController.previous(
+                        false /* shouldWarp */, false /* shouldScroll */);
             }
 
-            return false;
+            if (!result) {
+                mFeedbackController.playAuditory(R.id.sounds_complete);
+            }
+
+            // Consume the key event, even if navigation in the EditText failed
+            return true;
         } finally {
             AccessibilityNodeInfoUtils.recycleNodes(currentNode);
         }
@@ -213,13 +231,15 @@ public class ProcessorVolumeStream implements AccessibilityEventListener, KeyEve
                 : AudioManager.ADJUST_LOWER);
 
         if (mTouchingScreen) {
-            mAudioManager.adjustStreamVolume(STREAM_TOUCHING_SCREEN, direction, DEFAULT_FLAGS);
+            mAudioManager.adjustStreamVolume(
+                    STREAM_TOUCHING_SCREEN, direction, DEFAULT_FLAGS_TOUCHING_SCREEN);
         } else {
             // Attempt to adjust the suggested stream, but let the system
             // override in special situations like during voice calls, when an
             // application has locked the volume control stream, or when music
             // is playing.
-            mAudioManager.adjustSuggestedStreamVolume(direction, STREAM_DEFAULT, DEFAULT_FLAGS);
+            mAudioManager.adjustSuggestedStreamVolume(
+                    direction, STREAM_DEFAULT, DEFAULT_FLAGS_NOT_TOUCHING_SCREEN);
         }
     }
 

@@ -18,6 +18,7 @@ package com.google.android.marvin.talkback.tutorial;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
@@ -30,9 +31,11 @@ import com.google.android.marvin.talkback.R;
 /**
  * A tutorial lesson that introduces using a finger to explore and interact with
  * on-screen content.
+ *
+ * @author alanv@google.com (Alan Viverette)
  */
 @SuppressLint("ViewConstructor")
-@TargetApi(16)
+@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 class TouchTutorialModule1 extends TutorialModule {
     private static final int TARGET_POSITION = 0;
 
@@ -189,8 +192,32 @@ class TouchTutorialModule1 extends TutorialModule {
     }
 
     @Override
-    public void onShown() {
+    public void onStart() {
+        super.onStart();
+
+        AccessibilityTutorialActivity.setAllowContextMenus(false);
+
         onTrigger0();
+    }
+
+    @Override
+    public void onPause() {
+        // Do nothing.
+    }
+
+    @Override
+    public void onResume() {
+        // Do nothing.
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        mAllApps.setAccessibilityDelegate(null);
+        mAllApps.setOnItemClickListener(null);
+
+        AccessibilityTutorialActivity.setAllowContextMenus(true);
     }
 
     /**

@@ -3,15 +3,29 @@
     <!--The human-readable name of this service. Do not translate. -->
     <string name="talkback_title" translatable="false">TalkBack</string>
     <!--
+      Source: A brief description of TalkBack.
+      Description: This is presented to the user on the accessibility settings view. [CHAR LIMIT="NONE"]
+    -->
+    <string name="talkback_service_description">When TalkBack is on, your device provides spoken feedback to help blind and low-vision users. For example, it describes what you touch, select, and activate.</string>
+    <!--
       Source: Title for the activity that manages TalkBack settings.
       Description: This is presented to the user when managing TalkBack settings. [CHAR LIMIT="NONE"]
     -->
     <string name="talkback_preferences_title">TalkBack Settings</string>
     <!--
-      Source: A brief description of TalkBack.
-      Description: This is presented to the user on the accessibility settings view. [CHAR LIMIT="NONE"]
+      Source: Title for the summary activity that manages TalkBack custom labels.
+      Description: This is presented to the user when viewing a summary of TalkBack custom labels. [CHAR LIMIT="NONE"]
     -->
-    <string name="talkback_service_description">When TalkBack is on, your device provides spoken feedback to help blind and low-vision users. For example, it describes what you touch, select, and activate.</string>
+    <string name="label_manager_summary_title">Manage Custom Labels</string>
+    <!--
+      Source: Title for the activity that manages TalkBack custom labels for a specific package.
+      Description: This is presented to the user when managing TalkBack custom labels for a package. [CHAR LIMIT="NONE"]
+    -->
+    <string name="label_manager_package_title">Manage Labels for <xliff:g id="applicationLabel" example="Gmail">%1$s</xliff:g></string>
+    <!-- A message on the label manager package summary screen when there are no packages with labels. -->
+    <string name="label_manager_no_packages_message">There are currently no custom labels. You can create one by navigating to an unlabeled image and then adding a label from the Local Context Menu.</string>
+    <!-- A label for the timestamp of when a custom label was stored or last modified. -->
+    <string name="label_manager_timestamp_text">Last modified <xliff:g id="timestamp" example="1/1/11 11:11 AM">%1$s</xliff:g></string>
     <!-- NOTIFICATIONS -->
     <!--
       Source: A notification for a new text message (SMS) has appeared on the status bar.
@@ -329,7 +343,17 @@
       Source: Preference for customizing how to speak when the screen is off.
       Description: The user can check or not check this. [CHAR LIMIT=40]
     -->
-    <string name="title_pref_speak_screenoff">Speak notifications when screen is off</string>
+    <string name="title_pref_speak_screenoff">Speak when screen is off</string>
+    <!--
+      Source: Summary subtext for the Speak when screen is off setting.
+      Description: Explains that the device will speak the text of notifications, even when the screen is off. [CHAR LIMIT="NONE"]
+    -->
+    <string name="summaryOn_pref_speak_screenoff">Notifications are spoken when the screen is off</string>
+    <!--
+      Source: Summary subtext for the Speak when screen is off setting.
+      Description: Explains that the device will never produce speech when the screen is off. [CHAR LIMIT="NONE"]
+    -->
+    <string name="summaryOff_pref_speak_screenoff">No speech occurs when the screen is off</string>
     <!--
       Source: Preference for setting up if to announce the caller ID.
       Description: The user can check or not check this. [CHAR LIMIT=40]
@@ -370,6 +394,8 @@
     <string name="title_pref_shake_to_read_threshold">Shake to start continuous reading</string>
     <!-- Label for the PreferenceScreen used to manage TalkBack's gesture mapping. [CHAR LIMIT=40] -->
     <string name="title_pref_category_manage_gestures">Manage gestures</string>
+    <!-- Label for the button to launch an activity for managing TalkBack's custom view labels. [CHAR LIMIT=40] -->
+    <string name="title_pref_manage_labels">Manage custom labels</string>
     <!-- Category for assigning shortcuts to touch gestures. [CHAR LIMIT=40] -->
     <string name="title_pref_category_touch_shortcuts">Shortcut gestures</string>
     <!-- Category for changing the mapping of built-in gestures. [CHAR LIMIT=40] -->
@@ -438,11 +464,23 @@
     <string name="title_pref_log_level">Log output level</string>
     <!--
       Source: Preference title.
-      Description: This preference allows the user to show speech output on the screen. -->
+      Description: This preference allows the user to show speech output on the screen.
+    -->
     <string name="title_pref_tts_overlay">Display speech output</string>
     <!--
       Source: Preference title.
-      Description: This preference allows the user to specify when TalkBack resumes from a suspended state. -->
+      Description: This preference allows developers to disable or enable the injection of accessibility scripts into web content.
+    -->
+    <string name="title_pref_web_scripts">Enhance web accessibility</string>
+    <!--
+      Source: Preference description.
+      Description: This preference allows developers to disable or enable the injection of accessibility scripts into web content.
+    -->
+    <string name="summary_pref_web_scripts">Download accessibility scripts for web content</string>
+    <!--
+      Source: Preference title.
+      Description: This preference allows the user to specify when TalkBack resumes from a suspended state
+    -->
     <string name="title_pref_resume_talkback">Resume from suspend</string>
     <!-- AXIS  -->
     <!--
@@ -496,10 +534,6 @@
       Description: Announced when the user changes the granularity of reading a web page to the default webview behavior. [CHAR LIMIT="NONE"]
     -->
     <string name="axis_default_web_view_behavior">Navigate by default web view behavior.</string>
-    <!-- Title for the dialog that warns users about turning on Explore by touch. -->
-    <string name="attention">Attention</string>
-    <!-- Message for the dialog shown when the user launches the tutorial without turning on Accessibility. -->
-    <string name="requires_talkback">This tutorial requires Explore by touch. Please turn TalkBack on and enable Explore by touch before launching the tutorial.</string>
 
     <!-- Announced when the user changes reading mode to read an entire object at a time. -->
     <string name="granularity_default">Default granularity</string>
@@ -597,10 +631,29 @@
     <string name="title_viewpager_breakout_next_page">Next page</string>
     <!-- Label for the menu item to move to the previous page within a ViewPager control. [CHAR_LIMIT=40] -->
     <string name="title_viewpager_breakout_prev_page">Previous page</string>
+    <!-- Label for the local breakout menu containing controls for managing user defined labels for unlabeled items [CHAR_LIMIT=40] -->
+    <string name="title_labeling_controls">Label controls</string>
     <!-- Label for the menu item that lets the user quickly navigate through all on-screen items. [CHAR_LIMIT=40] -->
     <string name="title_summary">Quick navigation</string>
     <!-- Label for the menu item that lets the user change the navigation granularity (ex. character, word). [CHAR_LIMIT=40] -->
     <string name="title_granularity">Change granularity</string>
+
+    <!-- Label for the direction of the "swipe down then left" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_down_and_left">down then left</string>
+    <!-- Label for the direction of the "swipe down then right" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_down_and_right">down then right</string>
+    <!-- Label for the direction of the "swipe up then left" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_up_and_left">up then left</string>
+    <!-- Label for the direction of the "swipe up then right" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_up_and_right">up then right</string>
+    <!-- Label for the direction of the "swipe right then down" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_right_and_down">right then down</string>
+    <!-- Label for the direction of the "swipe right then up" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_right_and_up">right then up</string>
+    <!-- Label for the direction of the "swipe left then down" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_left_and_down">left then down</string>
+    <!-- Label for the direction of the "swipe left then up" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
+    <string name="value_direction_left_and_up">left then up</string>
 
     <!-- Label for the preference that assigns an action to the "swipe down then left" gesture. [CHAR_LIMIT=40] -->
     <string name="title_pref_shortcut_down_and_left">Swipe down then left</string>
@@ -660,25 +713,25 @@
 
     <!--
       Source: Title of a notification that a preferences-manager application exists.
-      Description: Allows the user to choose to download a preferences manager application. [CHAR LIMIT=30]
+      Description: Allows the user to choose to download a preferences manager application. [CHAR_LIMIT=30]
     -->
     <string name="title_talkback_settings_available">Accessibility Preferences available</string>
 
     <!--
       Source: Description of a notification that a preferences-manager application exists.
-      Description: Allows the user to choose to download a preferences manager application. [CHAR LIMIT=70]
+      Description: Allows the user to choose to download a preferences manager application. [CHAR_LIMIT=70]
     -->
     <string name="message_talkback_settings_available">Tap to download the Accessibility Preferences application.</string>
 
     <!--
       Source: Title of a notification that TalkBack's gestures have been changed.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=30]
+      Description: Displays a more detailed notification with information about gesture changes [CHAR_LIMIT=30]
     -->
     <string name="notification_title_talkback_gestures_changed">TalkBack gestures changed</string>
 
     <!--
       Source: Description of a notification that TalkBack's gestures have been changed.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=70]
+      Description: Displays a more detailed notification with information about gesture changes [CHAR_LIMIT=70]
     -->
     <string name="notification_message_talkback_gestures_changed">Tap to review changes to accessibility gestures</string>
 
@@ -699,6 +752,21 @@
     <string name="message_resume_keyguard">You can resume TalkBack from the notifications shade or by returning to the lock screen.</string>
     <!-- Checkbox label for the preference in the suspend dialog that keeps the warning shown for future suspensions. -->
     <string name="show_suspend_warning_label">Always show this warning</string>
+
+    <!-- Title for the alert shown when a user adds a custom label for an unlabeled view. [CHAR_LIMIT=40] -->
+    <string name="label_dialog_title_add">Add label</string>
+    <!-- Title for the alert shown when a user edits a custom label for an unlabeled view. [CHAR_LIMIT=40] -->
+    <string name="label_dialog_title_edit">Edit label</string>
+    <!-- Title for the alert shown when a user removes a custom label for an unlabeled view. [CHAR_LIMIT=40] -->
+    <string name="label_dialog_title_remove">Remove label</string>
+    <!-- Text that appears in the alert shown when a user adds or edits a custom label for an unlabeled view. -->
+    <string name="label_dialog_text">Enter the text to be used for this image in the field below.</string>
+    <!-- Text that appears in the alert shown when a user removes a custom label for an unlabeled view. -->
+    <string name="label_remove_dialog_text">Are you sure you want to remove the \"<xliff:g id="label" example="profile picture">%1$s</xliff:g>\" label?</string>
+    <!-- Text that appears in the alert shown when a user removes a custom label for an unlabeled view. -->
+    <string name="label_remove_dialog_text_app_name">Are you sure you want to remove the \"<xliff:g id="label" example="profile picture">%1$s</xliff:g>\" label within <xliff:g id="app_name" example="Google+">%2$s</xliff:g>?</string>
+    <!-- Hint text that appears in the edit box within the alert shown when a user adds or edits a custom label for an unlabeled view. [CHAR_LIMIT=80] -->
+    <string name="label_dialog_edit_hint">Label text</string>
 
     <!--
       Source: Description of a notification that TalkBack's gestures have been changed.
@@ -731,6 +799,15 @@
 
     <!-- Label for the permission that allows an application to control TalkBack. -->
     <string name="permission_talkback_label">Control TalkBack</string>
+
+    <!-- Description for the permission that allows an application to control TalkBack. -->
+    <string name="permission_talkback_desc">Permission to send gestures to TalkBack and resume spoken feedback.</string>
+
+    <!-- Label for the permission that allows an application to store and retrieve custom view labels used in TalkBack. -->
+    <string name="permission_labeling_label">Manage TalkBack custom labels</string>
+
+    <!-- Description for the permission that allows an application to store and retrieve custom view labels used in TalkBack. [CHAR LIMIT=150] -->
+    <string name="permission_labeling_desc">Permission to access, modify, and delete custom labels spoken by TalkBack.</string>
 
     <!-- Label for the sub-menu that contains URLs and email addresses extracted from the currently focused text. -->
     <string name="links">Links</string>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack-instellings"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Wanneer Talkback aan is, gee jou toestel gesproke terugvoer om blinde en swaksiende gebruikers te help. Byvoorbeeld, dit beskryf wat jy raak, kies en aktiveer."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack-instellings"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Bestuur gepasmaakte etikette"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Bestuur etikette vir <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Daar is tans geen gepasmaakte etikette nie. Jy kan een skep deur na \'n prent sonder \'n etiket te navigeer en dan \'n etiket uit die plaaslike konteksmenu by te voeg."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Laas gewysig teen <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Teksboodskap"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Ongestuurde teksboodskap"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Gemiste oproep"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Geen items nie."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Spraak"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Spraakvolume"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Praatkennisgewings wanneer skerm af is"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Praat wanneer skerm af is"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Kennisgewings word gesê wanneer die skerm af is"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Geen spraak kom voor wanneer die skerm af is nie"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Sê beller-ID"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Gebruik nabyheidsensor"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Nabyheidsensor maak spraak stil"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Eksperimenteel) Tik op die item wat tans gefokus is om te kies"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Skud om deurlopende lees te begin"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Bestuur gebare"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Bestuur gepasmaakte etikette"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Kortpad-gebare"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Ingeboude gebare"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Gebruik toonhoogteveranderings"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Ontwikkelaarsinstellings"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Log afvoervlak"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Vertoon spraakuitvoer"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Verbeter webtoeganklikheid"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Laai toeganklikheidskripte vir webinhoud af"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Hervat vanaf opskorting"</string>
     <string name="axis_character" msgid="5059604520074645703">"Navigeer volgens karakter."</string>
     <string name="axis_word" msgid="7745798763195184060">"Navigeer volgens woord."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Bladsy-kontroles"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Volgende bladsy"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Vorige bladsy"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Etiketkontroles"</string>
     <string name="title_summary" msgid="1892383897326964505">"Vinnige navigasie"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Verander korrelrigheid"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"eers af dan links"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack is opgeskort"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Tik om te hervat."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Skort TalkBack op?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Is jy seker dat jy TalkBack wil opskort?"\n\n"Terwyl TalkBack opgeskort is, sal jou toestel nie terugvoer voorsien nie."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Is jy seker dat jy TalkBack wil opskort?\n\nTerwyl TalkBack opgeskort is, sal jou toestel nie terugvoer voorsien nie."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Jy kan TalkBack hervat vanuit die kennisgewingskerm."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Jy kan TalkBack hervat vanuit die kennisgewingskerm of deur die skerm aan te skakel."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Jy kan TalkBack hervat vanuit die kennisgewingskerm of deur terug te gaan na die sluitskerm."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Wys altyd hierdie waarskuwing"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Hierdie weergawe van TalkBack sluit in veranderinge aan die verstek toeganklikheidsgebare. Die handelinge wat met daardie gebare geassosieer word, kan binne TalkBack-instellings gepasmaak word. Wanneer Verken-met-aanraak geaktiveer is, kan jy die volgende gebare gebruik om bepaalde handelinge uit te voer."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Hierdie weergawe van TalkBack sluit in veranderinge aan die verstek toeganklikheidsgebare."\n\n"Met die eers-op-dan-af-gebaar beweeg jy na die eerste item op die skerm, en die eers-af-dan-op-gebaar beweeg na die laaste item."\n\n"Die leesgrein kan nou verander word deur op \'n item te fokus en die grein van die plaaslike kontekskieslys af te kies."\n\n"Jy kan verander watter handelinge hierdie gebare uitvoer, in TalkBack-instellings."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Voeg etiket by"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Redigeer etiket"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Verwyder etiket"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Voer die teks wat vir hierdie prent gebruik moet word in die veld hieronder in."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Is jy seker jy wil die \"<xliff:g id="LABEL">%1$s</xliff:g>\"-etiket verwyder?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Is jy seker jy wil die \"<xliff:g id="LABEL">%1$s</xliff:g>\"-etiket binne <xliff:g id="APP_NAME">%2$s</xliff:g> verwyder?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Etiketteks"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Hierdie weergawe van TalkBack sluit in veranderinge aan die verstek toeganklikheidsgebare. Die handelinge wat met daardie gebare geassosieer word, kan binne TalkBack-instellings gepasmaak word. Wanneer Verken-met-aanraak geaktiveer is, kan jy die volgende gebare gebruik om bepaalde handelinge uit te voer.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Hierdie weergawe van TalkBack sluit in veranderinge aan die verstek toeganklikheidsgebare.\n\nMet die eers-op-dan-af-gebaar beweeg jy na die eerste item op die skerm, en die eers-af-dan-op-gebaar beweeg na die laaste item.\n\nDie leesgrein kan nou verander word deur op \'n item te fokus en die grein van die plaaslike kontekskieslys af te kies.\n\nJy kan verander watter handelinge hierdie gebare uitvoer, in TalkBack-instellings."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Aanvaar gebare"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Pasmaak gebare"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Deaktiveer \"Verken deur aanraking\"?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Is jy seker jy wil \"Verken deur aanraking\" afskakel?"\n\n"Jou toestel sal nie meer op kortpadgebare of praatitems reageer wanneer jy aan die skerm raak nie."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Is jy seker jy wil \"Verken deur aanraking\" afskakel?\n\nJou toestel sal nie meer op kortpadgebare of praatitems reageer wanneer jy aan die skerm raak nie."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Verken deur raak is nie in web-inhoud beskikbaar nie. Skakel <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> in Toeganklikheidsinstellings aan om web-inhoud te verken."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"TalkBack se globale konteks-kieslys"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Beheer TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Toestemming om gebare na TalkBack te stuur en gesproke terugvoer te hervat."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Bestuur TalkBack se gepasmaakte etikette"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Toestemming om toegang tot gepasmaakte etikette uitgespreek deur TalkBack te verkry, dit te wysig en dit uit te vee."</string>
     <string name="links" msgid="5674175288909957654">"Skakels"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Einde"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

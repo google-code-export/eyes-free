@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack-innstillinger"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Når Talkback er slått på, gir enheten talte tilbakemeldinger for å hjelpe svaksynte og blinde brukere. Enheten beskriver for eksempel hva du trykker på, velger og aktiverer."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack-innstillinger"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Administrer spesialtilpassede etiketter"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Administrer etiketter for <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Det er for øyeblikket ingen spesialtilpassede etiketter. Du kan opprette en ved å navigere til et umerket bilde og legge til en etikett fra den lokale kontekstmenyen."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Sist endret <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Tekstmelding"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Ingen sendt tekstmelding"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Tapt anrop"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Ingen elementer."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Tale"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Talevolum"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Uttal varsler når skjermen er slått av"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Snakk når skjermen er av"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Varsler leses høyt når skjermen er slått av"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Ingen tale når skjermen er slått av"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Les opp anrops-ID"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Bruk avstandssensor"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Avstandssensoren deaktiverer talefunksjonen"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Eksperimentelt) Trykk på elementet fokuset ligger på for å velge det"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Rist for å starte kontinuerlig lesing"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Administrer bevegelser"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Administrer spesialtilpassede etiketter"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Snarveisbevegelser"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Innebygde bevegelser"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Bruk tonehøydeendringer"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Utviklerinnstillinger"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Utdatanivå for loggen"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Vis utdata for tale"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Forbedre nettilgjengelighet"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Last ned tilgjengelighetsskript for nettinnhold"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Aktiver TalkBack igjen"</string>
     <string name="axis_character" msgid="5059604520074645703">"Naviger etter tegn."</string>
     <string name="axis_word" msgid="7745798763195184060">"Naviger etter ord."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Sidekontroller"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Neste side"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Forrige side"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Etikettkontroller"</string>
     <string name="title_summary" msgid="1892383897326964505">"Hurtignavigering"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Endre detaljnivå"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"ned og til venstre"</string>
@@ -203,21 +213,31 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack er stengt"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Trykk for å gjenoppta."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Vil du stenge TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Er du sikker på at du vil deaktivere TalkBack?"\n\n"Så lenge TalkBack er deaktivert, får du ikke tilbakemeldinger fra enheten."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Er du sikker på at du vil deaktivere TalkBack?\n\nSå lenge TalkBack er deaktivert, får du ikke tilbakemeldinger fra enheten."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Du kan aktivere TalkBack igjen fra varselskyggen."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Du kan aktivere TalkBack igjen fra varselskyggen eller ved å slå på skjermen."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Du kan aktivere TalkBack igjen fra varselskyggen eller ved å gå tilbake til låseskjermen."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Vis alltid denne advarselen"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Denne versjonen av TalkBack inkluderer endringer i tilgjengelighetsbevegelsene som er angitt som standard. Handlingene som er knyttet til disse bevegelsene kan tilpasses i TalkBack-innstillingene. Når Utforsk ved å trykke er aktivert, kan du bruke følgende bevegelser for å utføre visse handlinger."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Denne versjonen av TalkBack inneholder endringer til bevegelsene som er satt som standard."\n\n"Opp-så-ned-bevegelsen gjør det mulig å bevege seg til det første elementet på skjermen, og ned-så-opp-bevegelsen tar deg til siste element."\n\n"Lesedetaljnivået kan nå endres ved å fokusere på et element og deretter velge et detaljnivå fra den lokal kontekstmenyen."\n\n"Du kan endre handlingene som er utført med disse bevegelsene i TalkBack-innstillingene."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Legg til etikett"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Rediger etikett"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Fjern etikett"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Skriv inn teksten som skal brukes for dette bildet i feltet nedenfor."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Er du sikker på at du vil fjerne etiketten «<xliff:g id="LABEL">%1$s</xliff:g>»?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Er du sikker på at du vil fjerne etiketten «<xliff:g id="LABEL">%1$s</xliff:g>» fra <xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Etikett-tekst"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Denne versjonen av TalkBack inkluderer endringer i tilgjengelighetsbevegelsene som er angitt som standard. Handlingene som er knyttet til disse bevegelsene kan tilpasses i TalkBack-innstillingene. Når Utforsk ved å trykke er aktivert, kan du bruke følgende bevegelser for å utføre visse handlinger.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Denne versjonen av TalkBack inneholder endringer til bevegelsene som er satt som standard.\n\nOpp-så-ned-bevegelsen gjør det mulig å bevege seg til det første elementet på skjermen, og ned-så-opp-bevegelsen tar deg til siste element.\n\nLesedetaljnivået kan nå endres ved å fokusere på et element og deretter velge et detaljnivå fra den lokal kontekstmenyen.\n\nDu kan endre handlingene som er utført med disse bevegelsene i TalkBack-innstillingene."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Godta bevegelser"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Tilpass bevegelser"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Vil du deaktivere Utforsk ved å trykke?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Er du sikker på at du vil slå av Utforsk ved å trykke? "\n\n"Enheten kommer ikke lenger til å reagere på snarveisbevegelser eller snakke når du berører på skjermen."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Er du sikker på at du vil slå av Utforsk ved å trykke? \n\nEnheten kommer ikke lenger til å reagere på snarveisbevegelser eller snakke når du berører på skjermen."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Utforsk ved å trykke er ikke tilgjengelig i nettinnhold. Slå på <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> i tilgjengelighetsinnstillingene for å utforske nettinnhold."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"TalkBack-menyen for global kontekst"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Kontrollering av TalkBack"</string>
-    <string name="links" msgid="5674175288909957654">"Koblinger"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Tillatelse til å sende bevegelser til TalkBack og gjenoppta muntlig tilbakemelding."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Administrer spesialtilpassede etiketter fra TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Tillatelse til å få tilgang til, endre og slette spesialtilpassede etiketter som uttales av TalkBack."</string>
+    <string name="links" msgid="5674175288909957654">"Linker"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Slutt"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>
 </resources>

@@ -24,6 +24,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -85,6 +86,8 @@ public class TalkBackShortcutPreferencesActivity extends PreferenceActivity {
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         // Populate lists of available mapping keys and values
         for (int id : GESTURE_PREF_KEY_IDS) {
             mGesturePrefKeys.add(getString(id));
@@ -96,6 +99,20 @@ public class TalkBackShortcutPreferencesActivity extends PreferenceActivity {
 
         addPreferencesFromResource(R.xml.gesture_preferences);
         fixListSummaries(getPreferenceScreen());
+    }
+
+    /**
+     * Finishes the activity when the up button is pressed on the action bar.
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**

@@ -18,7 +18,6 @@ package com.google.android.marvin.talkback;
 
 import android.accessibilityservice.AccessibilityService;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
@@ -28,12 +27,10 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
-import com.googlecode.eyesfree.compat.CompatUtils;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoRef;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
-import com.googlecode.eyesfree.utils.NodeFilter;
 import com.googlecode.eyesfree.utils.NodeFocusFinder;
 import com.googlecode.eyesfree.utils.SharedPreferencesUtils;
 import com.googlecode.eyesfree.utils.WebInterfaceUtils;
@@ -55,13 +52,6 @@ public class CursorController implements AccessibilityEventListener {
 
     /** Represents navigation to previous element. */
     private static final int NAVIGATION_DIRECTION_PREVIOUS = -1;
-
-    /**
-     * Class for Samsung's TouchWiz implementation of AbsListView. May be
-     * {@code null} on non-Samsung devices.
-     */
-    private static final Class<?> CLASS_TOUCHWIZ_TWABSLISTVIEW = CompatUtils.getClass(
-            "com.sec.android.touchwiz.widget.TwAbsListView");
 
     /** Set of "seen" nodes used for eliminating duplicates during navigation. */
     private final HashSet<AccessibilityNodeInfoCompat> mNavigateSeenNodes =
@@ -533,8 +523,8 @@ public class CursorController implements AccessibilityEventListener {
 
             // If the current item is at the edge of a scrollable view, try to
             // automatically scroll the view in the direction of navigation.
-            if (shouldScroll && AccessibilityNodeInfoUtils.isEdgeListItem(
-                    mService, current, edgeDirection, FILTER_AUTO_SCROLL)
+            if (shouldScroll && AccessibilityNodeInfoUtils.isAutoScrollEdgeListItem(
+                    mService, current, edgeDirection)
                     && attemptScrollAction(scrollDirection)) {
                 return true;
             }
@@ -706,34 +696,6 @@ public class CursorController implements AccessibilityEventListener {
                 : AccessibilityNodeInfoCompat.ACTION_PREVIOUS_HTML_ELEMENT;
         return node.performAction(action);
     }
-
-    /**
-     * Filter that defines which types of views should be auto-scrolled.
-     * Generally speaking, only accepts views that are capable of showing
-     * partially-visible data.
-     * <p>
-     * Accepts the following classes (and sub-classes thereof):
-     * <ul>
-     * <li>{@link android.widget.AbsListView} (and Samsung's TwAbsListView)
-     * <li>{@link android.widget.AbsSpinner}
-     * <li>{@link android.widget.ScrollView}
-     * <li>{@link android.widget.HorizontalScrollView}
-     * </ul>
-     * <p>
-     * Specifically excludes {@link android.widget.AdapterViewAnimator} and
-     * sub-classes, since they represent overlapping views. Also excludes
-     * {@link android.support.v4.view.ViewPager} since it exclusively represents
-     * off-screen views.
-     */
-    private static final NodeFilter FILTER_AUTO_SCROLL = new NodeFilter() {
-        @Override
-        public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
-            return AccessibilityNodeInfoUtils.nodeMatchesAnyClassByType(context, node,
-                    android.widget.AbsListView.class, android.widget.AbsSpinner.class,
-                    android.widget.ScrollView.class, android.widget.HorizontalScrollView.class,
-                    CLASS_TOUCHWIZ_TWABSLISTVIEW);
-        }
-    };
 
     interface CursorControllerListener {
         public void onGranularityChanged(CursorGranularity granularity, boolean fromUser);

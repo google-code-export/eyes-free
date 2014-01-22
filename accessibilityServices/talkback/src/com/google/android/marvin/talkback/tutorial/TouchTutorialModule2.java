@@ -19,6 +19,7 @@ package com.google.android.marvin.talkback.tutorial;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
@@ -31,9 +32,11 @@ import com.google.android.marvin.talkback.tutorial.InstrumentedListView.ListView
 /**
  * A tutorial lesson that introduces using two fingers to scroll through a list
  * and using scroll forward and backward gestures.
+ *
+ * @author alanv@google.com (Alan Viverette)
  */
 @SuppressLint("ViewConstructor")
-@TargetApi(16)
+@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 class TouchTutorialModule2 extends TutorialModule {
     private static final int MIN_SCROLLED_ITEMS = 4;
 
@@ -171,13 +174,37 @@ class TouchTutorialModule2 extends TutorialModule {
 
         setSkipVisible(false);
         setBackVisible(true);
-        setNextVisible(false);
-        setFinishVisible(true);
+        setNextVisible(true);
+        setFinishVisible(false);
     }
 
     @Override
-    public void onShown() {
+    public void onStart() {
+        super.onStart();
+
+        AccessibilityTutorialActivity.setAllowContextMenus(false);
+
         onTrigger0();
+    }
+
+    @Override
+    public void onPause() {
+        // Do nothing.
+    }
+
+    @Override
+    public void onResume() {
+        // Do nothing.
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        mAllApps.setAccessibilityDelegate(null);
+        mAllApps.setInstrumentation(null);
+
+        AccessibilityTutorialActivity.setAllowContextMenus(true);
     }
 
     private void onTrigger0() {
@@ -225,6 +252,6 @@ class TouchTutorialModule2 extends TutorialModule {
     private void onTrigger6() {
         // This is the last trigger in this lesson.
         addInstruction(R.string.accessibility_tutorial_lesson_2_text_7,
-                true, getContext().getString(R.string.accessibility_tutorial_finish));
+                true, getContext().getString(R.string.accessibility_tutorial_next));
     }
 }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Setelan TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Saat TalkBack aktif, perangkat Anda menyediakan masukan lisan untuk membantu pengguna yang buta dan memiliki penglihatan kurang baik. Misalnya, TalkBack menguraikan apa yang disentuh, dipilih, dan diaktifkan."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Setelan TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Mengelola Label Khusus"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Mengelola Label untuk <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Tidak ada label khusus saat ini. Anda dapat membuatnya dengan menavigasi ke gambar yang tidak berlabel kemudian menambahkan label dari Menu Konteks Lokal."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Terakhir diubah <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Pesan teks"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Pesan teks yang tidak terkirim"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Panggilan tak terjawab"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Tidak ada item."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Ucapan"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Volume ucapan"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Ucapkan pemberitahuan saat layar mati"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Ucapkan saat layar mati"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Pemberitahuan diucapkan saat layar mati"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Tidak ada ucapan ketika layar mati"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Ucapkan ID penelepon"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Gunakan sensor kedekatan"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Sensor kedekatan mensenyapkan suara"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Eksperimental) Ketuk item yang saat ini disorot untuk memilih"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Goyang untuk mulai terus membaca"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Kelola isyarat"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Mengelola label khusus"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Isyarat pintasan"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Isyarat yang ada di dalam"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Gunakan perubahan tinggi nada"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Setelan pengembang"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Tingkat keluaran log"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Tampilkan keluaran ucapan"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Meningkatkan aksesibilitas web"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Unduh skrip aksesibilitas untuk konten web"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Lanjutkan dari penangguhan"</string>
     <string name="axis_character" msgid="5059604520074645703">"Navigasi berdasarkan karakter."</string>
     <string name="axis_word" msgid="7745798763195184060">"Navigasi berdasarkan kata."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Kontrol laman"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Laman berikutnya"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Laman sebelumnya"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Kontrol label"</string>
     <string name="title_summary" msgid="1892383897326964505">"Navigasi cepat"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Ubah perincian"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"ke bawah lalu ke kiri"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack ditangguhkan"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Ketuk untuk melanjutkan."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Tangguhkan TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Yakin ingin menanggguhkan TalkBack?"\n\n"Saat TalkBack ditangguhkan, perangkat Anda tidak akan menyediakan masukan."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Yakin ingin menanggguhkan TalkBack?\n\nSaat TalkBack ditangguhkan, perangkat Anda tidak akan menyediakan masukan."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Anda dapat melanjutkan TalkBack dari bayangan pemberitahuan."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Anda dapat melanjutkan TalkBack dari bayangan pemberitahuan atau dengan mengaktifkan layar."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Anda dapat melanjutkan TalkBack dari bayangan pemberitahuan atau dengan kembali ke layar penguncian."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Selalu tampilkan peringatan ini"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Versi TalkBack ini mencakup perubahan pada isyarat aksesibilitas default. Tindakan yang dikaitkan dengan isyarat ini dapat disesuaikan dalam setelan TalkBack. Saat Jelajahi dengan sentuhan diaktifkan, Anda dapat menggunakan isyarat berikut untuk melakukan tindakan tertentu."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Versi TalkBack ini berisi perubahan pada isyarat aksesibilitas default."\n\n"Isyarat dari atas ke bawah memungkinkan Anda berpindah ke item pertama pada layar, dan isyarat dari bawah ke atas memungkinkan Anda berpindah ke item terakhir."\n\n"Perincian bacaan kini dapat diubah dengan fokus ke suatu item, lalu pilih perincian dari menu konteks lokal."\n\n"Anda dapat mengubah tindakan yang dilakukan oleh isyarat ini di Setelan TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Tambahkan label"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Edit label"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Hapus label"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Masukkan teks guna digunakan untuk gambar ini pada bidang di bawah."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Yakin ingin menghapus label \"<xliff:g id="LABEL">%1$s</xliff:g>\"?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Yakin ingin menghapus label \"<xliff:g id="LABEL">%1$s</xliff:g>\" dalam <xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Teks label"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Versi TalkBack ini mencakup perubahan pada isyarat aksesibilitas default. Tindakan yang dikaitkan dengan isyarat ini dapat disesuaikan dalam setelan TalkBack. Saat Jelajahi dengan sentuhan diaktifkan, Anda dapat menggunakan isyarat berikut untuk melakukan tindakan tertentu.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Versi TalkBack ini berisi perubahan pada isyarat aksesibilitas default.\n\nIsyarat dari atas ke bawah memungkinkan Anda berpindah ke item pertama pada layar, dan isyarat dari bawah ke atas memungkinkan Anda berpindah ke item terakhir.\n\nPerincian bacaan kini dapat diubah dengan fokus ke suatu item, lalu pilih perincian dari menu konteks lokal.\n\nAnda dapat mengubah tindakan yang dilakukan oleh isyarat ini di Setelan TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Terima isyarat"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Sesuaikan isyarat"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Nonaktifkan Jelajahi dengan sentuhan?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Anda yakin ingin menonaktifkan Jelajahi dengan sentuhan?"\n\n"Perangkat Anda tidak akan lagi merespons isyarat pintasan atau mengucapkan item saat Anda menyentuh layar."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Anda yakin ingin menonaktifkan Jelajahi dengan sentuhan?\n\nPerangkat Anda tidak akan lagi merespons isyarat pintasan atau mengucapkan item saat Anda menyentuh layar."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Penjelajahan dengan sentuhan tidak tersedia di konten web. Aktifkan <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> di setelan Aksesibilitas untuk menjelajahi konten web."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Menu konteks global TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Kontrol TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Izin untuk mengirim isyarat ke TalkBack dan melanjutkan masukan yang diucapkan."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Mengelola label khusus TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Izin untuk mengakses, mengubah, dan menghapus label khusus yang diucapkan oleh TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"Tautan"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Akhir"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

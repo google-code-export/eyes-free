@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Ρυθμίσεις TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Όταν το Talkback είναι ενεργοποιημένο, η συσκευή σάς παρέχει φωνητικές οδηγίες για χρήστες με απώλεια όρασης ή με περιορισμένη όραση. Για παράδειγμα, περιγράφει αυτό που αγγίζετε, επιλέγετε και ενεργοποιείτε."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Ρυθμίσεις TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Διαχείριση προσαρμοσμένων ετικετών"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Διαχείριση ετικετών για <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Δεν υπάρχουν προσαρμοσμένες ετικέτες αυτήν τη στιγμή. Μπορείτε να δημιουργήσετε μία, εάν πλοηγηθείτε σε μια εικόνα χωρίς ετικέτα και, στη συνέχεια, προσθέσετε μια ετικέτα από το τοπικό μενού περιβάλλοντος."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Τελευταία τροποποίηση <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Μήνυμα κειμένου"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Μήνυμα κειμένου που δεν εστάλη"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Αναπάντητη κλήση"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Κανένα στοιχείο."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Ομιλία"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Ένταση ομιλίας"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Εκφ. ειδοπ. όταν η οθόνη είναι απενεργ."</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Μιλήστε όταν η οθόνη είναι απενεργοποιημένη"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Οι ειδοποιήσεις εκφωνούνται όταν η οθόνη είναι απενεργοποιημένη"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Δεν υπάρχει ομιλία όταν η οθόνη είναι απενεργοποιημένη"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Αναγνώριση κλήσης καλούντος"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Χρήση του αισθητήρα εγγύτητας"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Ο αισθητήρας εγγύτητας θέτει την ομιλία σε κατάσταση σίγασης"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Πειραματικό) Πατήστε το στοιχείο που επισημαίνεται αυτή τη στιγμή για επιλογή"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Ανακίνηση για συνεχή ανάγνωση"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Διαχείριση κινήσεων"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Διαχείριση προσαρμοσμένων ετικετών"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Κινήσεις συντόμευσης"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Ενσωματωμένες κινήσεις"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Χρήση αλλαγών τόνου φωνής"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Ρυθμίσεις προγραμματιστή"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Καταγραφή επιπέδου εξόδου"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Εμφάνιση εξόδου ομιλίας"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Βελτίωση προσβασιμότητας στον ιστό"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Λήψη σεναρίων προσβασιμότητας για περιεχόμενο ιστού"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Συνέχιση από την κατάσταση αναστολής"</string>
     <string name="axis_character" msgid="5059604520074645703">"Πλοήγηση βάσει χαρακτήρα."</string>
     <string name="axis_word" msgid="7745798763195184060">"Πλοήγηση βάσει λέξης."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Στοιχεία ελέγχου σελίδας"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Επόμενη σελίδα"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Προηγούμενη σελίδα"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Στοιχεία ελέγχου ετικέτας"</string>
     <string name="title_summary" msgid="1892383897326964505">"Γρήγορη πλοήγηση"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Αλλαγή ευαισθησίας"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"κάτω και αριστερά"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"Η λειτουργία του TalkBack ανεστάλη"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Πατήστε για να συνεχίσετε."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Αναστολή λειτουργίας του TalkBack;"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Είστε βέβαιοι ότι θέλετε να θέσετε το TalkBack σε κατάσταση αναστολής;"\n\n"Κατά τη διάρκεια αναστολής της λειτουργίας του TalkBack, η συσκευή σας δεν θα παρέχει φωνητικά σχόλια."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Είστε βέβαιοι ότι θέλετε να θέσετε το TalkBack σε κατάσταση αναστολής;\n\nΚατά τη διάρκεια αναστολής της λειτουργίας του TalkBack, η συσκευή σας δεν θα παρέχει φωνητικά σχόλια."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Μπορείτε να συνεχίσετε το TalkBack από το πλαίσιο σκίασης ειδοποιήσεων."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Μπορείτε να συνεχίσετε το TalkBack από το πλαίσιο σκίασης ειδοποιήσεων ή ενεργοποιώντας την οθόνη."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Μπορείτε να συνεχίσετε το TalkBack από το πλαίσιο σκίασης ειδοποιήσεων ή επιστρέφοντας στην οθόνη κλειδώματος."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Να εμφανίζεται πάντα αυτή η προειδοποίηση"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Αυτή η έκδοση του TalkBack περιλαμβάνει αλλαγές στις προεπιλεγμένες κινήσεις για άτομα με ειδικές ανάγκες. Οι ενέργειες που συσχετίζονται με αυτές τις κινήσεις μπορούν να προσαρμοστούν μέσα από τις ρυθμίσεις TalkBack. Όταν η Εξερεύνηση μέσω αφής είναι ενεργοποιημένη, μπορείτε να χρησιμοποιείτε τις ακόλουθες κινήσεις για να εκτελείτε ορισμένες ενέργειες."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Αυτή η έκδοση του TalkBack συμπεριλαμβάνει αλλαγές στις προεπιλεγμένες κινήσεις προσβασιμότητας."\n\n"Η κίνηση επάνω και κάτω, σας δίνει τη δυνατότητα να μετακινηθείτε στο πρώτο στοιχείο της οθόνης και με την κίνηση κάτω και επάνω μετακινήστε στο τελευταίο ."\n\n"Η ευαισθησία ανάγνωσης μπορεί να αλλάξει με την εστίαση σε ένα στοιχείο και επιλέγοντας την ευαισθησία από το τοπικό μενού περιβάλλοντος."\n\n"Μπορείτε να αλλάξετε τις ενέργειες που εκτελούνται από αυτές τις κινήσεις στις ρυθμίσεις του TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Προσθήκη ετικέτας"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Επεξεργασία ετικέτας"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Κατάργηση ετικέτας"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Εισαγάγετε το κείμενο που θα χρησιμοποιηθεί για αυτήν την εικόνα στο παρακάτω πεδίο."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Είστε βέβαιοι ότι θέλετε να καταργήσετε την ετικέτα \"<xliff:g id="LABEL">%1$s</xliff:g>\";"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Είστε βέβαιοι ότι θέλετε να καταργήσετε την ετικέτα \"<xliff:g id="LABEL">%1$s</xliff:g>\" από <xliff:g id="APP_NAME">%2$s</xliff:g>;"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Κείμενο ετικέτας"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Αυτή η έκδοση του TalkBack περιλαμβάνει αλλαγές στις προεπιλεγμένες κινήσεις για άτομα με ειδικές ανάγκες. Οι ενέργειες που συσχετίζονται με αυτές τις κινήσεις μπορούν να προσαρμοστούν μέσα από τις ρυθμίσεις TalkBack. Όταν η Εξερεύνηση μέσω αφής είναι ενεργοποιημένη, μπορείτε να χρησιμοποιείτε τις ακόλουθες κινήσεις για να εκτελείτε ορισμένες ενέργειες.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Αυτή η έκδοση του TalkBack συμπεριλαμβάνει αλλαγές στις προεπιλεγμένες κινήσεις προσβασιμότητας.\n\nΗ κίνηση επάνω και κάτω, σας δίνει τη δυνατότητα να μετακινηθείτε στο πρώτο στοιχείο της οθόνης και με την κίνηση κάτω και επάνω μετακινήστε στο τελευταίο .\n\nΗ ευαισθησία ανάγνωσης μπορεί να αλλάξει με την εστίαση σε ένα στοιχείο και επιλέγοντας την ευαισθησία από το τοπικό μενού περιβάλλοντος.\n\nΜπορείτε να αλλάξετε τις ενέργειες που εκτελούνται από αυτές τις κινήσεις στις ρυθμίσεις του TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Αποδοχή κινήσεων"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Προσαρμογή κινήσεων"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Απενεργοποίηση Εξερεύνησης με άγγιγμα;"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Είστε σίγουροι ότι θέλετε να απενεργοποιήσετε τη λειτουργία \"Εξερεύνηση με άγγιγμα\";"\n\n"Η συσκευή σας δεν θα ανταποκρίνεται σε κινήσεις συντόμευσης και δεν θα εκφωνεί τα αντικείμενα όταν αγγίζετε την οθόνη."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Είστε σίγουροι ότι θέλετε να απενεργοποιήσετε τη λειτουργία \"Εξερεύνηση με άγγιγμα\";\n\nΗ συσκευή σας δεν θα ανταποκρίνεται σε κινήσεις συντόμευσης και δεν θα εκφωνεί τα αντικείμενα όταν αγγίζετε την οθόνη."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Η εξερεύνηση με αφή δεν είναι διαθέσιμη στο περιεχόμενο ιστού. Ενεργοποιήστε την προτίμηση <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> στις ρυθμίσεις Προσβασιμότητας για να εξερευνήσετε το περιεχόμενο ιστού."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Μενού καθολικού περιβάλλοντος TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Έλεγχος TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Άδεια αποστολής χειρονομιών στο TalkBack και συνέχιση των εκφωνούμενων σχολίων."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Διαχείριση των προσαρμοσμένων ετικετών του TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Άδεια πρόσβασης, τροποποίησης και διαγραφής των προσαρμοσμένων ετικετών που εκφωνούνται από το TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"Σύνδεσμοι"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Λήξη"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

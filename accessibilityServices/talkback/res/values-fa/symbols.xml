@@ -20,8 +20,8 @@
     <string name="symbol_division" msgid="4791397535826699505">"علامت تقسیم"</string>
     <string name="symbol_dollar_sign" msgid="4816772894471123223">"علامت دلار"</string>
     <string name="symbol_ellipsis" msgid="3891332472133850270">"سه نقطه"</string>
-    <string name="symbol_em_dash" msgid="658543896507447622">"خط تیره Em"</string>
-    <string name="symbol_en_dash" msgid="234490117412068534">"خط تیره En"</string>
+    <string name="symbol_em_dash" msgid="658543896507447622">"‏خط تیره Em"</string>
+    <string name="symbol_en_dash" msgid="234490117412068534">"‏خط تیره En"</string>
     <string name="symbol_euro" msgid="8754914286710071533">"یورو"</string>
     <string name="symbol_exclamation_mark" msgid="1423755347958355783">"علامت تعجب"</string>
     <string name="symbol_grave_accent" msgid="6594493842492693387">"آکسان گراو"</string>

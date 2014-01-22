@@ -18,7 +18,9 @@ package com.google.android.marvin.talkback;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech.Engine;
@@ -236,10 +238,8 @@ public class TtsDiscoveryProxyActivity extends Activity {
      */
     private boolean queryAvailableEngines() {
         mExpectedResults = mAvailableEngines.size();
-        if (mExpectedResults == 0) {
-            return false;
-        }
 
+        final PackageManager pm = getPackageManager();
         for (int i = 0; i < mAvailableEngines.size(); i++) {
             final TtsEngineInfo engine = mAvailableEngines.get(i);
             final Intent checkTtsDataIntent = new Intent(Engine.ACTION_CHECK_TTS_DATA);
@@ -248,9 +248,14 @@ public class TtsDiscoveryProxyActivity extends Activity {
             // Use the engine index as the request code so that we can associate
             // activity results with their respective engines.
             final int requestCode = getRequestCodeForIndex(i);
-            startActivityForResult(checkTtsDataIntent, requestCode);
+
+            if (pm.resolveActivity(checkTtsDataIntent, PackageManager.MATCH_DEFAULT_ONLY) != null) {
+                startActivityForResult(checkTtsDataIntent, requestCode);
+            } else {
+                mExpectedResults--;
+            }
         }
 
-        return true;
+        return mExpectedResults > 0;
     }
 }

@@ -74,6 +74,11 @@
         <resource>@array/midi_complete</resource>
     </auditory>
 
+    <!-- Auditory feedback played when we move into a new view during touch exploration -->
+    <auditory id="view_entered">
+        <resource>@array/midi_view_entered</resource>
+    </auditory>
+
     <!-- Auditory feedback played when the system recognizes that the user is performing a gesture. -->
     <auditory id="gesture_begin">
         <resource>@array/midi_gesture_begin</resource>

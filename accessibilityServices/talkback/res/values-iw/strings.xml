@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"הגדרות TalkBack"</string>
-    <string name="talkback_service_description" msgid="983212841294665356">"כאשר Talkback מופעל, המכשיר מספק משוב מילולי המסייע למשתמשים עיוורים ובעלי ראייה מוגבלת. לדוגמה, המשוב מתאר את הפריטים שבהם המשתמש נוגע, בוחר ומפעיל."</string>
+    <string name="talkback_service_description" msgid="983212841294665356">"‏כאשר Talkback מופעל, המכשיר מספק משוב מילולי המסייע למשתמשים עיוורים ובעלי ראייה מוגבלת. לדוגמה, המשוב מתאר את הפריטים שבהם המשתמש נוגע, בוחר ומפעיל."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"‏הגדרות TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"ניהול תוויות בהתאמה אישית"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"ניהול תוויות עבור <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"אין כרגע תוויות המותאמות אישית. ניתן ליצור תווית על ידי ניווט אל תמונה ללא תווית ולהוסיף תווית באמצעות תפריט ההקשר המקומי."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"שונתה לאחרונה <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"הודעת טקסט"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"הודעת טקסט שלא נשלחה"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"שיחה שלא נענתה"</string>
-    <string name="notification_type_usb_connected" msgid="6285639671469979341">"USB מחובר"</string>
+    <string name="notification_type_usb_connected" msgid="6285639671469979341">"‏USB מחובר"</string>
     <string name="notification_type_status_mute" msgid="575502984311443548">"השתק"</string>
     <string name="notification_type_status_chat" msgid="6270641711377218448">"צ\'אט"</string>
     <string name="notification_type_status_error" msgid="9106600515811868558">"שגיאה"</string>
     <string name="notification_type_status_more" msgid="3191659976249507098">"עוד"</string>
-    <string name="notification_type_status_sdcard" msgid="2268627072134312579">"כרטיס SD"</string>
-    <string name="notification_type_status_sdcard_usb" msgid="410122674028987252">"USB של כרטיס SD"</string>
+    <string name="notification_type_status_sdcard" msgid="2268627072134312579">"‏כרטיס SD"</string>
+    <string name="notification_type_status_sdcard_usb" msgid="410122674028987252">"‏USB של כרטיס SD"</string>
     <string name="notification_status_sync" msgid="4919271166470257796">"סינכרון"</string>
     <string name="notification_type_new_email" msgid="207543580986817175">"דוא\"ל חדש"</string>
     <string name="notification_type_status_sync_noanim" msgid="7207653060078653323">"סינכרון"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"אין פריטים."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"דיבור"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"עוצמת קול דיבור"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"אמור התראות בקול כאשר המסך כבוי"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"דבר כשהמסך כבוי"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"הודעות נאמרות בקול כשהמסך כבוי"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"לא מושמע דיבור כשהמסך כבוי"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"אמור את זהות המתקשר"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"השתמש בחיישן קירבה"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"חיישן קירבה משתיק דיבור"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(ניסיוני) הקש על הפריט הנוכחי שנמצא במיקוד כדי לבחור בו"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"נער כדי להתחיל בקריאה רציפה"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"נהל תנועות"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"נהל תוויות בהתאמה אישית"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"תנועות קיצור דרך"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"תנועה מובנית"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"השתמש בשינויי גובה צליל"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"הגדרות מפתח"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"רמה של פלט רישום ביומן"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"הצג פלט קולי"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"שיפור נגישות האינטרנט"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"הורד סקריפטים של נגישות עבור תוכן אינטרנט"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"המשך מהשעיה"</string>
     <string name="axis_character" msgid="5059604520074645703">"נווט לפי תו."</string>
     <string name="axis_word" msgid="7745798763195184060">"נווט לפי מילה."</string>
@@ -130,7 +139,7 @@
     <string name="shortcut_unassigned" msgid="8631675444401168361">"לא הוקצה"</string>
     <string name="shortcut_back" msgid="8404153155835310379">"לחצן \'הקודם\'"</string>
     <string name="shortcut_home" msgid="3905505999818649470">"לחצן \'דף הבית\'"</string>
-    <string name="shortcut_recents" msgid="7901137492524332991">"לחצן יישומים אחרונים"</string>
+    <string name="shortcut_recents" msgid="7901137492524332991">"לחצן אפליקציות אחרונות"</string>
     <string name="shortcut_notifications" msgid="7234767026975704922">"פתח התראות"</string>
     <string name="shortcut_talkback_breakout" msgid="568168492542718040">"פתח את תפריט ההקשר הגלובלי"</string>
     <string name="shortcut_local_breakout" msgid="6177140532797600317">"פתח תפריט הקשר מקומי"</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"פקדי דף"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"הדף הבא"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"הדף הקודם"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"בקרות תווית"</string>
     <string name="title_summary" msgid="1892383897326964505">"ניווט מהיר"</string>
     <string name="title_granularity" msgid="8810561997342447201">"שנה רמת פירוט"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"למטה ואחר כך שמאלה"</string>
@@ -197,26 +207,36 @@
     <string name="value_keyboard_echo_softkeys" msgid="6592352879887617590">"רק למקלדת על המסך"</string>
     <string name="value_keyboard_echo_never" msgid="7272733066649438914">"לעולם אין להגות מקשים"</string>
     <string name="title_talkback_settings_available" msgid="6764624676369520992">"\'העדפות נגישות\' זמין"</string>
-    <string name="message_talkback_settings_available" msgid="8705763859411459771">"הקש כדי להוריד את היישום \'העדפות נגישות\'."</string>
-    <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"תנועות TalkBack שונו"</string>
+    <string name="message_talkback_settings_available" msgid="8705763859411459771">"הקש כדי להוריד את האפליקציה \'העדפות נגישות\'."</string>
+    <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"‏תנועות TalkBack שונו"</string>
     <string name="notification_message_talkback_gestures_changed" msgid="5639775622146513884">"הקש כדי לסקור את שינויי תנועות הנגישות"</string>
-    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack מושעה"</string>
+    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"‏TalkBack מושעה"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"הקש כדי להפעיל מחדש."</string>
-    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"האם להשעות את TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"האם אתה בטוח שברצונך להשעות את TalkBack?‏"\n\n"בזמן ש-TalkBack מושעה, המכשיר לא יספק משוב."</string>
-    <string name="message_resume_manual" msgid="4491108398618252430">"ניתן להפעיל מחדש את TalkBack מתריס ההתראות."</string>
-    <string name="message_resume_screen_on" msgid="2080032080971819102">"ניתן להפעיל מחדש את TalkBack מתריס ההתראות או על ידי הפעלת המסך."</string>
-    <string name="message_resume_keyguard" msgid="8347218053451487513">"ניתן להפעיל מחדש את TalkBack מתריס ההתראות או על ידי חזרה למסך הנעילה."</string>
+    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"‏האם להשעות את TalkBack?"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"‏האם אתה בטוח שברצונך להשעות את TalkBack?‏\n\nבזמן ש-TalkBack מושעה, המכשיר לא יספק משוב."</string>
+    <string name="message_resume_manual" msgid="4491108398618252430">"‏ניתן להפעיל מחדש את TalkBack מתריס ההתראות."</string>
+    <string name="message_resume_screen_on" msgid="2080032080971819102">"‏ניתן להפעיל מחדש את TalkBack מתריס ההתראות או על ידי הפעלת המסך."</string>
+    <string name="message_resume_keyguard" msgid="8347218053451487513">"‏ניתן להפעיל מחדש את TalkBack מתריס ההתראות או על ידי חזרה למסך הנעילה."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"הצג תמיד את האזהרה הזו"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"גרסה זו של TalkBack כוללת שינויים במחוות הנגישות המוגדרות כברירת מחדל. ניתן להתאים אישית את הפעולות המשויכות למחוות אלה בתוך הגדרות TalkBack. כש\'חקור על ידי מגע\' מופעל, ניתן להשתמש במחוות הבאות כדי לבצע פעולות מסוימות."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"גרסה זו של TalkBack כוללת שינויים במחוות הנגישות המוגדרות כברירת מחדל."\n\n"התנועה \'למעלה ואחר כך למטה\' תאפשר לך לעבור לפריט הראשון במסך, והתנועה \'למטה ואחר כך למעלה\' תעביר לפריט האחרון."\n\n"כעת ניתן לשנות את רמת פירוט הקריאה על-ידי התמקדות בפריט ולאחר מכן בחירת רמת פירוט מתפריט ההקשר המקומי."\n\n"תוכל לשנות את הפעולות המתבצעות על-ידי תנועות אלה במסך \'הגדרות TalkBack\'."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"הוספת תווית"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"עריכת תווית"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"הסרת תווית"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"הזן בשדה שבהמשך את הטקסט שבו יעשה שימוש עבור התמונה הזו."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"האם אתה בטוח שברצונך להסיר את התווית \"<xliff:g id="LABEL">%1$s</xliff:g>\"?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"האם אתה בטוח שברצונך להסיר את התווית \"<xliff:g id="LABEL">%1$s</xliff:g>\" ב-<xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"טקסט תווית"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"‏גרסה זו של TalkBack כוללת שינויים במחוות הנגישות המוגדרות כברירת מחדל. ניתן להתאים אישית את הפעולות המשויכות למחוות אלה בתוך הגדרות TalkBack. כש\'חקור על ידי מגע\' מופעל, ניתן להשתמש במחוות הבאות כדי לבצע פעולות מסוימות.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"‏גרסה זו של TalkBack כוללת שינויים במחוות הנגישות המוגדרות כברירת מחדל.\n\nהתנועה \'למעלה ואחר כך למטה\' תאפשר לך לעבור לפריט הראשון במסך, והתנועה \'למטה ואחר כך למעלה\' תעביר לפריט האחרון.\n\nכעת ניתן לשנות את רמת פירוט הקריאה על-ידי התמקדות בפריט ולאחר מכן בחירת רמת פירוט מתפריט ההקשר המקומי.\n\nתוכל לשנות את הפעולות המתבצעות על-ידי תנועות אלה במסך \'הגדרות TalkBack\'."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"אשר תנועות"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"התאמה אישית של תנועות"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"האם להשבית את גילוי באמצעות מגע?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"האם אתה בטוח שאתה רוצה לכבות את אפשרות הגילוי באמצעות מגע?"\n\n"המכשיר יפסיק להגיב למחוות של קיצורי דרך או לקרוא בשמות פריטים כשתיגע במסך."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"האם אתה בטוח שאתה רוצה לכבות את אפשרות הגילוי באמצעות מגע?\n\nהמכשיר יפסיק להגיב למחוות של קיצורי דרך או לקרוא בשמות פריטים כשתיגע במסך."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"\'גילוי באמצעות מגע\' אינו זמין בתוכן אינטרנט. הפעל את <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> בהגדרות הנגישות לשימוש בתוכן אינטרנט."</string>
-    <string name="label_talkback_context_menu" msgid="102441078934343795">"תפריט הקשר גלובלי של TalkBack"</string>
-    <string name="permission_talkback_label" msgid="7399199628843033396">"שליטה ב-TalkBack"</string>
+    <string name="label_talkback_context_menu" msgid="102441078934343795">"‏תפריט הקשר גלובלי של TalkBack"</string>
+    <string name="permission_talkback_label" msgid="7399199628843033396">"‏שליטה ב-TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"‏הרשאה לשלוח תנועות אל TalkBack ולהמשיך במשוב מדובר."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"‏נהל תוויות מותאמות אישית ב-TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"‏הרשאה לגשת, לשנות ולמחוק תוויות מותאמות אישית הנאמרות על ידי TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"קישורים"</string>
     <string name="end_of_text" msgid="4039485166364049724">"סיום"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

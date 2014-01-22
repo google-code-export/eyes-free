@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Nastavení aplikace TalkBack"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Pokud je zapnuta funkce Talkback, poskytuje zařízení hlasovou zpětnou vazbu a pomáhá tak nevidomým nebo slabozrakým uživatelům. Popisuje například, čeho se dotýkáte, co vybíráte a aktivujete."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Nastavení aplikace TalkBack"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Správa vlastních štítků"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Správa štítků aplikace <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Aktuálně nemáte žádné vlastní štítky. Můžete je vytvořit tak, že přejdete na obrázek bez štítku a přidáte do něj štítek pomocí místní kontextové nabídky."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Naposledy upraveno <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Textová zpráva"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Textová zpráva nebyla odeslána"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Zmeškaný hovor"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Žádné položky."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Řeč"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Hlasitost řeči"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Hlasová oznámení při vypnuté obrazovce"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Hovor s vyp. obrazovkou"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Když je vypnutá obrazovka, mluvená oznámení jsou zapnuta"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Když je vypnutá obrazovka, řeč je také vypnuta"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Oznámit ID volajícího"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Použít snímač polohy"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Snímač polohy vypíná řeč"</string>
@@ -86,9 +92,10 @@
     <string name="title_pref_auto_scroll" msgid="5676036153048224469">"Seznamy posouvat automaticky"</string>
     <string name="title_pref_category_touch_exploration" msgid="4152747299134842442">"Průzkum dotykem"</string>
     <string name="title_pref_single_tap" msgid="3053869870881145209">"Výběr jedním klepnutím"</string>
-    <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Experimentální) Položku, která je právě aktivní, bude možné vybrat klepnutím."</string>
+    <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Experimentální) Položku, která je právě aktivní, bude možné vybrat klepnutím"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Zatřesením spustit kontinuální čtení"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Správa gest"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Spravovat vlastní štítky"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Gesta pro zkratky"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Vestavěná gesta"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Měnit výšku hlasu"</string>
@@ -99,12 +106,14 @@
     <string name="title_pref_vibration" msgid="3844312655168149890">"Vibrační odezva"</string>
     <string name="title_pref_soundback" msgid="4700299128916932277">"Zvuková odezva"</string>
     <string name="title_pref_use_audio_focus" msgid="3377176622565829045">"Zaměřit se na zvuk hovoru"</string>
-    <string name="summary_pref_use_audio_focus" msgid="6384160228414065955">"Sníží hlasitost ostatních zvuků při hovoru."</string>
+    <string name="summary_pref_use_audio_focus" msgid="6384160228414065955">"Sníží hlasitost ostatních zvuků při hovoru"</string>
     <string name="title_pref_soundback_volume" msgid="7800640782909840723">"Hlasitost zvuku"</string>
     <string name="title_pref_category_miscellaneous_settings" msgid="4300919879277841983">"Různé"</string>
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Nastavení vývojáře"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Zaznamenat výstupní úroveň"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Zobrazit hlasový výstup"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Usnadnění přístupu k webu"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Stahovat skripty pro usnadnění přístupu pro webový obsah"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Obnovit z pozastavení"</string>
     <string name="axis_character" msgid="5059604520074645703">"Navigovat podle znaků."</string>
     <string name="axis_word" msgid="7745798763195184060">"Navigovat podle slov."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Ovládací prvky stránky"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Další stránka"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Předchozí stránka"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Ovládací prvky štítků"</string>
     <string name="title_summary" msgid="1892383897326964505">"Rychlá navigace"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Změnit úroveň podrobností"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"dolů a pak doleva"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"Aplikace TalkBack je pozastavena"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Pokračujte klepnutím."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Pozastavit aplikaci TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Opravdu chcete aplikaci TalkBack pozastavit?"\n\n"Když bude aplikace TalkBack pozastavena, nebude vaše zařízení poskytovat hlasovou zpětnou vazbu."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Opravdu chcete aplikaci TalkBack pozastavit?\n\nKdyž bude aplikace TalkBack pozastavena, nebude vaše zařízení poskytovat hlasovou zpětnou vazbu."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Funkci TalkBack můžete znovu spustit z panelu oznámení."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Funkci TalkBack můžete znovu spustit z panelu oznámení nebo zapnutím obrazovky."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Funkci TalkBack můžete znovu spustit z panelu oznámení nebo návratem na obrazovku uzamčení."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Vždy zobrazovat toto upozornění"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Tato verze služby TalkBack obsahuje i změny výchozích gest usnadnění. Akce přiřazené k těmto gestům lze přizpůsobit v nastavení TalkBack. Když je zapnutá funkce Prozkoumání dotykem, můžete použít následující gesta k provádění určitých akcí."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"V této verzi aplikace TalkBack byla změněna výchozí gesta pro usnadnění."\n\n"Gesta úrovně podrobnosti čtení „nahoru a pak dolů“ a „dolů a pak nahoru“ nyní umožňují přejít na první a poslední položku na obrazovce."\n\n"Úroveň podrobnosti čtení lze nyní změnit tak, že přepnete fokus na položku a vyberete úroveň podrobnosti v místní kontextové nabídce."\n\n"Akce odpovídající těmto gestům můžete změnit v nastavení aplikace TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Přidat štítek"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Upravit štítek"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Odebrat štítek"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Do níže uvedeného pole zadejte text, který chcete použít pro tento obrázek."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Opravdu štítek <xliff:g id="LABEL">%1$s</xliff:g> chcete odstranit?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Opravdu štítek <xliff:g id="LABEL">%1$s</xliff:g> aplikace <xliff:g id="APP_NAME">%2$s</xliff:g> chcete odstranit?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Text štítku"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Tato verze služby TalkBack obsahuje i změny výchozích gest usnadnění. Akce přiřazené k těmto gestům lze přizpůsobit v nastavení TalkBack. Když je zapnutá funkce Prozkoumání dotykem, můžete použít následující gesta k provádění určitých akcí.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"V této verzi aplikace TalkBack byla změněna výchozí gesta pro usnadnění.\n\nGesta úrovně podrobnosti čtení „nahoru a pak dolů“ a „dolů a pak nahoru“ nyní umožňují přejít na první a poslední položku na obrazovce.\n\nÚroveň podrobnosti čtení lze nyní změnit tak, že přepnete fokus na položku a vyberete úroveň podrobnosti v místní kontextové nabídce.\n\nAkce odpovídající těmto gestům můžete změnit v nastavení aplikace TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Přijmout gesta"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Přizpůsobit gesta"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Vypnout Prozkoumání dotykem?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Opravdu chcete funkci Prozkoumání dotykem vypnout?"\n\n"Zařízení již nebude reagovat na gesta ani nebude poskytovat hlasovou odezvu, když se dotknete obrazovky."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Opravdu chcete funkci Prozkoumání dotykem vypnout?\n\nZařízení již nebude reagovat na gesta ani nebude poskytovat hlasovou odezvu, když se dotknete obrazovky."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Procházení dotykem je ve webovém obsahu nedostupné. Chcete-li procházet webový obsah, zapněte v nastavení Usnadnění možnost <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g>."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Globální kontextová nabídka aplikace TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Ovládání aplikace TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Oprávnění odesílat gesta do aplikace TalkBack a získat mluvenou zpětnou vazbu."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Správa vlastních štítků TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Oprávnění zobrazovat, upravovat a mazat vlastní štítky vyslovované aplikací TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"Odkazy"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Konec"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

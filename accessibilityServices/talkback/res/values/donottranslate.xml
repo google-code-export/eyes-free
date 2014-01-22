@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- None of the strings here should be translated -->
+    <!-- NOTE: When adding a preference here, it must also be added to the initialization in PreferenceDefaultsProxy.java -->
     <string name="pref_category_when_to_speak_key">pref_category_when_to_speak</string>
     <string name="pref_screenoff_key">pref_screenoff</string>
     <string name="pref_proximity_key">pref_proximity</string>
@@ -17,15 +18,17 @@
     <string name="pref_intonation_key">pref_intonation</string>
     <string name="pref_keyboard_echo_key">pref_keyboard_echo</string>
     <string name="pref_tts_overlay_key">pref_tts_overlay</string>
+    <string name="pref_web_scripts_key">pref_web_scripts</string>
     <string name="pref_resume_talkback_key">pref_resume_talkback</string>
     <string name="pref_caller_id_key">pref_caller_id</string>
     <string name="pref_explore_by_touch_key">pref_explore_by_touch</string>
     <string name="pref_explore_by_touch_reflect_key">pref_explore_by_touch_reflect</string>
     <string name="pref_auto_scroll_key">pref_auto_scroll</string>
     <string name="pref_single_tap_key">pref_single_tap</string>
-    <string name="pref_shake_to_read_key">pref_shake_to_read</string>
+    <string name="pref_shake_to_read_key">pref_shake_to_read</string> <!-- Deprecated by pref_shake_to_read_threshold_key -->
     <string name="pref_shake_to_read_threshold_key">pref_shake_to_read_threshold</string>
     <string name="pref_tutorial_key">pref_tutorial</string>
+    <string name="pref_manage_labels_key">pref_manage_labels</string>
     <string name="pref_category_miscellaneous_key">pref_category_miscellaneous</string>
     <string name="pref_category_touch_exploration_key">pref_category_touch_exploration</string>
 
@@ -47,6 +50,7 @@
     <string name="pref_must_accept_gesture_change_notification">pref_must_accept_gesture_change_notification</string>
 
     <string name="pref_show_suspension_confirmation_dialog">pref_show_suspension_confirmation_dialog</string>
+    <string name="pref_vendor_overrides_processed">pref_vendor_overrides_processed</string>
 
     <!-- Keyboard echo preference entries. Must be synchronized with TextFormatters.java. -->
     <string-array name="pref_keyboard_echo_entries">
@@ -223,6 +227,7 @@
     <item name="sounds_scrollable_enter" type="id"/>
     <item name="sounds_scrollable_exit" type="id"/>
     <item name="sounds_complete" type="id"/>
+    <item name="sounds_view_entered" type="id"/>
     <item name="sounds_gesture_begin" type="id"/>
     <item name="sounds_gesture_end" type="id"/>
     <item name="sounds_scrolled_tone" type="id"/>
@@ -258,6 +263,7 @@
     <bool name="pref_intonation_default">true</bool>
     <string name="pref_keyboard_echo_default">0</string>
     <bool name="pref_tts_overlay_default">false</bool>
+    <bool name="pref_web_scripts_default">true</bool>
     <string name="pref_resume_talkback_default">KEYGUARD</string>
     <bool name="pref_caller_id_default">true</bool>
     <bool name="pref_explore_by_touch_default">true</bool>
@@ -310,6 +316,9 @@
     <item name="edittext_breakout_select_all" type="id" />
     <item name="edittext_breakout_start_selection_mode" type="id" />
     <item name="edittext_breakout_end_selection_mode" type="id" />
+    <item name="labeling_breakout_add_label" type="id" />
+    <item name="labeling_breakout_edit_label" type="id" />
+    <item name="labeling_breakout_remove_label" type="id" />
 
     <!-- Key combo identifiers -->
     <item name="key_combo_suspend_resume" type="id"/>
@@ -327,5 +336,8 @@
 
     <!-- Pseudo navigation granularity ID for specialized web content -->
     <item name="pseudo_web_special_content" type="id" />
+
+    <!-- Defines whether support for speaking text replacements is enabled.  Overridden in some locales -->
+    <bool name="supports_text_replacement">true</bool>
 
 </resources>

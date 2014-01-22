@@ -22,7 +22,7 @@ import android.os.Handler;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.view.accessibility.AccessibilityEvent;
 
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 
 /**
  * Produces continuous vibration feedback during framework gesture recognition.

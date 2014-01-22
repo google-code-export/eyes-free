@@ -22,6 +22,8 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.google.android.marvin.talkback.TalkBackService;
 import com.google.android.marvin.talkback.Utterance;
+import com.google.android.marvin.talkback.formatter.EventSpeechRule.AccessibilityEventFilter;
+import com.google.android.marvin.talkback.formatter.EventSpeechRule.AccessibilityEventFormatter;
 import com.googlecode.eyesfree.utils.LogUtils;
 
 import org.w3c.dom.Document;
@@ -55,6 +57,34 @@ import javax.xml.parsers.ParserConfigurationException;
 public class EventSpeechRuleProcessor {
 
     /**
+     * Indicates the result of filtering and formatting an
+     * {@link AccessibilityEvent} through the processor.
+     */
+    private enum RuleProcessorResult {
+        /**
+         * Result indicating that an {@link EventSpeechRule} matched an
+         * {@link AccessibilityEvent} and formatted an {@link Utterance}
+         */
+        FORMATTED,
+
+        /**
+         * Result indicating that no {@link EventSpeechRule}'s
+         * {@link AccessibilityEventFilter} matched an
+         * {@link AccessibilityEvent}
+         */
+        NOT_MATCHED,
+
+        /**
+         * Result indicating that an {@link EventSpeechRule}'s
+         * {@link AccessibilityEventFilter} matched an
+         * {@link AccessibilityEvent}, but its
+         * {@link AccessibilityEventFormatter} indicated the event should be
+         * dropped from the processor.
+         */
+        REJECTED
+    }
+
+    /**
      * Constant used for storing all speech rules that either do not define a
      * filter package or have custom filters.
      */
@@ -80,15 +110,14 @@ public class EventSpeechRuleProcessor {
     }
 
     /**
-     * Processes an <code>event</code> by sequentially trying to apply all
-     * {@link EventSpeechRule}s in the order they are defined for the package
-     * source of the event. If no package specific rules exist the default
-     * speech rules are examined in the same manner. If a rule is successfully
-     * applied the result is used to populate an <code>utterance</code>. In other words,
-     * the first matching rule wins. Optionally <code>filterArguments</code> and <code>formatterArguments</code>
-     * can be provided.
+     * Processes an {@code event} by sequentially trying to apply all
+     * {@link EventSpeechRule}s maintained by this processor in the order they
+     * are defined for the package source of the event. If no package specific
+     * rules exist the default speech rules are examined in the same manner. If
+     * a rule is successfully applied the result is used to populate an
+     * {@code utterance}. In other words, the first matching rule wins.
      *
-     * @return True if the event was processed false otherwise.
+     * @return {@code true} if the event was processed, {@code false} otherwise.
      */
     public boolean processEvent(AccessibilityEvent event, Utterance utterance) {
         synchronized (mPackageNameToSpeechRulesMap) {
@@ -96,15 +125,23 @@ public class EventSpeechRuleProcessor {
             List<EventSpeechRule> speechRules = mPackageNameToSpeechRulesMap
                     .get(event.getPackageName());
 
-            if ((speechRules != null) && processEvent(speechRules, event, utterance)) {
-                return true;
+            if ((speechRules != null)) {
+                RuleProcessorResult packageResult = processEvent(speechRules, event, utterance);
+                switch (packageResult) {
+                    case FORMATTED:
+                        return true;
+                    case REJECTED:
+                        return false;
+                    case NOT_MATCHED:
+                        break;
+                }
             }
 
             // Package specific rule not found; try undefined package ones.
             speechRules = mPackageNameToSpeechRulesMap.get(UNDEFINED_PACKAGE_NAME);
 
-            if ((speechRules != null) && processEvent(speechRules, event, utterance)) {
-                return true;
+            if ((speechRules != null)) {
+                return processEvent(speechRules, event, utterance) == RuleProcessorResult.FORMATTED;
             }
         }
 
@@ -171,17 +208,15 @@ public class EventSpeechRuleProcessor {
     }
 
     /**
-     * Processes an <code>event</code> by sequentially trying to apply all <code>speechRules
-     * </code> in the order they are defined for the package source of the
-     * event. If no package specific rules exist the default speech rules are
-     * examined in the same manner. If a rule is successfully applied the result
-     * is used to populate an <code>utterance</code>. In other words, the first matching
-     * rule wins. Optionally <code>filterArguments</code> and <code>formatterArguments</code> can be provided.
+     * Processes an {@code event} by sequentially trying to apply all
+     * {@code speechRules} in the order they are defined. If a rule is
+     * successfully applied the result is used to populate an {@code Utterance}.
      *
-     * @return {@code true} if the event was processed, {@code false} otherwise.
+     * @return a {@link RuleProcessorResult} corresponding to how the event was
+     *         processed.
      */
-    private boolean processEvent(List<EventSpeechRule> speechRules, AccessibilityEvent event,
-            Utterance utterance) {
+    private RuleProcessorResult processEvent(
+            List<EventSpeechRule> speechRules, AccessibilityEvent event, Utterance utterance) {
         for (EventSpeechRule speechRule : speechRules) {
             // We should never crash because of a bug in speech rules.
             try {
@@ -189,14 +224,14 @@ public class EventSpeechRuleProcessor {
                     if (speechRule.applyFormatter(event, utterance)) {
                         LogUtils.log(EventSpeechRuleProcessor.class, Log.VERBOSE,
                                 "Processed event using rule:\n%s", speechRule);
-                        return true;
+                        return RuleProcessorResult.FORMATTED;
                     } else {
                         LogUtils.log(EventSpeechRuleProcessor.class, Log.VERBOSE,
                                 "The \"%s\" filter accepted the event, but the \"%s\" "
                                         + "formatter indicated the event should be dropped.",
                                 speechRule.getFilter().getClass().getSimpleName(),
                                 speechRule.getFormatter().getClass().getSimpleName());
-                        return false;
+                        return RuleProcessorResult.REJECTED;
                     }
                 }
             } catch (Exception e) {
@@ -206,7 +241,7 @@ public class EventSpeechRuleProcessor {
             }
         }
 
-        return false;
+        return RuleProcessorResult.NOT_MATCHED;
     }
 
     /**

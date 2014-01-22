@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"A Talkback beállításai"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Amikor a Talkback funkció be van kapcsolva, a készülék hangalapú visszajelzést ad, hogy segítsen a vak és gyengénlátó felhasználóknak. Például elmondja, hogy a felhasználó mit érintett meg, választott ki vagy aktivált."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"A Talkback beállításai"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Egyedi címkék kezelése"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"<xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>-címkék kezelése"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Jelenleg nincsenek egyedi címkék. Létrehozhat egyet, ha egy címke nélküli képhez navigál, majd hozzáad egy címkét a helyi menüből."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Utolsó módosítás: <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Szöveges üzenet"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Elküldetlen szöveges üzenet"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Nem fogadott hívás"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Nincsenek elemek."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Beszéd"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Beszéd hangereje"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Értesítésolvasás kikapcsolt képernyőnél"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Beszéd zárolt képernyőnél"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Az értesítéseket felolvassa a rendszer zárolt képernyőnél"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Nincs beszéd zárolt képernyőnél"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Hívásazonosító kimondása"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Közelségérzékelő"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"A közelségérzékelő elnémítja a beszédet"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"Koppintson az aktuálisan kijelölt elemre a kiválasztáshoz (kísérleti funkció)"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Rázza meg a folyamatos olvasás megkezdéséhez"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Kézmozdulatok kezelése"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Egyedi címkék kezelése"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Gyorsparancs-kézmozdulatok"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Beépített kézmozdulatok"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Hangszínváltoztatások használata"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Fejlesztői beállítások"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Naplózási kimenet szintje"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Kimondott beszéd megjelenítése"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Internetes kisegítő lehetőségek bővítése"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Hozzáférési szkriptek letöltése az internetes tartalomhoz"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Folytatás felfüggesztett állapotból"</string>
     <string name="axis_character" msgid="5059604520074645703">"Navigáció karakter szerint."</string>
     <string name="axis_word" msgid="7745798763195184060">"Navigáció szó szerint."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Oldalvezérlők"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Következő oldal"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Előző oldal"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Címkevezérlők"</string>
     <string name="title_summary" msgid="1892383897326964505">"Gyors navigáció"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Részletesség módosítása"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"lefelé, majd balra"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"A TalkBack fel van függesztve."</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Érintse meg a folytatáshoz."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Felfüggeszti a TalkBack funkciót?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Biztosan felfüggeszti a TalkBack használatát?"\n\n"Ha felfüggeszti a TalkBack funkciót, eszköze nem ad visszajelzést."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Biztosan felfüggeszti a TalkBack használatát?\n\nHa felfüggeszti a TalkBack funkciót, eszköze nem ad visszajelzést."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"A TalkBack funkciót az értesítési területen kapcsolhatja be újra."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"A TalkBack funkciót az értesítési területen vagy a képernyő bekapcsolásával kapcsolhatja be újra."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"A TalkBack funkciót az értesítési területen vagy a lezárási képernyőre visszalépve kapcsolhatja be újra."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Mindig jelenjen meg ez a figyelmeztetés"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"A TalkBack ezen verziója tartalmazza az alapértelmezett kisegítő kézmozdulatok módosításait. A kézmozdulatokhoz társított műveletek a TalkBack beállításai között személyre szabhatók. Amikor a Felfedezés érintéssel funkció engedélyezve van, akkor a következő kézmozdulatokkal végezhet el bizonyos műveleteket."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"A TalkBack ezen verziójában módosultak a kisegítő lehetőségek alapértelmezett kézmozdulatai."\n\n"A fel-le kézmozdulat segítségével a képernyő első eleméhez kerülhet, míg a le-fel kézmozdulattal a legutolsó elemhez juthat."\n\n"Az olvasási részletességet mostantól úgy is módosíthatja, hogy egy elemre fókuszál, majd a helyi menüből kiválasztja a részletességet."\n\n"A TalkBack-beállításokban módosíthatja az ezen kézmozdulatok által végrehajtható műveleteket."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Címke hozzáadása"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Címke szerkesztése"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Címke eltávolítása"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Adja meg a képhez használandó szöveget a lenti mezőben."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Biztosan eltávolítja a(z) „<xliff:g id="LABEL">%1$s</xliff:g>” címkét?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Biztosan eltávolítja a(z) „<xliff:g id="LABEL">%1$s</xliff:g>” címkét a(z) <xliff:g id="APP_NAME">%2$s</xliff:g> alkalmazásból?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Címkeszöveg"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"A TalkBack ezen verziója tartalmazza az alapértelmezett kisegítő kézmozdulatok módosításait. A kézmozdulatokhoz társított műveletek a TalkBack beállításai között személyre szabhatók. Amikor a Felfedezés érintéssel funkció engedélyezve van, akkor a következő kézmozdulatokkal végezhet el bizonyos műveleteket.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"A TalkBack ezen verziójában módosultak a kisegítő lehetőségek alapértelmezett kézmozdulatai.\n\nA fel-le kézmozdulat segítségével a képernyő első eleméhez kerülhet, míg a le-fel kézmozdulattal a legutolsó elemhez juthat.\n\nAz olvasási részletességet mostantól úgy is módosíthatja, hogy egy elemre fókuszál, majd a helyi menüből kiválasztja a részletességet.\n\nA TalkBack-beállításokban módosíthatja az ezen kézmozdulatok által végrehajtható műveleteket."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Kézmozdulatok elfogadása"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Kézmozdulatok személyre szabása"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Letiltja a Felfedezés érintéssel funkciót?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Biztosan kikapcsolja a Felfedezés érintéssel funkciót?"\n\n"Eszköze a továbbiakban nem reagál a kézmozdulatokra és a hangvezérlés parancsaira, amikor megérinti a képernyőt."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Biztosan kikapcsolja a Felfedezés érintéssel funkciót?\n\nEszköze a továbbiakban nem reagál a kézmozdulatokra és a hangvezérlés parancsaira, amikor megérinti a képernyőt."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Az internetes tartalmaknál nem érhető el a Felfedezés érintéssel. Kapcsolja be a(z) <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> funkciót a Kisegítő lehetőségeknél az internetes tartalmak felfedezéséhez."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"TalkBack globális helyi menü"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"TalkBack irányítása"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Engedély a kézmozdulatok TalkBacknek való elküldésére és a hangos visszajelzés folytatására."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Egyedi TalkBack-címkék kezelése"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Engedély a TalkBack által kimondott egyedi címkék hozzáféréséhez, módosításához és törléséhez."</string>
     <string name="links" msgid="5674175288909957654">"Linkek"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Vége"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

@@ -23,9 +23,9 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
 import com.google.android.marvin.talkback.formatter.EventSpeechRuleProcessor;
 import com.google.android.marvin.talkback.test.TalkBackListener;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.LogUtils;
 import com.googlecode.eyesfree.utils.StringBuilderUtils;
 import com.googlecode.eyesfree.utils.WeakReferenceHandler;
@@ -101,7 +101,9 @@ public class ProcessorEventQueue implements AccessibilityEventListener {
         mEventSpeechRuleProcessor.addSpeechStrategy(R.raw.speechstrategy_googletv);
 
         // Add platform-specific speech strategies for bundled apps.
-        if (Build.VERSION.SDK_INT >= 16) {
+        if (Build.VERSION.SDK_INT >= 19) {
+            mEventSpeechRuleProcessor.addSpeechStrategy(R.raw.speechstrategy_kitkat);
+        } else if (Build.VERSION.SDK_INT >= 16) {
             mEventSpeechRuleProcessor.addSpeechStrategy(R.raw.speechstrategy_jellybean);
         } else if (Build.VERSION.SDK_INT >= 14) {
             mEventSpeechRuleProcessor.addSpeechStrategy(R.raw.speechstrategy_ics);

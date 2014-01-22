@@ -36,8 +36,8 @@ public class RadialMenuOverlay extends SimpleOverlay implements DialogInterface 
      * @param useNodeProvider {@code true} to use a node provider for
      *            accessibility.
      */
-    public RadialMenuOverlay(Context context, boolean useNodeProvider) {
-        super(context);
+    public RadialMenuOverlay(Context context, int menuId, boolean useNodeProvider) {
+        super(context, menuId);
 
         mMenu = new RadialMenu(context, this);
         mMenuView = new RadialMenuView(context, mMenu, useNodeProvider);

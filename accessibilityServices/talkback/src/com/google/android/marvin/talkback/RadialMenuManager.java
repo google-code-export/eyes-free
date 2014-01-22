@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.view.WindowManager;
 
 import com.google.android.marvin.talkback.SpeechController.UtteranceCompleteRunnable;
 import com.google.android.marvin.talkback.tutorial.AccessibilityTutorialActivity;
+import com.google.android.marvin.talkback.tutorial.ContextMenuMonitor;
 import com.googlecode.eyesfree.utils.FeedbackController;
 import com.googlecode.eyesfree.widget.RadialMenu;
 import com.googlecode.eyesfree.widget.RadialMenuItem;
@@ -22,7 +24,7 @@ import com.googlecode.eyesfree.widget.RadialMenuView;
 import com.googlecode.eyesfree.widget.SimpleOverlay;
 import com.googlecode.eyesfree.widget.SimpleOverlay.SimpleOverlayListener;
 
-class RadialMenuManager extends BroadcastReceiver{
+class RadialMenuManager extends BroadcastReceiver {
     /** Delay in milliseconds before speaking the radial menu usage hint. */
     /*package*/ static final int DELAY_RADIAL_MENU_HINT = 2000;
 
@@ -87,14 +89,16 @@ class RadialMenuManager extends BroadcastReceiver{
      * @return {@code true} if the menu could be shown.
      */
     public boolean showRadialMenu(int menuId) {
-        if (AccessibilityTutorialActivity.isTutorialActive()) {
+        // Some TalkBack tutorial modules don't allow context menus.
+        if (AccessibilityTutorialActivity.isTutorialActive()
+                && !AccessibilityTutorialActivity.shouldAllowContextMenus()) {
             return false;
         }
 
         RadialMenuOverlay overlay = mCachedRadialMenus.get(menuId);
 
         if (overlay == null) {
-            overlay = new RadialMenuOverlay(mService, false);
+            overlay = new RadialMenuOverlay(mService, menuId, false);
             overlay.setListener(mOverlayListener);
 
             final WindowManager.LayoutParams params = overlay.getParams();
@@ -242,6 +246,11 @@ class RadialMenuManager extends BroadcastReceiver{
             playScaleForMenu(menu);
 
             mIsRadialMenuShowing++;
+
+            // Broadcast a notification that the menu was shown.
+            Intent intent = new Intent(ContextMenuMonitor.ACTION_CONTEXT_MENU_SHOWN);
+            intent.putExtra(ContextMenuMonitor.EXTRA_MENU_ID, overlay.getId());
+            LocalBroadcastManager.getInstance(mService).sendBroadcast(intent);
         }
 
         @Override
@@ -253,6 +262,11 @@ class RadialMenuManager extends BroadcastReceiver{
             }
 
             mIsRadialMenuShowing--;
+
+            // Broadcast a notification that the menu was hidden.
+            Intent intent = new Intent(ContextMenuMonitor.ACTION_CONTEXT_MENU_HIDDEN);
+            intent.putExtra(ContextMenuMonitor.EXTRA_MENU_ID, overlay.getId());
+            LocalBroadcastManager.getInstance(mService).sendBroadcast(intent);
         }
     };
 

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"የTalkBack ቅንብሮች"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Talkback ሲበራ፣ መሳሪያህ ዓይነስውር እና ዝቅተኛ የማየት ችሎታ ያላቸውን ተጠቃሚዎችን ለመርዳት የንግግር ግብረመልስ ይሰጣል፡፡ ለምሳሌ፣ ምን እንደምትነካ፣ እንደምትመርጥ እና እንደምታነቃ ይገልጻል፡፡"</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"የTalkBack ቅንብሮች"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"ብጁ መለያዎችን ያስተዳድሩ"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"ለ<xliff:g id="APPLICATIONLABEL">%1$s</xliff:g> መለያዎችን ያስተዳድሩ"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"በአሁኑ ወቅት ምንም ብጁ መለያዎች የሉም። መለያ ወዳልተደረገበት ምስል በማሰስ እና ከዚያም ከአካባቢዊ ተገቢ ሁኔታ ምናሌው ውስጥ አንድ መለያ በማከል አንድ መፍጠር ይችላሉ።"</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"ለመጨረሻ ጊዜ የተስተካከለው <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"የፅሁፍ መልዕክት"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"ያልተላኩ የፅሁፍ መልዕክት"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"ያመለጠ"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"ምንም ንጥሎች የሉም።"</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"ንግግር"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"የንግግር ድምጽ"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"ማሳያው ሲጠፋ ማሳወቂያውን ይናገሩ"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"ማያ ሲጠፋ ንግግር አድርግ"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"ማያ ገጹ ሲጠፋ ምንም ማሳወቂያዎች ይነገራሉ"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"ማያ ገጹ ሲጠፋ ምንም ንግግር አይከሰትም"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"የደዋይ መታወቂያ ተናገር"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"የቀረቤታመፈለጊያ ተጠቀም"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"የቀረቤታ ሴንሰር የንግግርን ድምፅ ፀጥ ያደርጋል"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(የሙከራ) ለመምረጥ አሁን በተተኮረበት ንጥል ላይ መታ ያድርጉ።"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"ቀጣይነት ያለው ንባብን ለመጀመር ይነቅንቁት"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"የእጅ ምልክቶችን ያቀናብሩ"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"ብጁ መለያዎችን ያስተዳድሩ"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"የአቋራጭ እጅ ምልክቶች"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"አብረው የተሰሩ የእጅ ምልክቶች"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"የድምጽ ቅጥነት ለውጦች ተጠቀም"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"የገንቢ ቅንብሮች"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"የውጽአት ደረጃን መዝግብ"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"የንግግር ውፅዓት አሳይ"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"የድር ተደራሽነት አሻሽል"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"ለድር ይዘት የተደራሽነት ስክሪፕቶችን ያውርዱ"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"ከማንጠልጠል ቀጥል"</string>
     <string name="axis_character" msgid="5059604520074645703">"በቁምፊ ዳስስ።"</string>
     <string name="axis_word" msgid="7745798763195184060">"በቃል ዳስስ።"</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"የገጽ መቆጣጠሪያዎች"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"ቀጣይ ገፅ"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"ቀዳሚ ገፅ"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"መለያ መቆጣጠሪያዎች"</string>
     <string name="title_summary" msgid="1892383897326964505">"ፈጣን አሰሳ"</string>
     <string name="title_granularity" msgid="8810561997342447201">"አንኳርነት ቀይር"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"ታች ከዚያ ግራ"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack ታግዷል"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"ከቆመበት ለመቀጠል መታ ያድርጉ።"</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"TalkBack ይታገድ?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"እርግጠኛ ነዎት TalkBackን ማንጠልጠል ይፈልጋሉ?"\n\n"TalkBack ታግዶ ሳለ መሣሪያዎ ግብረ መልስ አይሰጥም።"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"እርግጠኛ ነዎት TalkBackን ማንጠልጠል ይፈልጋሉ?\n\nTalkBack ታግዶ ሳለ መሣሪያዎ ግብረ መልስ አይሰጥም።"</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"TalkBackን ከማሳወቂያዎች ጥላ ሆነው ከቆመበት መቀጠል ይችላሉ።"</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"TalkBackን ከማሳወቂያዎች ጥላ ሆነው ወይም ማያ ገጹን በማብራት ከቆመበት መቀጠል ይችላሉ።"</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"TalkBackን ከማሳወቂያዎች ጥላ ሆነው ወይም ወደ የቁልፍ ማያ ገጽ በመመለስ ከቆመበት መቀጠል ይችላሉ።"</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"ሁልጊዜ ይህንን ማስጠንቀቂያ አሳይ"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"ይህ የTalkBack ስሪት ወደ ነባሪው የተደራሽነት ጣት ምልክቶች ላይ የተደረጉ ለውጦችን ያካትታል። ከእነዚህ ምልክቶች ጋር የተጎዳኙ ምልክቶች በTalkBack ቅንብሮች ውስጥ ሊበጁ ይችላሉ። በንክኪ አስስ ሲነቃ የተወሰኑ እርምጃዎችን ለመፈጸም የሚከተሉትን ምልክቶች መጠቀም ይችላሉ።"\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"ይህ የTalkBack ስሪት በነባሪው የተደራሽነት የእጅ ምልክቶች ላይ የተደረጉ ለውጦችን ያካትታል።"\n\n"የላይ-ወደ-ታች እጅ ምልክት በማያ ገጹ ላይ ወዳለው የመጀመሪያ ንጥል እንዲሄዱ ያስችልዎታል፣ ከዚያ የታች-ወደ-ላይ እጅ ምልክት ወደ መጨረሻው ንጥል ይወስዳል።"\n\n"የተነባቢነት ጥራቱ አሁን በአንድ ንጥል ላይ በማተኮርና ከዚያ ከአካባቢያዊ የአውድ ምናሌ ውስጥ አንድ የጥራት ደረጃ በመምረጥ ሊቀየር ይችላል።"\n\n"በእነዚህ የእጅ ምልክቶች የሚሰሩ እርምጃዎች ላይ በTalkBack ቅንብሮች ውስጥ መቀየር ይችላሉ።"</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"መለያ አክል"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"መለያ አርትዕ አድርግ"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"መለያ አስወግዱ"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"ለዚህ ምስል ስራ ላይ የሚውለው ጽሑፍ ከታች ባለው መስክ ላይ ያስገቡ።"</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"እርግጠኛ ነዎት የ«<xliff:g id="LABEL">%1$s</xliff:g>» መለያውን ማስወገድ ይፈልጋሉ?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"እርግጠኛ ነዎት በ<xliff:g id="APP_NAME">%2$s</xliff:g> ውስጥ ያለውን የ«<xliff:g id="LABEL">%1$s</xliff:g>» መለያውን ማስወገድ ይፈልጋሉ?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"የመለያ ጽሁፍ"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"ይህ የTalkBack ስሪት ወደ ነባሪው የተደራሽነት ጣት ምልክቶች ላይ የተደረጉ ለውጦችን ያካትታል። ከእነዚህ ምልክቶች ጋር የተጎዳኙ ምልክቶች በTalkBack ቅንብሮች ውስጥ ሊበጁ ይችላሉ። በንክኪ አስስ ሲነቃ የተወሰኑ እርምጃዎችን ለመፈጸም የሚከተሉትን ምልክቶች መጠቀም ይችላሉ።\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"ይህ የTalkBack ስሪት በነባሪው የተደራሽነት የእጅ ምልክቶች ላይ የተደረጉ ለውጦችን ያካትታል።\n\nየላይ-ወደ-ታች እጅ ምልክት በማያ ገጹ ላይ ወዳለው የመጀመሪያ ንጥል እንዲሄዱ ያስችልዎታል፣ ከዚያ የታች-ወደ-ላይ እጅ ምልክት ወደ መጨረሻው ንጥል ይወስዳል።\n\nየተነባቢነት ጥራቱ አሁን በአንድ ንጥል ላይ በማተኮርና ከዚያ ከአካባቢያዊ የአውድ ምናሌ ውስጥ አንድ የጥራት ደረጃ በመምረጥ ሊቀየር ይችላል።\n\nበእነዚህ የእጅ ምልክቶች የሚሰሩ እርምጃዎች ላይ በTalkBack ቅንብሮች ውስጥ መቀየር ይችላሉ።"</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"ምልክቶችን ተቀበል"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"ምልክቶችን አብጅ"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"በንኪኪ አስስ ይሰናከል?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"እርግጠኛ ነዎት በንኪኪ አስስን ማጥፋት ይፈልጋሉ?"\n\n"መሣሪያዎ ከአሁን በኋላ ለአጭር ምልክቶች ምላሽ አይሰጡም ወይም ማያ ገጹን ሲነኩ ንጥሎችን አይናገሩም።"</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"እርግጠኛ ነዎት በንኪኪ አስስን ማጥፋት ይፈልጋሉ?\n\nመሣሪያዎ ከአሁን በኋላ ለአጭር ምልክቶች ምላሽ አይሰጡም ወይም ማያ ገጹን ሲነኩ ንጥሎችን አይናገሩም።"</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"አስስ በመንካት በድር ይዘት ላይ አይገኝም። የድር ይዘትን ለማሰስ በተደራሽነት ቅንብሮች ውስጥ <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g>ን ያብሩ።"</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"TalkBack የሁለንተናዊ አውድ ምናሌ"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"TalkBackን ይቆጣጠራል"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"የእጅ ምልክቶችን ለTalkBack የመላክ እና የሚነገሩ ግብረመልስ ከቆሙበት የማስቀጠል ፍቃድ።"</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"ብጁ የTalkBack ስያሜዎችን ማቀናበር"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"በTalkBack የሚነገሩ ብጁ ስያሜዎችን የመድረስ፣ የመቀየር እና የመሰረዝ ፍቃድ።"</string>
     <string name="links" msgid="5674175288909957654">"አገናኞች"</string>
     <string name="end_of_text" msgid="4039485166364049724">"መጨረሻ"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

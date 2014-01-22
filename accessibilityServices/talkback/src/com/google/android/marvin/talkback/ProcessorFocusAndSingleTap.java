@@ -29,9 +29,9 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.google.android.marvin.talkback.TalkBackService.AccessibilityEventListener;
 import com.google.android.marvin.talkback.tutorial.AccessibilityTutorialActivity;
 import com.googlecode.eyesfree.compat.accessibilityservice.AccessibilityServiceCompatUtils;
+import com.googlecode.eyesfree.utils.AccessibilityEventListener;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
 import com.googlecode.eyesfree.utils.NodeFocusFinder;
@@ -63,6 +63,12 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
 
     /** The period after a window event when focus following is disabled. */
     private static final long TIMEOUT_WINDOW_STATE_CHANGED = TalkBackService.DELAY_AUTO_AFTER_STATE;
+
+    /**
+     * Whether to enable the experimental feature that provides feedback when
+     * the user explores within an unfocusable region.
+     */
+    private static final boolean FEATURE_FLAG_EMPTY_SPACE = true;
 
     private final TalkBackService mService;
     private final SpeechController mSpeechController;
@@ -132,7 +138,19 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
                 setFocusFromViewSelected(event, record);
                 break;
             case AccessibilityEvent.TYPE_VIEW_HOVER_ENTER:
-                setFocusFromViewHoverEnter(record);
+                final AccessibilityNodeInfoCompat touchedNode = record.getSource();
+                try {
+                    if ((touchedNode != null) && !setFocusFromViewHoverEnter(touchedNode)
+                            && FEATURE_FLAG_EMPTY_SPACE) {
+                        mHandler.sendEmptyTouchAreaFeedbackDelayed(touchedNode);
+                    }
+                } finally {
+                    AccessibilityNodeInfoUtils.recycleNodes(touchedNode);
+                }
+
+                break;
+            case AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED:
+                mHandler.cancelEmptyTouchAreaFeedback();
                 break;
             case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
                 handleWindowStateChange(event);
@@ -434,19 +452,13 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
 
     /**
      * Attempts to place focus on an accessibility-focusable node, starting from
-     * the {@code event}'s source node.
+     * the {@code touchedNode}.
      */
-    private boolean setFocusFromViewHoverEnter(AccessibilityRecordCompat event) {
-        AccessibilityNodeInfoCompat touched = null;
+    private boolean setFocusFromViewHoverEnter(AccessibilityNodeInfoCompat touchedNode) {
         AccessibilityNodeInfoCompat focusable = null;
 
         try {
-            touched = event.getSource();
-            if (touched == null) {
-                return false;
-            }
-
-            focusable = AccessibilityNodeInfoUtils.findFocusFromHover(mService, touched);
+            focusable = AccessibilityNodeInfoUtils.findFocusFromHover(mService, touchedNode);
             if (focusable == null) {
                 return false;
             }
@@ -476,7 +488,7 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
 
             return true;
         } finally {
-            AccessibilityNodeInfoUtils.recycleNodes(touched, focusable);
+            AccessibilityNodeInfoUtils.recycleNodes(focusable);
         }
     }
 
@@ -680,6 +692,7 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
         private static final int FOCUS_AFTER_CONTENT_CHANGED = 2;
         private static final int REFOCUS_AFTER_TIMEOUT = 3;
         private static final int CLEAR_SCROLL_ACTION = 4;
+        private static final int EMPTY_TOUCH_AREA = 5;
 
         /** Delay after a scroll event before checking focus. */
         private static final long FOCUS_AFTER_SCROLL_DELAY = 250;
@@ -688,9 +701,16 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
         /** Delay after a scroll event to clear the cached scroll action. */
         private static final long CLEAR_SCROLL_ACTION_DELAY = 200;
 
+        /** Delay for indicating the user has explored into an unfocusable area. */
+        private static final long EMPTY_TOUCH_AREA_DELAY = 100;
+
         private AccessibilityRecordCompat mCachedContentRecord;
         private AccessibilityNodeInfoCompat mCachedScrollNode;
         private AccessibilityNodeInfoCompat mCachedFocusedNode;
+        private AccessibilityNodeInfoCompat mCachedTouchedNode;
+
+        private MappedFeedbackController
+                mFeedbackController = MappedFeedbackController.getInstance();
 
         public FollowFocusHandler(ProcessorFocusAndSingleTap parent) {
             super(parent);
@@ -724,6 +744,14 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
                     break;
                 case CLEAR_SCROLL_ACTION:
                     parent.setScrollActionImmediately(0);
+                    break;
+                case EMPTY_TOUCH_AREA:
+                    if (!AccessibilityNodeInfoUtils.isSelfOrAncestorFocused(
+                            parent.mService, mCachedTouchedNode)) {
+                        mFeedbackController.playHaptic(R.id.patterns_hover);
+                        mFeedbackController.playAuditory(R.id.sounds_view_entered, 1.3f, 1, 0);
+                    }
+
                     break;
             }
         }
@@ -793,6 +821,18 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
         }
 
         /**
+         * Provides feedback indicating an empty or unfocusable area after a
+         * delay.
+         */
+        public void sendEmptyTouchAreaFeedbackDelayed(AccessibilityNodeInfoCompat touchedNode) {
+            cancelEmptyTouchAreaFeedback();
+            mCachedTouchedNode = AccessibilityNodeInfoCompat.obtain(touchedNode);
+
+            final Message msg = obtainMessage(EMPTY_TOUCH_AREA);
+            sendMessageDelayed(msg, EMPTY_TOUCH_AREA_DELAY);
+        }
+
+        /**
          * Clears the cached scroll action after a short delay.
          */
         public void clearScrollActionDelayed() {
@@ -838,6 +878,19 @@ class ProcessorFocusAndSingleTap implements AccessibilityEventListener {
          */
         public void cancelClearScrollAction() {
             removeMessages(CLEAR_SCROLL_ACTION);
+        }
+
+        /**
+         * Cancel any pending messages for delivering feedback indicating an
+         * empty or unfocusable area.
+         */
+        public void cancelEmptyTouchAreaFeedback() {
+            removeMessages(EMPTY_TOUCH_AREA);
+
+            if (mCachedTouchedNode != null) {
+                mCachedTouchedNode.recycle();
+                mCachedTouchedNode = null;
+            }
         }
     }
 }

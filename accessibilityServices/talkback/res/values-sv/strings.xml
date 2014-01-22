@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Inställningar för Talkback"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"När Talkback är aktiverat får användare som är blinda eller har nedsatt syn talad feedback. Exempelvis beskrivs vad du trycker på, väljer och aktiverar."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Inställningar för Talkback"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Hantera anpassade etiketter"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Hantera etiketter för <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Det finns för närvarande inga anpassade etiketter. Du kan skapa en genom att öppna en bild utan etikett och sedan lägga till en etikett från din lokala snabbmeny."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Senast ändrad <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"SMS"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"SMS som inte skickats"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Missat samtal"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Det finns inga objekt."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Tal"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Talvolym"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Läs upp meddelanden vid avstängd skärm"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Tala med skärmen avstängd"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Meddelanden hörs när skärmen är avstängd"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Inget tal hörs när skärmen är avstängd"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Läs upp inkommande nummer"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Använd rörelsesensor"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Närhetssensorn stänger av tal"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Experiment) Tryck på det objekt som är i fokus för att välja det"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Starta löpande läsning genom att skaka mobilen"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Hantera rörelser"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Hantera anpassade etiketter"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Rörelser för genvägar"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Inbyggda rörelser"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Använd ändringar i tonhöjd"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Inställningar för utvecklare"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Utdatanivå för registrering"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Visa talutdata"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Ökad webbtillgänglighet"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Hämta tillgänglighetsskript för webbinnehåll"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Återuppta från avstängt läge"</string>
     <string name="axis_character" msgid="5059604520074645703">"Navigera efter tecken."</string>
     <string name="axis_word" msgid="7745798763195184060">"Navigera efter ord."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Sidkontroller"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Nästa sida"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Föregående sida"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Etikettverktyg"</string>
     <string name="title_summary" msgid="1892383897326964505">"Snabbnavigering"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Ändra detaljnivå"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"nedåt, sedan åt vänster"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack är inaktiverat"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Tryck för att fortsätta."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Vill du inaktivera TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Är du säker på att du vill stänga av TalkBack?"\n\n"Din enhet ger ingen feedback när TalkBack är avstängt."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Är du säker på att du vill stänga av TalkBack?\n\nDin enhet ger ingen feedback när TalkBack är avstängt."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Du kan återuppta TalkBack från meddelandepanelen."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Du kan återuppta TalkBack från meddelandepanelen eller genom att aktivera skärmen."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Du kan återuppta TalkBack från meddelandepanelen eller genom att återgå till låsskärmen."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Visa alltid det här varningsmeddelandet"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Denna version av TalkBack innehåller ändringar i standardrörelserna för tillgänglighetstjänster. De kommandon som är kopplade till rörelserna kan anpassas i inställningarna i TalkBack. När Explore by touch är aktiverat kan du använda följande rörelser för att utföra vissa saker."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"I den här versionen av TalkBack har standardalternativen för tillgänglighetsrörelser ändrats."\n\n"Med en uppåtrörelse följt av en nedåtrörelse flyttar du det första objektet på skärmen och med ett motsatt rörelsemönster – först nedåt, sedan uppåt – flyttar du det sista objektet."\n\n"Lässkärpan ändras nu genom att först fokusera på ett objekt och sedan välja en nivå på skärpan från den lokala snabbmenyn."\n\n"Du kan ändra vilka åtgärder som utförs med hjälp av dessa rörelser i inställningarna för TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Lägg till etikett"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Redigera etikett"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Ta bort etikett"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Ange texten som ska användas för den här bilden i fältet nedan."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Är du säker på att du vill ta bort etiketten <xliff:g id="LABEL">%1$s</xliff:g>?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Är du säker på att du vill ta bort etiketten <xliff:g id="LABEL">%1$s</xliff:g> i <xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Etikettext"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Denna version av TalkBack innehåller ändringar i standardrörelserna för tillgänglighetstjänster. De kommandon som är kopplade till rörelserna kan anpassas i inställningarna i TalkBack. När Explore by touch är aktiverat kan du använda följande rörelser för att utföra vissa saker.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"I den här versionen av TalkBack har standardalternativen för tillgänglighetsrörelser ändrats.\n\nMed en uppåtrörelse följt av en nedåtrörelse flyttar du det första objektet på skärmen och med ett motsatt rörelsemönster – först nedåt, sedan uppåt – flyttar du det sista objektet.\n\nLässkärpan ändras nu genom att först fokusera på ett objekt och sedan välja en nivå på skärpan från den lokala snabbmenyn.\n\nDu kan ändra vilka åtgärder som utförs med hjälp av dessa rörelser i inställningarna för TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Godkänn rörelser"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Anpassa rörelser"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Vill du inaktivera Explore by touch?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Är du säker på att du vill inaktivera Explore by touch?"\n\n"Enheten kommer inte längre att reagera på rörelser för genvägar eller beskriva vad som finns på skärmen."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Är du säker på att du vill inaktivera Explore by touch?\n\nEnheten kommer inte längre att reagera på rörelser för genvägar eller beskriva vad som finns på skärmen."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"Explore by touch är inte tillgängligt i webbinnehåll. Aktivera <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> i tillgänglighetsinställningarna om du vill utforska innehåll på webben."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Global snabbmeny för TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Styra TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Behörighet att skicka rörelser till TalkBack och få talade ord tillbaka."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Hantera TalkBacks anpassade etiketter"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Behörighet att komma åt, ändra och ta bort anpassade etiketter som blir upplästa genom TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"Länkar"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Slutet"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

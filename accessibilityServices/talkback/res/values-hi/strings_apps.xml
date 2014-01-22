@@ -3,7 +3,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="template_change_search_category" msgid="5128415851194056980">"खोज श्रेणी बदलें"</string>
     <string name="template_search_box" msgid="7674310082251778508">"खोज बॉक्स"</string>
-    <string name="template_voice_search" msgid="6344082494914081067">"ध्वनि खोज"</string>
+    <string name="template_voice_search" msgid="6344082494914081067">"बोलकर खोजें"</string>
     <string name="template_dragging_icon" msgid="856607323610801888">"<xliff:g id="TITLE">%1$s</xliff:g> आइकन खींचना."</string>
     <string name="value_increment_hours" msgid="3948602939148321286">"घंटे बढ़ाएं."</string>
     <string name="value_increment_minutes" msgid="7973429691186941970">"मिनट बढ़ाएं."</string>
@@ -15,7 +15,7 @@
     <string name="value_decrement_month" msgid="6268533926259338764">"माह कम करें."</string>
     <string name="value_decrement_day" msgid="5715832708435309689">"दिन कम करें."</string>
     <string name="value_decrement_year" msgid="756084611736232559">"वर्ष कम करें."</string>
-    <string name="template_stream_volume" msgid="7768533936282059501">"<xliff:g id="STREAM_NAME">%1$s</xliff:g> वॉल्यूम <xliff:g id="PERCENT">%2$d</xliff:g> प्रतिशत."</string>
+    <string name="template_stream_volume" msgid="7768533936282059501">"<xliff:g id="STREAM_NAME">%1$s</xliff:g> आवाज़ <xliff:g id="PERCENT">%2$d</xliff:g> प्रतिशत."</string>
     <string name="template_stream_volume_set" msgid="5961200256130745221">"<xliff:g id="STREAM_NAME">%1$s</xliff:g> वॉल्‍यूम <xliff:g id="PERCENT">%2$d</xliff:g> प्रतिशत पर सेट है."</string>
     <string name="value_stream_master" msgid="6130733378374740098">"मास्टर"</string>
     <string name="value_stream_voice_call" msgid="5305385298856357591">"फ़ोन कॉल"</string>

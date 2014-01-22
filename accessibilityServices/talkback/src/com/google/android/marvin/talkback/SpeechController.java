@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.media.AudioManager;
+import android.media.MediaRecorder.AudioSource;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -34,7 +35,7 @@ import com.google.android.marvin.utils.FailoverTextToSpeech;
 import com.google.android.marvin.utils.FailoverTextToSpeech.FailoverTtsListener;
 import com.google.android.marvin.utils.ProximitySensor;
 import com.google.android.marvin.utils.ProximitySensor.ProximityChangeListener;
-import com.googlecode.eyesfree.compat.media.AudioManagerCompatUtils;
+import com.googlecode.eyesfree.compat.media.AudioSystemCompatUtils;
 import com.googlecode.eyesfree.compat.speech.tts.TextToSpeechCompatUtils.EngineCompatUtils;
 import com.googlecode.eyesfree.utils.LogUtils;
 import com.googlecode.eyesfree.utils.SharedPreferencesUtils;
@@ -377,6 +378,15 @@ public class SpeechController {
         item.setCompletedAction(completedAction);
 
         if (queueMode != QUEUE_MODE_QUEUE) {
+            // Call onUtteranceComplete on each queue item to be cleared.
+            for (FeedbackItem queuedItem : mFeedbackQueue) {
+                final UtteranceCompleteRunnable queuedItemCompletedAction
+                        = queuedItem.getCompletedAction();
+                if (queuedItemCompletedAction != null) {
+                    queuedItemCompletedAction.run(STATUS_INTERRUPTED);
+                }
+            }
+
             mCurrentFragmentIterator = null;
             mFeedbackQueue.clear();
         }
@@ -523,7 +533,7 @@ public class SpeechController {
     private boolean shouldSilenceSpeech(FeedbackItem item) {
         // Unless otherwise flagged, don't speak during speech recognition.
         if (!item.hasFlag(FeedbackItem.FLAG_DURING_RECO)
-                && AudioManagerCompatUtils.isSpeechRecognitionActive(mAudioManager)
+                && AudioSystemCompatUtils.isSourceActive(AudioSource.VOICE_RECOGNITION)
                 && !mAudioManager.isBluetoothA2dpOn() && !mAudioManager.isWiredHeadsetOn()) {
             return true;
         }

@@ -46,7 +46,8 @@ class EventQueue {
      * {@code MAXIMUM_QUALIFYING_EVENTS} of these events in the queue.
      */
     private static final int MASK_LIMITED_EVENT_TYPES =
-            AccessibilityEventCompat.TYPE_VIEW_HOVER_ENTER;
+            AccessibilityEventCompat.TYPE_VIEW_HOVER_ENTER |
+            AccessibilityEventCompat.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
 
     /**
      * The list responsible for maintaining events in the event queue.

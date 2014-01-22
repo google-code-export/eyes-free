@@ -133,6 +133,10 @@ public class FeedbackItem {
         mFragments.add(fragment);
     }
 
+    public void addAllFragments(List<FeedbackFragment> fragments) {
+        mFragments.addAll(fragments);
+    }
+
     public void addFragmentAtPosition(FeedbackFragment fragment, int position) {
         mFragments.add(position, fragment);
     }

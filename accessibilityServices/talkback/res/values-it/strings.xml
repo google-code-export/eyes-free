@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"Impostazioni di Talkback"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Quando Talkback è attivo, il dispositivo fornisce suggerimenti vocali per aiutare gli utenti non vedenti o con problemi di vista. Ad esempio, descrive gli elementi toccati, selezionati e attivati."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"Impostazioni di Talkback"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"Gestisci etichette personalizzate"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"Gestisci etichette per <xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"Al momento non ci sono etichette personalizzate. Puoi crearne una passando a un\'immagine senza etichetta e aggiungendo un\'etichetta dal menu contestuale locale."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"Ultima modifica: <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"Messaggio di testo"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"Messaggio di testo non inviato"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"Chiamata senza risposta"</string>
@@ -77,7 +81,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"Nessun elemento."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"Voce"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"Volume voce"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"Pronuncia notifiche con schermo spento"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"Parla con schermo non attivo"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"Notifiche vocali quando lo schermo non è attivo"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"Nessun comando vocale con schermo non attivo"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"Pronuncia ID chiamante"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"Uso sensore di prossimità"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"Il sensore di prossimità disattiva la voce"</string>
@@ -89,6 +95,7 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(Sperimentale) Tocca gli elementi attualmente in evidenza per selezionarli"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"Scuoti per avviare la lettura continua"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"Gestisci gesti"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"Gestisci etichette personalizzate"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"Gesti rapidi"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"Gesti integrati"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"Usa variazioni tono"</string>
@@ -105,6 +112,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"Impostazioni sviluppatore"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"Livello di uscita"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"Visualizza uscita vocale"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"Miglioramento dell\'accessibilità web"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"Scarica script di accessibilità per i contenuti web"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"Ripristina da sospensione"</string>
     <string name="axis_character" msgid="5059604520074645703">"Naviga per carattere."</string>
     <string name="axis_word" msgid="7745798763195184060">"Naviga per parola."</string>
@@ -161,6 +170,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"Controlli pagina"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"Pagina successiva"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"Pagina precedente"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"Comandi per le etichette"</string>
     <string name="title_summary" msgid="1892383897326964505">"Navigazione rapida"</string>
     <string name="title_granularity" msgid="8810561997342447201">"Modifica granularità"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"verso il basso poi a sinistra"</string>
@@ -203,20 +213,30 @@
     <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack è sospeso"</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"Tocca per riprendere."</string>
     <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"Sospendere TalkBack?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Vuoi sospendere TalkBack?"\n\n"In seguito alla sospensione di TalkBack, il dispositivo non fornirà feedback."</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"Vuoi sospendere TalkBack?\n\nIn seguito alla sospensione di TalkBack, il dispositivo non fornirà feedback."</string>
     <string name="message_resume_manual" msgid="4491108398618252430">"Puoi ripristinare TalkBack dall\'area notifiche."</string>
     <string name="message_resume_screen_on" msgid="2080032080971819102">"Puoi ripristinare TalkBack dall\'area notifiche o attivando lo schermo."</string>
     <string name="message_resume_keyguard" msgid="8347218053451487513">"Puoi ripristinare TalkBack dall\'area notifiche o ritornando alla schermata di blocco."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"Mostra sempre questo avviso"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti. Le azioni associate ai gesti possono essere personalizzate nelle impostazioni di TalkBack. Se l\'opzione \"Esplora al tocco\" è attiva, puoi utilizzare i gesti che seguono per compiere determinate azioni."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti."\n\n"Il gesto dall\'alto verso il basso ti consentirà di passare al primo elemento visualizzato sullo schermo, mentre il gesto dal basso verso l\'alto ti consentirà di passare all\'ultimo elemento."\n\n"La granularità della lettura ora può essere modificata attivando un elemento, quindi selezionando una granularità dal menu contestuale locale."\n\n"Puoi cambiare le azioni compiute da questi gesti nelle impostazioni di TalkBack."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"Aggiungi etichetta"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"Modifica etichetta"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"Rimuovi etichetta"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"Inserisci il testo da utilizzare per questa immagine nel campo sottostante."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"Vuoi rimuovere l\'etichetta \"<xliff:g id="LABEL">%1$s</xliff:g>\"?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"Vuoi rimuovere l\'etichetta \"<xliff:g id="LABEL">%1$s</xliff:g>\" in <xliff:g id="APP_NAME">%2$s</xliff:g>?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"Testo etichetta"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti. Le azioni associate ai gesti possono essere personalizzate nelle impostazioni di TalkBack. Se l\'opzione \"Esplora al tocco\" è attiva, puoi utilizzare i gesti che seguono per compiere determinate azioni.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti.\n\nIl gesto dall\'alto verso il basso ti consentirà di passare al primo elemento visualizzato sullo schermo, mentre il gesto dal basso verso l\'alto ti consentirà di passare all\'ultimo elemento.\n\nLa granularità della lettura ora può essere modificata attivando un elemento, quindi selezionando una granularità dal menu contestuale locale.\n\nPuoi cambiare le azioni compiute da questi gesti nelle impostazioni di TalkBack."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"Accetta gesti"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"Personalizza gesti"</string>
     <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"Disattivare la funzione Esplora al tocco?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Vuoi disattivare la funzione Esplora al tocco?"\n\n"Il dispositivo non risponderà più ai gesti rapidi e non fornirà feedback vocali per gli elementi toccati sullo schermo."</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"Vuoi disattivare la funzione Esplora al tocco?\n\nIl dispositivo non risponderà più ai gesti rapidi e non fornirà feedback vocali per gli elementi toccati sullo schermo."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"L\'esplorazione tattile non è disponibile nei contenuti web. Attiva <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g> nelle impostazioni di Accessibilità per esplorare i contenuti web."</string>
     <string name="label_talkback_context_menu" msgid="102441078934343795">"Menu contestuale globale TalkBack"</string>
     <string name="permission_talkback_label" msgid="7399199628843033396">"Controllo di TalkBack"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"Autorizzazione a inviare gesti a TalkBack e a riprendere il feedback vocale."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"Gestione di etichette personalizzate TalkBack"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"Autorizzazione ad accedere, modificare ed eliminare etichette personalizzate pronunciate da TalkBack."</string>
     <string name="links" msgid="5674175288909957654">"Link"</string>
     <string name="end_of_text" msgid="4039485166364049724">"Fine"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="NUMBER">%1$d</xliff:g> <xliff:g id="CHARACTER">%2$s</xliff:g>"</string>

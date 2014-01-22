@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="talkback_preferences_title" msgid="615685549632541311">"TalkBack 설정"</string>
     <string name="talkback_service_description" msgid="983212841294665356">"Talkback을 사용하면 기기에서 시각 장애인을 위한 음성 피드백을 제공합니다. 예를 들어 사용자가 터치하거나 선택하거나 활성화한 항목을 설명해 줍니다."</string>
+    <string name="talkback_preferences_title" msgid="615685549632541311">"음성 안내 지원 설정"</string>
+    <string name="label_manager_summary_title" msgid="6129629673621990309">"맞춤 라벨 관리"</string>
+    <string name="label_manager_package_title" msgid="5518823554025145373">"<xliff:g id="APPLICATIONLABEL">%1$s</xliff:g>의 라벨 관리"</string>
+    <string name="label_manager_no_packages_message" msgid="2531887372542054600">"현재 맞춤 라벨이 없습니다. 라벨이 지정되지 않은 이미지를 찾은 다음 로컬 컨텍스트 메뉴에서 라벨을 추가하여 만들 수 있습니다."</string>
+    <string name="label_manager_timestamp_text" msgid="5161359164826380670">"최종 수정: <xliff:g id="TIMESTAMP">%1$s</xliff:g>"</string>
     <string name="notification_type_text_message" msgid="2840489326612585077">"문자 메시지"</string>
     <string name="notification_type_failed_text_message" msgid="3279662617442887805">"문자 메시지를 보내지 못함"</string>
     <string name="notification_type_missed_call" msgid="4227042474220035667">"부재중 전화"</string>
@@ -20,7 +24,7 @@
     <string name="notification_status_play" msgid="5444333019485373575">"재생 중"</string>
     <string name="template_current_tts_engine" msgid="2402080656466274253">"<xliff:g id="ENGINE_NAME">%1$s</xliff:g> 사용"</string>
     <string name="template_menu" msgid="1721331413132447874">"<xliff:g id="TITLE">%1$s</xliff:g> 메뉴"</string>
-    <string name="template_edit_box" msgid="8644462446565912356">"수정 창. <xliff:g id="TEXT_CONTENT">%1$s</xliff:g>"</string>
+    <string name="template_edit_box" msgid="8644462446565912356">"입력창. <xliff:g id="TEXT_CONTENT">%1$s</xliff:g>"</string>
     <string name="template_alert_dialog_template" msgid="578525726030867650">"<xliff:g id="MESSAGE">%1$s</xliff:g> 알림"</string>
     <string name="template_text_replaced" msgid="7412248329207268610">"<xliff:g id="NEW_TEXT">%1$s</xliff:g>이(가) <xliff:g id="OLD_TEXT">%2$s</xliff:g>을(를) 대체"</string>
     <string name="template_text_removed" msgid="515933675336971194">"<xliff:g id="TEXT">%1$s</xliff:g> 삭제됨"</string>
@@ -36,16 +40,16 @@
     <!-- String.format failed for translation -->
     <!-- no translation found for template_percent (8298434876867671403) -->
     <skip />
-    <string name="template_container" msgid="8918583415236947599">"<xliff:g id="TYPE">%1$s</xliff:g> <xliff:g id="COUNT">%2$d</xliff:g>개 항목을 표시합니다."</string>
+    <string name="template_container" msgid="8918583415236947599">"<xliff:g id="TYPE">%1$s</xliff:g>가 <xliff:g id="COUNT">%2$d</xliff:g>개 항목을 표시합니다."</string>
     <string name="value_gridview" msgid="9093738961981389981">"바둑판"</string>
     <string name="value_listview" msgid="3437715684913760710">"목록"</string>
     <string name="value_tabwidget" msgid="5550633699198799743">"탭바"</string>
-    <string name="template_scroll_from_to_count" msgid="3686789962835061906">"<xliff:g id="TOTAL_COUNT">%3$d</xliff:g>개 항목 중 <xliff:g id="FROM_INDEX">%1$d</xliff:g> - <xliff:g id="TO_INDEX">%2$d</xliff:g> 표시 중"</string>
+    <string name="template_scroll_from_to_count" msgid="3686789962835061906">"<xliff:g id="TOTAL_COUNT">%3$d</xliff:g>개 항목 중에서 <xliff:g id="FROM_INDEX">%1$d</xliff:g> 부터 <xliff:g id="TO_INDEX">%2$d</xliff:g> 까지 표시 중"</string>
     <string name="template_scroll_from_count" msgid="677594507054979865">"<xliff:g id="TOTAL_COUNT">%2$d</xliff:g>개 항목 중 <xliff:g id="FROM_INDEX">%1$d</xliff:g> 표시 중"</string>
     <string name="template_spinner" msgid="3914981448273826697">"<xliff:g id="TITLE">%1$s</xliff:g> 드롭다운 목록"</string>
     <string name="template_password_selected" msgid="7528235887386963927">"<xliff:g id="FROM_INDEX">%1$s</xliff:g>에서 <xliff:g id="TO_INDEX">%2$s</xliff:g>까지 선택된 문자"</string>
     <string name="template_capital_letter" msgid="9151240217884890264">"대문자 <xliff:g id="UPPERCASE_CHARACTER">%1$s</xliff:g>"</string>
-    <string name="template_checkbox" msgid="5452847405394165465">"<xliff:g id="TITLE">%1$s</xliff:g> 확인란"</string>
+    <string name="template_checkbox" msgid="5452847405394165465">"<xliff:g id="TITLE">%1$s</xliff:g> 체크박스"</string>
     <string name="template_radio_button" msgid="6220410400770793883">"<xliff:g id="TITLE">%1$s</xliff:g> 라디오 버튼"</string>
     <string name="template_switch" msgid="1615681613214625067">"<xliff:g id="TITLE">%1$s</xliff:g>, 스위치"</string>
     <string name="value_password" msgid="52094746222829357">"비밀번호"</string>
@@ -79,7 +83,9 @@
     <string name="value_no_items" msgid="3587303601074849845">"항목이 없습니다."</string>
     <string name="title_pref_category_when_to_speak" msgid="9082038550046119493">"음성"</string>
     <string name="title_pref_speech_volume" msgid="4013853601342391397">"음성 볼륨"</string>
-    <string name="title_pref_speak_screenoff" msgid="423335664627577373">"화면이 꺼져 있을 때 말하기 알림"</string>
+    <string name="title_pref_speak_screenoff" msgid="1278357255432372076">"화면이 꺼져 있을 때 말하기"</string>
+    <string name="summaryOn_pref_speak_screenoff" msgid="8939554146179627909">"화면이 꺼져 있을 때 음성 알림"</string>
+    <string name="summaryOff_pref_speak_screenoff" msgid="6148656407539902635">"화면이 꺼져 있을 때 음성 사용 안함"</string>
     <string name="title_pref_caller_id" msgid="1414845059814636961">"발신자 번호 말하기"</string>
     <string name="title_pref_proximity" msgid="4957940010293002852">"근접 센서 사용"</string>
     <string name="summaryOn_pref_proximity" msgid="9000886370261892995">"근접 센서에서 음성 기능을 중지함"</string>
@@ -91,13 +97,14 @@
     <string name="summary_pref_single_tap" msgid="3011671416541372042">"(베타) 현재 포커스가 있는 항목을 탭하여 선택하기"</string>
     <string name="title_pref_shake_to_read_threshold" msgid="544749941147543935">"흔들어서 계속 읽기"</string>
     <string name="title_pref_category_manage_gestures" msgid="5457025819029526883">"동작 관리"</string>
+    <string name="title_pref_manage_labels" msgid="593992209353672625">"맞춤 라벨 관리"</string>
     <string name="title_pref_category_touch_shortcuts" msgid="4220670726993962812">"바로가기 동작"</string>
     <string name="title_pref_category_built_in_gestures" msgid="1088371786802119419">"내장된 동작"</string>
     <string name="title_pref_intonation" msgid="7762392438106753854">"피치 변경 사용"</string>
     <string name="title_pref_keyboard_echo" msgid="860353418869467119">"키보드 에코"</string>
     <string name="summaryOn_pref_intonation" msgid="9077400986652228237">"낮은 피치 음성으로 키보드로 입력한 내용을 말함"</string>
     <string name="summaryOff_pref_intonation" msgid="8702174746754615499">"말할 때 음성 피치를 변경하지 않음"</string>
-    <string name="title_pref_category_feedback_settings" msgid="1245161004109313841">"기타 의견"</string>
+    <string name="title_pref_category_feedback_settings" msgid="1245161004109313841">"기타 피드백"</string>
     <string name="title_pref_vibration" msgid="3844312655168149890">"진동 확인"</string>
     <string name="title_pref_soundback" msgid="4700299128916932277">"소리 확인"</string>
     <string name="title_pref_use_audio_focus" msgid="3377176622565829045">"음성 포커스"</string>
@@ -107,6 +114,8 @@
     <string name="title_pref_category_developer_settings" msgid="6580150385309942699">"개발자 설정"</string>
     <string name="title_pref_log_level" msgid="1608733715034404715">"로그 출력 수준"</string>
     <string name="title_pref_tts_overlay" msgid="7821227047722471620">"음성 출력 표시"</string>
+    <string name="title_pref_web_scripts" msgid="4384237853588668209">"웹 접근성 향상"</string>
+    <string name="summary_pref_web_scripts" msgid="5271359440699022407">"웹 콘텐츠용 접근성 스크립트 다운로드"</string>
     <string name="title_pref_resume_talkback" msgid="7672596366500481032">"일시중지에서 다시 시작"</string>
     <string name="axis_character" msgid="5059604520074645703">"문자별로 탐색"</string>
     <string name="axis_word" msgid="7745798763195184060">"단어별로 탐색"</string>
@@ -129,13 +138,13 @@
     <string name="granularity_pseudo_web_special_content" msgid="8235312346324504685">"특별한 콘텐츠 탐색"</string>
     <string name="orientation_portrait" msgid="5280362272647722922">"세로"</string>
     <string name="orientation_landscape" msgid="129313890178554132">"가로"</string>
-    <string name="shortcut_unassigned" msgid="8631675444401168361">"지정되지 않음"</string>
+    <string name="shortcut_unassigned" msgid="8631675444401168361">"지정 안함"</string>
     <string name="shortcut_back" msgid="8404153155835310379">"뒤로 버튼"</string>
     <string name="shortcut_home" msgid="3905505999818649470">"홈 버튼"</string>
-    <string name="shortcut_recents" msgid="7901137492524332991">"최근에 사용한 앱 버튼"</string>
+    <string name="shortcut_recents" msgid="7901137492524332991">"최근 앱 버튼"</string>
     <string name="shortcut_notifications" msgid="7234767026975704922">"알림 열기"</string>
-    <string name="shortcut_talkback_breakout" msgid="568168492542718040">"전체 문맥 메뉴 열기"</string>
-    <string name="shortcut_local_breakout" msgid="6177140532797600317">"로컬 문맥 메뉴 열기"</string>
+    <string name="shortcut_talkback_breakout" msgid="568168492542718040">"글로벌 컨텍스트 메뉴 열기"</string>
+    <string name="shortcut_local_breakout" msgid="6177140532797600317">"로컬 컨텍스트 메뉴 열기"</string>
     <string name="shortcut_repeat_last_utterance" msgid="2063136654845335137">"마지막 음성 반복"</string>
     <string name="shortcut_spell_last_utterance" msgid="106643257328883413">"마지막 음성 읽기"</string>
     <string name="shortcut_pause_feedback" msgid="1125364186583919621">"피드백 일시중지"</string>
@@ -163,6 +172,7 @@
     <string name="title_viewpager_controls" msgid="5445165716688066887">"페이지 컨트롤"</string>
     <string name="title_viewpager_breakout_next_page" msgid="8569901339110496653">"다음 페이지"</string>
     <string name="title_viewpager_breakout_prev_page" msgid="628828561164930528">"이전 페이지"</string>
+    <string name="title_labeling_controls" msgid="5329026809097946643">"라벨 컨트롤"</string>
     <string name="title_summary" msgid="1892383897326964505">"빠른 탐색"</string>
     <string name="title_granularity" msgid="8810561997342447201">"세부사항 변경"</string>
     <string name="value_direction_down_and_left" msgid="1136254602001079211">"아래쪽 왼쪽 순"</string>
@@ -177,10 +187,10 @@
     <string name="title_pref_shortcut_down_and_right" msgid="70468539039651273">"아래쪽 오른쪽 순으로 스와이프"</string>
     <string name="title_pref_shortcut_up_and_left" msgid="6488345551912922700">"위쪽 왼쪽 순으로 스와이프"</string>
     <string name="title_pref_shortcut_up_and_right" msgid="8936164693273303141">"위쪽 오른쪽 순으로 스와이프"</string>
-    <string name="title_pref_shortcut_right_and_down" msgid="8367941430094918701">"오른쪽 아래로 스와이프"</string>
-    <string name="title_pref_shortcut_right_and_up" msgid="3803984082758463130">"오른쪽 위로 스와이프"</string>
-    <string name="title_pref_shortcut_left_and_down" msgid="7133444152727902323">"왼쪽 아래로 스와이프"</string>
-    <string name="title_pref_shortcut_left_and_up" msgid="2432229113065295801">"왼쪽 위로 스와이프"</string>
+    <string name="title_pref_shortcut_right_and_down" msgid="8367941430094918701">"오른쪽 아래쪽 순으로 스와이프"</string>
+    <string name="title_pref_shortcut_right_and_up" msgid="3803984082758463130">"오른쪽 위쪽 순으로 스와이프"</string>
+    <string name="title_pref_shortcut_left_and_down" msgid="7133444152727902323">"왼쪽 아래쪽 순으로 스와이프"</string>
+    <string name="title_pref_shortcut_left_and_up" msgid="2432229113065295801">"왼쪽 위쪽 순으로 스와이프"</string>
     <string name="title_pref_two_part_vertical_gestures" msgid="3232021917181479854">"위아래(아래위) 동작"</string>
     <string name="value_volume_100_percent" formatted="false" msgid="6676030754946177658">"미디어 볼륨과 일치"</string>
     <string name="value_volume_75_percent" formatted="false" msgid="7578844180160160971">"미디어 볼륨의 75%"</string>
@@ -200,25 +210,35 @@
     <string name="value_keyboard_echo_never" msgid="7272733066649438914">"입력 키 음성 출력 사용 안함"</string>
     <string name="title_talkback_settings_available" msgid="6764624676369520992">"접근성 설정을 사용할 수 있음"</string>
     <string name="message_talkback_settings_available" msgid="8705763859411459771">"접근성 설정 애플리케이션을 다운로드하려면 탭하세요."</string>
-    <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"TalkBack 동작 변경"</string>
+    <string name="notification_title_talkback_gestures_changed" msgid="8384253637363301938">"음성 안내 지원 동작 변경"</string>
     <string name="notification_message_talkback_gestures_changed" msgid="5639775622146513884">"접근성 동작 변경사항을 검토하려면 탭하세요."</string>
-    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"TalkBack이 일시중지되었습니다."</string>
+    <string name="notification_title_talkback_suspended" msgid="2185046615850691522">"음성 안내 지원이 일시중지되었습니다."</string>
     <string name="notification_message_talkback_suspended" msgid="3312683762001713772">"다시 시작하려면 누르세요."</string>
-    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"TalkBack을 일시중지하시겠습니까?"</string>
-    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"TalkBack을 일시중지하시겠습니까?"\n\n"TalkBack을 일시중지하면 더 이상 기기에서 피드백을 제공하지 않습니다."</string>
-    <string name="message_resume_manual" msgid="4491108398618252430">"알림 창에서 TalkBack을 다시 시작할 수 있습니다."</string>
-    <string name="message_resume_screen_on" msgid="2080032080971819102">"알림 창을 이용하거나 화면을 켜서 TalkBack을 다시 시작할 수 있습니다."</string>
-    <string name="message_resume_keyguard" msgid="8347218053451487513">"알림 창을 이용하거나 잠금 화면으로 돌아가서 TalkBack을 다시 시작할 수 있습니다."</string>
+    <string name="dialog_title_suspend_talkback" msgid="452536442417893349">"음성 안내 지원을 일시중지하시겠습니까?"</string>
+    <string name="dialog_message_suspend_talkback" msgid="7378497787526587410">"음성 안내 지원을 일시중지하시겠습니까?\n\n음성 안내 지원을 일시중지하면 더 이상 기기에서 피드백을 제공하지 않습니다."</string>
+    <string name="message_resume_manual" msgid="4491108398618252430">"알림 창에서 음성 안내 지원을 다시 시작할 수 있습니다."</string>
+    <string name="message_resume_screen_on" msgid="2080032080971819102">"알림 창을 이용하거나 화면을 켜서 음성 안내 지원을 다시 시작할 수 있습니다."</string>
+    <string name="message_resume_keyguard" msgid="8347218053451487513">"알림 창을 이용하거나 잠금 화면으로 돌아가서 음성 안내 지원을 다시 시작할 수 있습니다."</string>
     <string name="show_suspend_warning_label" msgid="2767993698595859057">"이 경고를 항상 표시"</string>
-    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"해당 버전의 TalkBack은 기본 접근성 동작이 변경되었습니다. 이 동작과 관련된 작업은 TalkBack 설정에서 맞춤설정할 수 있습니다. \'터치하여 탐색\'을 사용하면 다음 동작을 사용하여 특정 작업을 수행할 수 있습니다."\n\n"<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
-    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"이 버전의 TalkBack에는 기본 접근성 동작에 대한 변경사항이 포함되어 있습니다."\n\n"위아래 및 아래위 읽기 동작을 이용하여 화면에 표시된 첫 번째 및 마지막 항목으로 이동할 수 있습니다."\n\n"특정 항목에 초점을 맞춘 다음 로컬 컨텍스트 메뉴에서 단위를 선택하여 읽기 수준을 변경할 수 있습니다."\n\n"TalkBack 설정에서 이러한 동작으로 수행된 작업을 변경할 수 있습니다."</string>
+    <string name="label_dialog_title_add" msgid="5382481431231127704">"라벨 추가"</string>
+    <string name="label_dialog_title_edit" msgid="4092558174381892707">"라벨 수정"</string>
+    <string name="label_dialog_title_remove" msgid="3378715305025501902">"라벨 삭제"</string>
+    <string name="label_dialog_text" msgid="1215316331086955256">"아래 입력란에 이 이미지에 사용할 텍스트를 입력하세요."</string>
+    <string name="label_remove_dialog_text" msgid="3934146603628571606">"\'<xliff:g id="LABEL">%1$s</xliff:g>\' 라벨을 삭제하시겠습니까?"</string>
+    <string name="label_remove_dialog_text_app_name" msgid="2384427835919655322">"<xliff:g id="APP_NAME">%2$s</xliff:g>에서 \'<xliff:g id="LABEL">%1$s</xliff:g>\' 라벨을 삭제하시겠습니까?"</string>
+    <string name="label_dialog_edit_hint" msgid="1909934608642527277">"라벨 텍스트"</string>
+    <string name="talkback_gesture_change_details" msgid="2919155220372343154">"해당 버전의 음성 안내 지원은 기본 접근성 동작이 변경되었습니다. 이 동작과 관련된 작업은 음성 안내 지원 설정에서 맞춤설정할 수 있습니다. \'터치하여 탐색\'을 사용하면 다음 동작을 사용하여 특정 작업을 수행할 수 있습니다.\n\n<xliff:g id="MAPPINGS">%1$s</xliff:g>"</string>
+    <string name="talkback_built_in_gesture_change_details" msgid="1504489384911892122">"이 버전의 음성 안내 지원에는 기본 접근성 동작에 대한 변경사항이 포함되어 있습니다.\n\n위아래 및 아래위 읽기 동작을 이용하여 화면에 표시된 첫 번째 및 마지막 항목으로 이동할 수 있습니다.\n\n특정 항목에 초점을 맞춘 다음 로컬 컨텍스트 메뉴에서 단위를 선택하여 읽기 수준을 변경할 수 있습니다.\n\n음성 안내 지원 설정에서 이러한 동작으로 수행된 작업을 변경할 수 있습니다."</string>
     <string name="button_accept_changed_gesture_mappings" msgid="3709582843147387025">"동작 추천 동의"</string>
     <string name="button_customize_gesture_mappings" msgid="6198453024008558647">"동작 맞춤설정"</string>
-    <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"\'터치하여 탐색\'을 사용 중지하시겠습니까?"</string>
-    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"\'터치하여 탐색\'을 사용 중지하시겠습니까?"\n\n"사용 중지하면, 화면을 터치할 때 바로가기 동작에 응답하지 않거나 항목 설명을 들을 수 없습니다."</string>
+    <string name="dialog_title_disable_exploration" msgid="6318745977662978395">"\'터치하여 탐색\' 사용 중지"</string>
+    <string name="dialog_message_disable_exploration" msgid="206632033549219529">"\'터치하여 탐색\'을 사용 중지하시겠습니까?\n\n사용 중지하면, 화면을 터치할 때 바로가기 동작에 응답하지 않으며 항목 설명을 들을 수 없습니다."</string>
     <string name="hint_script_injection" msgid="2973894305173271874">"\'터치하여 탐색\'은 웹 콘텐츠에는 사용할 수 없습니다. 웹 콘텐츠를 탐색하려면 접근성 설정에서 <xliff:g id="PREFERENCE_NAME">%1$s</xliff:g>을(를) 사용하도록 설정하세요."</string>
-    <string name="label_talkback_context_menu" msgid="102441078934343795">"TalkBack 전체 문맥 메뉴"</string>
-    <string name="permission_talkback_label" msgid="7399199628843033396">"TalkBack 제어"</string>
+    <string name="label_talkback_context_menu" msgid="102441078934343795">"음성 안내 지원 글로벌 컨텍스트 메뉴"</string>
+    <string name="permission_talkback_label" msgid="7399199628843033396">"음성 안내 지원 제어"</string>
+    <string name="permission_talkback_desc" msgid="7998251777426211557">"음성 안내 지원에 제스처를 보내고 음성 피드백을 다시 사용할 수 있는 권한입니다."</string>
+    <string name="permission_labeling_label" msgid="1480122506788515888">"음성 안내 지원 맞춤 라벨 관리"</string>
+    <string name="permission_labeling_desc" msgid="2506887117365155231">"음성 안내 지원에서 사용하는 맞춤 라벨을 조회, 수정, 삭제할 수 있는 권한입니다."</string>
     <string name="links" msgid="5674175288909957654">"링크"</string>
     <string name="end_of_text" msgid="4039485166364049724">"끝"</string>
     <string name="character_collapse_template" msgid="6127861834252515898">" <xliff:g id="CHARACTER">%2$s</xliff:g> <xliff:g id="NUMBER">%1$d</xliff:g>개"</string>
