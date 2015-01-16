@@ -31,6 +31,12 @@
       <organization>Google, Inc</organization>
       <organizationUrl>http://www.google.com</organizationUrl>
     </developer>
+    <developer>
+      <name>Samuel Rush</name>
+      <email>sjrush@google.com</email>
+      <organization>Google, Inc</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
   </developers>
 
   <scm>
