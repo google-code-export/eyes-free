@@ -8,6 +8,7 @@
   <packaging>jar</packaging>
 
   <name>Accessibility Test Framework</name>
+  <description>Library used to test for common accessibility issues.</description>
   <url>https://code.google.com/p/eyes-free/</url>
 
   <licenses>
